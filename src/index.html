@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WardOps — Docs, Email &amp; Tracking in One for Freight Forwarders</title>
+<meta name="description" content="WardOps is ocean freight operations software that puts documents, email and container tracking in one place and shows your team what needs attention today.">
+<link rel="canonical" href="{{SITE_URL}}">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#FBFBF9">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="{{ROOT}}assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="{{ROOT}}assets/favicon-48.png" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="{{ROOT}}assets/apple-touch-icon.png">
+<link rel="manifest" href="{{ROOT}}site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="WardOps">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="{{SITE_URL}}">
+<meta property="og:title" content="WardOps — Documents, email and tracking in one place">
+<meta property="og:description" content="Operations software for ocean freight forwarders. Every PDF read and filed, every email on the right shipment, every ETA change explained.">
+<meta property="og:image" content="{{SITE_URL}}assets/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="WardOps: documents, email and tracking in one place for freight forwarders">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WardOps — Documents, email and tracking in one place">
+<meta name="twitter:description" content="Operations software for ocean freight forwarders. See what needs attention today, before it turns into demurrage.">
+<meta name="twitter:image" content="{{SITE_URL}}assets/og-image.jpg">
+<link rel="stylesheet" href="{{ROOT}}assets/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{SITE_URL}}#organization",
+      "name": "WardOps",
+      "url": "{{SITE_URL}}",
+      "logo": "{{SITE_URL}}assets/icon-192.png",
+      "email": "{{CONTACT_EMAIL}}"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{SITE_URL}}#website",
+      "name": "WardOps",
+      "url": "{{SITE_URL}}",
+      "inLanguage": "en",
+      "publisher": {"@id": "{{SITE_URL}}#organization"}
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "{{SITE_URL}}#software",
+      "name": "WardOps",
+      "url": "{{SITE_URL}}",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Freight forwarding operations software",
+      "operatingSystem": "Web browser",
+      "description": "Operations software for ocean freight forwarders that brings shipment documents, email and container tracking into one shipment file and flags what needs attention.",
+      "audience": {"@type": "BusinessAudience", "audienceType": "Ocean freight forwarders and customs-focused operations teams"},
+      "featureList": [
+        "Emails automatically linked to shipments by B/L, booking and container numbers",
+        "Reply and customer notification drafts that are sent only after approval",
+        "Document reading with text extraction, OCR and optional AI",
+        "Arrival notice, delivery order and cargo release generation on your letterhead",
+        "ETA history with source priority and change alerts",
+        "Last free day, demurrage and detention estimates",
+        "ISF deadline and AMS match checks for US imports",
+        "Unanswered email alerts after eight hours"
+      ],
+      "publisher": {"@id": "{{SITE_URL}}#organization"}
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "{{SITE_URL}}#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Does WardOps replace my TMS?",
+         "acceptedAnswer": {"@type": "Answer", "text": "WardOps is an operations system with its own shipment files, focused on follow-up: documents, email and tracking. Accounting and invoicing stay in the tools you already use. You can start by importing a spreadsheet of open shipments."}},
+        {"@type": "Question", "name": "Will WardOps send emails to my customers on its own?",
+         "acceptedAnswer": {"@type": "Answer", "text": "No. Replies and notifications are prepared as drafts. Nothing is sent until someone on your team reviews it and clicks approve, and every send is logged with who approved it."}},
+        {"@type": "Question", "name": "Which shipments does WardOps support?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Full container load (FCL) ocean freight, import and export. Less-than-container load (LCL) comes next, then air freight."}},
+        {"@type": "Question", "name": "Which email providers can I connect?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Microsoft 365 / Outlook and Gmail. You connect with your own account and can disconnect at any time. Access tokens are stored encrypted."}},
+        {"@type": "Question", "name": "Where does tracking data come from?",
+         "acceptedAnswer": {"@type": "Answer", "text": "From carrier and terminal updates through a tracking provider, from delay emails and from your documents. Every ETA keeps its source, and a weaker source never overwrites a stronger one. During early access we set up the data source that fits your lanes."}},
+        {"@type": "Question", "name": "How does WardOps use AI?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Only when it is needed. Documents are read from their text first, then with OCR. AI reads a page only when both fall short, you can switch it off for your company, and your data is never used to train AI models."}},
+        {"@type": "Question", "name": "How much does WardOps cost?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Early-access pricing is agreed per team. Tell us about your volume and we will share a simple plan."}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="tide" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1FB5A5"/><stop offset=".55" stop-color="#2B63D9"/><stop offset="1" stop-color="#183C8C"/>
+    </linearGradient>
+  </defs>
+  <symbol id="mark" viewBox="0 0 48 48"><rect width="48" height="48" rx="12" fill="url(#tide)"/>
+    <path d="M11 16l6.5 16 6.5-11 6.5 11L37 16" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 3H6.5A1.5 1.5 0 005 4.5v15A1.5 1.5 0 006.5 21h11a1.5 1.5 0 001.5-1.5V8l-5-5zm0 0v5h5M8.5 13h7M8.5 16.5h4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 5.5h16a1 1 0 011 1v11a1 1 0 01-1 1H4a1 1 0 01-1-1v-11a1 1 0 011-1zm-.5.8L12 13l8.5-6.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-ship" viewBox="0 0 24 24"><path d="M3 16.5l1.6 3.5h14.8l1.6-3.5M5 16.5V11h14v5.5M8 11V6.5h8V11M12 3.5v3M2.5 21c1.4 0 1.4-.8 2.8-.8s1.4.8 2.8.8 1.4-.8 2.8-.8 1.4.8 2.8.8 1.4-.8 2.8-.8 1.4.8 2.8.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><path d="M6.5 10.5h11a1.5 1.5 0 011.5 1.5v7a1.5 1.5 0 01-1.5 1.5h-11A1.5 1.5 0 015 19v-7a1.5 1.5 0 011.5-1.5zm2-.1V7.5a3.5 3.5 0 017 0v2.9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-hand" viewBox="0 0 24 24"><path d="M9 11V5.5a1.5 1.5 0 013 0V10m0-.5V4.5a1.5 1.5 0 013 0V10m0-3.5a1.5 1.5 0 013 0V14a7 7 0 01-7 7h-.6a6 6 0 01-4.9-2.6L4.2 15a1.6 1.6 0 012.5-2l1.8 1.8V8a1.5 1.5 0 013 0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3.5l1.9 5.1 5.1 1.9-5.1 1.9-1.9 5.1-1.9-5.1-5.1-1.9 5.1-1.9L12 3.5zM18.5 16l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-log" viewBox="0 0 24 24"><path d="M8 6h11M8 12h11M8 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><path d="M12 21a9 9 0 100-18 9 9 0 000 18zm0-13v4.5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-anchor" viewBox="0 0 24 24"><path d="M12 8a2.5 2.5 0 100-5 2.5 2.5 0 000 5zm0 0v13m0 0c-4.4 0-8-3.1-8-7h3m5 7c4.4 0 8-3.1 8-7h-3M8 11h8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4.5m0 0h11.5l-2 4 2 4H5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 20v-1.5a3.5 3.5 0 00-3.5-3.5h-5A3.5 3.5 0 004 18.5V20M10 11.5a3.5 3.5 0 100-7 3.5 3.5 0 000 7zm10 8.5v-1.5a3.5 3.5 0 00-2.6-3.4M15.5 4.6a3.5 3.5 0 010 6.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-report" viewBox="0 0 24 24"><path d="M5 20V10m7 10V4m7 16v-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13m0 0l-5-5m5 5l-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<header class="site-header">
+  <div class="container bar">
+    <a class="brand" href="{{SITE_URL}}" aria-label="WardOps home">
+      <svg class="brand-mark" aria-hidden="true"><use href="#mark"/></svg><span>Ward<span class="ops">Ops</span></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#why">Why WardOps</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#control">Control</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-primary btn-small" href="#early-access">Get early access</a>
+  </div>
+</header>
+
+<main id="main">
+  <!-- ========================= HERO ========================= -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">For ocean freight forwarders</p>
+        <h1 id="hero-title">Documents, email and tracking in one place.</h1>
+        <p class="lead">WardOps puts every PDF, email and carrier update on the right shipment, and shows what needs attention today.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#early-access">Get early access</a>
+          <a class="btn btn-ghost" href="#how-it-works">See how it works</a>
+        </div>
+        <p class="works-with">Works with
+          <span class="brand-chip"><img src="{{ROOT}}assets/brands/gmail.svg" alt="" width="20" height="15">Gmail</span>
+          <span class="brand-chip"><img src="{{ROOT}}assets/brands/outlook.svg" alt="" width="18" height="17">Outlook</span>
+        </p>
+      </div>
+
+      <figure class="flow" aria-label="Example: a document, an email and a tracking update land on the same shipment file">
+        <div class="sources">
+          <div class="source s-doc">
+            <span class="ico"><svg aria-hidden="true"><use href="#i-doc"/></svg></span>
+            <div><b>Bill of lading</b><small>PDF, read and filed</small></div>
+          </div>
+          <div class="source s-mail">
+            <span class="ico"><svg aria-hidden="true"><use href="#i-mail"/></svg></span>
+            <div><b>Customer email</b><small>“Any update?”</small></div>
+          </div>
+          <div class="source s-track">
+            <span class="ico"><svg aria-hidden="true"><use href="#i-ship"/></svg></span>
+            <div><b>Carrier update</b><small>ETA moved +6 days</small></div>
+          </div>
+        </div>
+        <svg class="merge" viewBox="0 0 40 240" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 40 C 22 40, 18 120, 40 120 M0 120 H40 M0 200 C 22 200, 18 120, 40 120" fill="none" stroke="#B9C4CF" stroke-width="1.5" stroke-dasharray="3 4" vector-effect="non-scaling-stroke"/>
+        </svg>
+        <article class="ship-card">
+          <header class="sc-head">
+            <span class="mono sc-no">OI-26090118</span><span class="pill pill-warn">Discharged</span>
+          </header>
+          <p class="sc-route">Istanbul <svg aria-hidden="true"><use href="#i-arrow"/></svg> New York</p>
+          <dl class="sc-facts">
+            <div><dt>ETA</dt><dd>18 Oct <span class="shift" title="ETA moved 17 days in total">+17d</span></dd></div>
+            <div><dt>Last free day</dt><dd>27 Oct</dd></div>
+          </dl>
+          <p class="sc-attn"><i class="dot crit" aria-hidden="true"></i>Free time ends in 2 days</p>
+        </article>
+        <figcaption class="sr-only">Example shipment file combining a bill of lading, a customer email and a carrier ETA update.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ========================= WHY ========================= -->
+  <section class="section" id="why" aria-labelledby="why-title">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Why WardOps</p>
+        <h2 id="why-title">Three jobs your team does all day. One shipment file.</h2>
+        <p class="section-lead">Most ops teams juggle a TMS, a shared inbox, carrier websites and a folder of PDFs.
+          Other tools keep the record. WardOps also does the follow-up: it reads what comes in, puts it on the right file
+          and tells you what to do next.</p>
+      </div>
+      <div class="pillars">
+        <article class="pillar">
+          <span class="p-ico p-doc"><svg aria-hidden="true"><use href="#i-doc"/></svg></span>
+          <h3>Documents: every PDF read and filed</h3>
+          <p>Bills of lading, arrival notices and booking confirmations are read, matched to the right shipment and checked
+            against what is already on file. A value never silently overwrites one your team entered.</p>
+          <ul class="ticks">
+            <li>Missing documents by HS code and deadline become tasks</li>
+            <li>Arrival notice, delivery order and cargo release on your letterhead</li>
+          </ul>
+        </article>
+        <article class="pillar">
+          <span class="p-ico p-mail"><svg aria-hidden="true"><use href="#i-mail"/></svg></span>
+          <h3>Email: every message on the right shipment</h3>
+          <p>Emails are linked to shipments by B/L, booking and container numbers. Status questions get a reply drafted
+            from the file, so answering takes a minute instead of ten.</p>
+          <ul class="ticks">
+            <li>Questions unanswered after 8 hours come back as tasks</li>
+            <li>Drafts in English or Turkish, sent only after your OK</li>
+          </ul>
+        </article>
+        <article class="pillar">
+          <span class="p-ico p-track"><svg aria-hidden="true"><use href="#i-ship"/></svg></span>
+          <h3>Tracking: every change, with its source</h3>
+          <p>Milestones and ETA changes land on one timeline, each with where it came from. A weaker source such as a
+            document never overwrites a carrier update.</p>
+          <ul class="ticks">
+            <li>Slipping ETAs and missed departures flagged early</li>
+            <li>Last free day, demurrage and detention estimates</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="compare">
+        <div class="table-wrap">
+          <table>
+            <caption class="sr-only">A typical freight operations setup compared with WardOps</caption>
+            <thead><tr><th scope="col"></th><th scope="col">Typical setup</th><th scope="col" class="us">With WardOps</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Where shipment information lives</th><td>TMS, inbox, carrier sites, shared drive</td><td class="us">One shipment file</td></tr>
+              <tr><th scope="row">How problems are found</th><td>Someone happens to notice</td><td class="us">Rules flag them, most urgent first</td></tr>
+              <tr><th scope="row">Customer status emails</th><td>Written from scratch, every time</td><td class="us">Drafted from the file, sent after your OK</td></tr>
+              <tr><th scope="row">Documents</th><td>Downloaded, renamed, retyped</td><td class="us">Read, matched and checked</td></tr>
+              <tr><th scope="row">ETA changes</th><td>Overwritten in a spreadsheet</td><td class="us">Kept with source and full history</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= ATTENTION ========================= -->
+  <section class="section tint" id="how-it-works" aria-labelledby="attention-title">
+    <div class="container split">
+      <div class="section-head">
+        <p class="eyebrow">How it works</p>
+        <h2 id="attention-title">Start the day with what needs attention, not with the inbox.</h2>
+        <p class="section-lead">WardOps checks every open shipment against rules your team can tune: ETA shifts, missed
+          departures, last free day, detention, missing documents, unanswered email and the handoffs that fall
+          between two people.</p>
+        <p class="note">Alerts are sorted by urgency. Close one, or mark it “not needed”, and it stays quiet unless the
+          situation gets worse.</p>
+      </div>
+      <ul class="alerts" aria-label="Example alerts">
+        <li><span class="pill pill-crit">Critical</span><div><b>Free time ends tomorrow, no customs release yet</b>
+          <small><span class="mono">OI-26090118</span> · WRDU 260418 4 · est. demurrage from day 1</small></div></li>
+        <li><span class="pill pill-warn">Warning</span><div><b>ISF filed, not matched with AMS</b>
+          <small><span class="mono">OI-26090124</span> · vessel sailed 3 days ago</small></div></li>
+        <li><span class="pill pill-warn">Warning</span><div><b>Released, waiting for delivery address and trucker</b>
+          <small><span class="mono">OI-26090131</span> · containers ready for pickup</small></div></li>
+        <li><span class="pill pill-info">Info</span><div><b>Customer asked for an update 9 hours ago</b>
+          <small><span class="mono">OE-26090207</span> · reply draft ready for review</small></div></li>
+      </ul>
+    </div>
+
+    <div class="container timeline-block">
+      <div class="section-head narrow">
+        <h3 class="h3-lg">One timeline per shipment</h3>
+        <p>Every file shows where the cargo is, when each step happened and what comes next. Dates come from real events,
+          not from whoever typed last.</p>
+      </div>
+      <ol class="tracker" aria-label="Example shipment milestones">
+        <li class="done"><span class="dot"><svg aria-hidden="true"><use href="#i-check"/></svg></span><b>Booking</b><small>2 Sep</small></li>
+        <li class="done"><span class="dot"><svg aria-hidden="true"><use href="#i-check"/></svg></span><b>Gate in</b><small>8 Sep</small></li>
+        <li class="done"><span class="dot"><svg aria-hidden="true"><use href="#i-check"/></svg></span><b>Loaded</b><small>9 Sep</small></li>
+        <li class="done"><span class="dot"><svg aria-hidden="true"><use href="#i-check"/></svg></span><b>Departed</b><small>10 Sep</small></li>
+        <li class="done"><span class="dot"><svg aria-hidden="true"><use href="#i-check"/></svg></span><b>Arrived</b><small>12 Oct</small></li>
+        <li class="now"><span class="dot"></span><b>Discharged</b><small>12 Oct</small></li>
+        <li><span class="dot"></span><b>Customs</b><small></small></li>
+        <li><span class="dot"></span><b>Picked up</b><small></small></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ========================= FEATURES ========================= -->
+  <section class="section" id="features" aria-labelledby="features-title">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Features</p>
+        <h2 id="features-title">Built the way forwarders actually work</h2>
+      </div>
+      <div class="features">
+        <article><span class="feat-logos"><img src="{{ROOT}}assets/brands/gmail.svg" alt="Gmail" width="26" height="20"><img src="{{ROOT}}assets/brands/outlook.svg" alt="Microsoft Outlook" width="24" height="23"></span><h3>Gmail and Outlook</h3>
+          <p>Connect your ops inbox. Only operational messages are read; the rest stays untouched.</p></article>
+        <article><svg aria-hidden="true"><use href="#i-doc"/></svg><h3>Your documents, your letterhead</h3>
+          <p>Generate arrival notices, delivery orders and cargo releases as PDF, or fill your own Word template.</p></article>
+        <article><svg aria-hidden="true"><use href="#i-flag"/></svg><h3>US imports covered</h3>
+          <p>ISF 10+2 checklist and deadline, AMS match check, customs and freight release before pickup.</p></article>
+        <article><svg aria-hidden="true"><use href="#i-anchor"/></svg><h3>Release and pickup readiness</h3>
+          <p>See which containers can be picked up and what is blocking the rest: customs, freight release or a hold.</p></article>
+        <article><svg aria-hidden="true"><use href="#i-clock"/></svg><h3>Free time and costs</h3>
+          <p>Last free day and empty return tracked per container, with demurrage and detention estimates from your tariffs.</p></article>
+        <article><svg aria-hidden="true"><use href="#i-users"/></svg><h3>Customer routines</h3>
+          <p>Remember how each customer or agent works: release type, who files the ISF, bond, notify list, delivery notes.</p></article>
+        <article><svg aria-hidden="true"><use href="#i-check"/></svg><h3>Document checks by HS code</h3>
+          <p>Hazardous goods and required certificates are flagged from your own HS code rules, with who to ask for each.</p></article>
+        <article><svg aria-hidden="true"><use href="#i-report"/></svg><h3>Daily report</h3>
+          <p>A short morning summary of what moved, what slipped and what is waiting on your team.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= CONTROL ========================= -->
+  <section class="section warm" id="control" aria-labelledby="control-title">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">You stay in control</p>
+        <h2 id="control-title">Automation that asks before it acts</h2>
+        <p class="section-lead">One wrong email can cost more than a month of software. WardOps prepares the work and
+          your team decides what goes out.</p>
+      </div>
+      <div class="controls">
+        <article><span class="c-ico"><svg aria-hidden="true"><use href="#i-hand"/></svg></span>
+          <h3>Nothing leaves without your OK</h3>
+          <p>Replies, notifications and documents wait in an approval queue. Every send is logged with who approved it.</p></article>
+        <article><span class="c-ico"><svg aria-hidden="true"><use href="#i-lock"/></svg></span>
+          <h3>Your data stays separate</h3>
+          <p>Each company’s data is isolated, with admin, operations and view-only roles. Mail access tokens are stored encrypted.</p></article>
+        <article><span class="c-ico"><svg aria-hidden="true"><use href="#i-spark"/></svg></span>
+          <h3>AI only when it is needed</h3>
+          <p>Text and OCR come first. AI reads a page only when they fall short, and you can switch it off. Your data never trains AI models.</p></article>
+        <article><span class="c-ico"><svg aria-hidden="true"><use href="#i-log"/></svg></span>
+          <h3>A complete audit trail</h3>
+          <p>Sign-ins, sends, document generation and setting changes are recorded and visible to your admins.</p></article>
+      </div>
+      <p class="fine-links">Read how responsibility is shared in our
+        <a href="{{ROOT}}legal/automation-protocol/">Automation, Approval and Responsibility Protocol</a>.</p>
+    </div>
+  </section>
+
+  <!-- ========================= START ========================= -->
+  <section class="section" id="getting-started" aria-labelledby="start-title">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Getting started</p>
+        <h2 id="start-title">No migration project</h2>
+      </div>
+      <ol class="steps">
+        <li><h3>Sign up with Google or Apple</h3>
+          <p>Create your company workspace in a minute and invite your team.</p></li>
+        <li><h3>Bring your open shipments</h3>
+          <p>Import a spreadsheet of open files and connect your operations inbox.</p>
+          <p class="inline-logos"><span class="brand-chip"><img src="{{ROOT}}assets/brands/gmail.svg" alt="" width="18" height="14">Gmail</span>
+            <span class="brand-chip"><img src="{{ROOT}}assets/brands/outlook.svg" alt="" width="17" height="16">Outlook</span></p></li>
+        <li><h3>Work from “Needs attention”</h3>
+          <p>Your first list of alerts is ready as soon as the files are in.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ========================= FAQ ========================= -->
+  <section class="section tint" id="faq" aria-labelledby="faq-title">
+    <div class="container narrow-wrap">
+      <div class="section-head">
+        <p class="eyebrow">FAQ</p>
+        <h2 id="faq-title">Questions forwarders ask us</h2>
+      </div>
+      <div class="faq">
+        <details><summary>Does WardOps replace my TMS?</summary>
+          <p>WardOps is an operations system with its own shipment files, focused on follow-up: documents, email and tracking.
+            Accounting and invoicing stay in the tools you already use. You can start by importing a spreadsheet of open shipments.</p></details>
+        <details><summary>Will WardOps send emails to my customers on its own?</summary>
+          <p>No. Replies and notifications are prepared as drafts. Nothing is sent until someone on your team reviews it and
+            clicks approve, and every send is logged with who approved it.</p></details>
+        <details><summary>Which shipments does WardOps support?</summary>
+          <p>Full container load (FCL) ocean freight, import and export. Less-than-container load (LCL) comes next, then air freight.</p></details>
+        <details><summary>Which email providers can I connect?</summary>
+          <p class="inline-logos"><span class="brand-chip"><img src="{{ROOT}}assets/brands/gmail.svg" alt="" width="18" height="14">Gmail</span>
+            <span class="brand-chip"><img src="{{ROOT}}assets/brands/outlook.svg" alt="" width="17" height="16">Microsoft 365 / Outlook</span></p>
+          <p>Microsoft 365 / Outlook and Gmail. You connect with your own account and can disconnect at any time. Access tokens
+            are stored encrypted.</p></details>
+        <details><summary>Where does tracking data come from?</summary>
+          <p>From carrier and terminal updates through a tracking provider, from delay emails and from your documents. Every ETA
+            keeps its source, and a weaker source never overwrites a stronger one. During early access we set up the data
+            source that fits your lanes.</p></details>
+        <details><summary>How does WardOps use AI?</summary>
+          <p>Only when it is needed. Documents are read from their text first, then with OCR. AI reads a page only when both
+            fall short, you can switch it off for your company, and your data is never used to train AI models.</p></details>
+        <details><summary>How much does WardOps cost?</summary>
+          <p>Early-access pricing is agreed per team. Tell us about your volume and we will share a simple plan.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= EARLY ACCESS ========================= -->
+  <section class="section cta-section" id="early-access" aria-labelledby="cta-title">
+    <div class="container cta-grid">
+      <div>
+        <p class="eyebrow on-dark">Early access</p>
+        <h2 id="cta-title">See WardOps with your own shipments</h2>
+        <p class="lead-sm">We are onboarding a small group of ocean freight teams. Tell us a little about yours and we will
+          set up a walkthrough using a few of your real files.</p>
+        <p class="contact-line">Prefer email? Write to <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a></p>
+      </div>
+      <form class="form" id="accessForm" action="{{FORM_ACTION}}" method="post" data-endpoint="{{FORM_ENDPOINT}}"
+            data-email="{{CONTACT_EMAIL}}" novalidate>
+        <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="f-company">Company</label><input id="f-company" name="company" autocomplete="organization" required></div>
+        <div class="field"><label for="f-volume">FCL containers per month</label>
+          <select id="f-volume" name="volume">
+            <option value="">Choose one (optional)</option>
+            <option>Under 50</option><option>50–200</option><option>200–1,000</option><option>Over 1,000</option>
+          </select></div>
+        <div class="field full"><label for="f-note">Anything we should know? <span class="opt">(optional)</span></label>
+          <textarea id="f-note" name="note" rows="3" placeholder="Lanes, current tools, what slows your team down"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="f-web">Website</label><input id="f-web" name="website" tabindex="-1" autocomplete="off"></div>
+        <p class="consent full">We use these details only to contact you about WardOps. See our <a href="{{ROOT}}legal/privacy/">Privacy Policy</a>.</p>
+        <div class="full form-foot">
+          <button class="btn btn-primary" type="submit">Request early access</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container foot-grid">
+    <div class="foot-brand">
+      <a class="brand" href="{{SITE_URL}}"><svg class="brand-mark" aria-hidden="true"><use href="#mark"/></svg><span>Ward<span class="ops">Ops</span></span></a>
+      <p>Documents, email and tracking in one place for ocean freight forwarders. In early access; features may change.</p>
+      <p><a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a></p>
+    </div>
+    <nav aria-label="Legal" class="foot-links">
+      <p class="foot-title">Legal</p>
+      <a href="{{ROOT}}legal/terms/">Terms of Service</a>
+      <a href="{{ROOT}}legal/privacy/">Privacy Policy</a>
+      <a href="{{ROOT}}legal/automation-protocol/">Automation &amp; Responsibility</a>
+      <a href="{{ROOT}}legal/data-processing/">Data Processing Agreement</a>
+      <a href="{{ROOT}}legal/records-and-feedback/">Records &amp; Feedback</a>
+    </nav>
+    <nav aria-label="Page" class="foot-links">
+      <p class="foot-title">Product</p>
+      <a href="#why">Why WardOps</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </div>
+  <div class="container foot-bottom"><p>© {{YEAR}} WardOps</p>
+    <p class="tm">Gmail is a trademark of Google LLC. Microsoft 365 and Outlook are trademarks of the Microsoft group of
+      companies. WardOps is not affiliated with or endorsed by Google or Microsoft.</p></div>
+</footer>
+
+<script src="{{ROOT}}assets/site.js" defer></script>
+</body>
+</html>
