@@ -1,0 +1,45 @@
+# Siteyi her main gönderiminde derleyip GitHub Pages'e yayımlar.
+# Depo ayarı: Settings → Pages → Build and deployment → Source: "GitHub Actions".
+name: Pages
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Inter yazı tipini indir (OFL lisanslı; depoda tutulmaz)
+        run: |
+          mkdir -p src/assets/fonts
+          curl -sSfL -o src/assets/fonts/inter-latin.woff2 https://fonts.gstatic.com/s/inter/v20/UcCo3FwrK3iLTcviYwYZ8UA3.woff2
+          curl -sSfL -o src/assets/fonts/inter-latin-ext.woff2 https://fonts.gstatic.com/s/inter/v20/UcCo3FwrK3iLTcvsYwYZ8UA3J58.woff2
+      - name: Siteyi derle ve SEO denetimini çalıştır
+        run: python build.py --strict
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

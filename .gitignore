@@ -1,0 +1,5 @@
+dist/
+# Inter yazı tipi dosyaları derlemede indirilir (bkz. .github/workflows/pages.yml)
+src/assets/fonts/*.woff2
+__pycache__/
+.DS_Store
