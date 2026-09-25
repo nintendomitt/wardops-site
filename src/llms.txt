@@ -1,0 +1,34 @@
+# WardOps
+
+> WardOps is operations software for ocean freight forwarders. It brings shipment documents, email and container tracking into one shipment file and shows the team what needs attention today. It is in early access and currently supports full container load (FCL) ocean freight, import and export.
+
+## What makes it different
+
+- Most freight operations tools keep the record; WardOps also does the follow-up. It reads what comes in, puts it on the right shipment and flags what to do next.
+- Documents: bills of lading, arrival notices and booking confirmations are read (text first, then OCR, AI only when needed), matched to the right shipment and checked against the file. Values never silently overwrite what the team entered. Missing documents by HS code and deadline become tasks.
+- Email: messages are linked to shipments by B/L, booking and container numbers. Questions unanswered after 8 hours come back as tasks. Status replies are drafted from the file in English or Turkish.
+- Tracking: milestones and ETA changes land on one timeline with their source (carrier or terminal, manual, email, booking, document). A weaker source never overwrites a stronger one.
+- Alerts include ETA shifts, missed departures, last free day, demurrage and detention estimates, ISF filed but not matched with AMS, cargo released but waiting for a delivery address, and arrival notices not yet issued.
+- Documents such as arrival notices, delivery orders and cargo releases are generated on the forwarder's own letterhead (PDF or the forwarder's Word template).
+
+## Control and safety
+
+- Nothing is sent to customers or third parties without a person on the team approving it; every send is logged with who approved it.
+- Each company's data is isolated; roles are admin, operations and view-only. Mail access tokens are stored encrypted.
+- AI is used only when text and OCR are not enough, can be switched off per company, and customer data is not used to train AI models.
+- WardOps is not a carrier, NVOCC or customs broker and does not file customs, ISF or AMS declarations on anyone's behalf.
+
+## Getting started
+
+- Sign up with Google or Apple, import a spreadsheet of open shipments and connect a Microsoft 365 / Outlook or Gmail inbox.
+- Coming next: LCL, then air freight.
+- Early-access pricing is agreed per team. Contact: {{CONTACT_EMAIL}}
+
+## Pages
+
+- [Home]({{SITE_URL}}): Product overview, features, how it works and FAQ.
+- [Early access]({{SITE_URL}}#early-access): Request a walkthrough with your own shipments.
+
+## Legal
+
+{{LEGAL_LINKS}}
