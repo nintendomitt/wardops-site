@@ -1,18 +1,22 @@
 """Favicon, uygulama ikonları ve paylaşım görselini (og-image) üretir.
 
-SVG'ler macOS QuickLook (WebKit) ile PNG'ye çevrilir; bu yüzden betik yalnızca
-macOS'ta çalışır. Üretilen dosyalar src/assets altına yazılır ve depoya eklenir;
-site derlemesi (build.py) bu betiğe ihtiyaç duymaz.
+SVG'ler başsız Chrome ile PNG'ye çevrilir; macOS'ta ve GitHub Actions'ın Ubuntu
+makinelerinde aynı şekilde çalışır. Yayında görseller derleme sırasında üretilir
+(bkz. .github/workflows/pages.yml), bu yüzden PNG/JPG dosyaları depoda tutulmaz.
 
 Paylaşım görselindeki yazılar Inter ile çizilir (SF Pro'nun lisansı görsel
-üretimine izin vermez). Renkler marka brifindendir.
+üretimine izin vermez). Renkler marka brifindendir. Inter dosyası
+src/assets/fonts altında bulunmalıdır.
 
 Kullanım (proje kökünden, PyMuPDF kurulu Python ile):
     backend/.venv/bin/python website/tools/make_images.py
+Chrome farklı bir yerdeyse CHROME ortam değişkeniyle yolu verilir.
 """
 from __future__ import annotations
 
 import base64
+import os
+import shutil
 import subprocess
 import tempfile
 from pathlib import Path
@@ -21,7 +25,16 @@ import fitz  # PyMuPDF: yalnızca kırpma ve PNG yazımı için
 
 ASSETS = Path(__file__).resolve().parents[1] / "src" / "assets"
 FONT = ASSETS / "fonts" / "inter-latin.woff2"
-QL_SCALE = 1.5625   # QuickLook SVG'yi bu oranda büyütür; genişlik buna bölünerek verilir
+MAC_CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+
+
+def chrome() -> str:
+    for candidate in (os.environ.get("CHROME"), shutil.which("google-chrome"),
+                      shutil.which("google-chrome-stable"), shutil.which("chromium"), MAC_CHROME):
+        if candidate and Path(candidate).exists():
+            return candidate
+    raise SystemExit("Chrome bulunamadı; CHROME ortam değişkeniyle yolunu verin.")
+
 
 GRADIENT = ('<linearGradient id="tide" x1="0" y1="0" x2="1" y2="1">'
             '<stop offset="0" stop-color="#1FB5A5"/><stop offset=".55" stop-color="#2B63D9"/>'
@@ -35,19 +48,23 @@ def mark(x: float, y: float, size: float, stroke: float = 4) -> str:
             f'stroke-linecap="round" stroke-linejoin="round"/></g>')
 
 
-CANVAS = 1200   # QuickLook ölçeği bu boyutta doğrulandı; küçük boyutlar buradan küçültülür
+CANVAS = 1200   # büyük tuvalde çizilip küçültülür; küçük ikonlarda kenarlar daha temiz çıkar
 
 
 def draw(svg_body: str) -> fitz.Pixmap:
     """1200×1200 tuvalde SVG'yi çizer (şeffaflık korunur)."""
-    svg = (f'<svg xmlns="http://www.w3.org/2000/svg" width="{CANVAS / QL_SCALE:.4f}" height="{CANVAS / QL_SCALE:.4f}" '
+    svg = (f'<svg xmlns="http://www.w3.org/2000/svg" width="{CANVAS}" height="{CANVAS}" '
            f'viewBox="0 0 {CANVAS} {CANVAS}">{svg_body}</svg>')
     with tempfile.TemporaryDirectory() as tmp:
         source = Path(tmp) / "image.svg"
+        target = Path(tmp) / "image.png"
         source.write_text(svg, encoding="utf-8")
-        subprocess.run(["qlmanage", "-t", "-s", str(CANVAS), "-o", tmp, str(source)],
-                       check=True, capture_output=True)
-        return fitz.Pixmap(str(Path(tmp) / "image.svg.png"))
+        subprocess.run([chrome(), "--headless=new", "--no-sandbox", "--disable-gpu", "--hide-scrollbars",
+                        "--force-device-scale-factor=1", "--default-background-color=00000000",
+                        "--virtual-time-budget=3000", f"--window-size={CANVAS},{CANVAS}",
+                        f"--screenshot={target}", source.as_uri()],
+                       check=True, capture_output=True, timeout=120)
+        return fitz.Pixmap(str(target))
 
 
 def save(pix: fitz.Pixmap, out: Path) -> None:

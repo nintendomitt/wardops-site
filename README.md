@@ -12,9 +12,9 @@ motorları ve yapay zekâ tarayıcıları içeriği JavaScript çalıştırmadan
 | `src/legal/*.md` | Hukuki metinlerin İngilizce taslakları (Türkçe asılları `backend/legal/`) |
 | `src/legal.html`, `src/404.html` | Hukuki sayfa ve 404 şablonları |
 | `src/robots.txt`, `src/llms.txt` | Tarayıcı izinleri ve yapay zekâ özeti |
-| `src/assets/` | Stil, betik, ikonlar, paylaşım görseli; Inter yazı tipi dosyaları (OFL) depoda tutulmaz, derlemede indirilir |
+| `src/assets/` | Stil, betik, SVG ikon; Inter yazı tipi (OFL), PNG ikonlar ve paylaşım görseli depoda tutulmaz, derlemede indirilir veya üretilir |
 | `src/assets/brands/` | Gmail ve Outlook logoları (Wikimedia Commons; telifsiz ama tescilli marka, değiştirilmeden kullanılır) |
-| `tools/make_images.py` | İkon ve paylaşım görselini yeniden üretir (yalnızca macOS) |
+| `tools/make_images.py` | PNG ikonları ve paylaşım görselini başsız Chrome ile üretir (yerelde ve derlemede) |
 | `build.py` | `src/` → `dist/` derlemesi, sitemap ve SEO denetimi |
 
 ## Derleme ve önizleme

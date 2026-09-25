@@ -1,5 +1,8 @@
 dist/
 # Inter yazı tipi dosyaları derlemede indirilir (bkz. .github/workflows/pages.yml)
 src/assets/fonts/*.woff2
+# PNG ikonlar ve paylaşım görseli derlemede üretilir (bkz. tools/make_images.py)
+src/assets/*.png
+src/assets/og-image.jpg
 __pycache__/
 .DS_Store
