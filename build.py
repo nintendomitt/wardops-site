@@ -24,6 +24,14 @@ SRC = ROOT / "src"
 DIST = ROOT / "dist"
 
 #: Hukuki sayfalar: (adres, markdown dosyası, sekme başlığındaki kısa ad, arama sonucundaki açıklama)
+#: Kullanim rehberleri (Markdown, src/guides/): (adres, kaynak, kisa baslik, aciklama).
+GUIDES = [
+    ("connect-outlook", "connect-outlook.md", "Connect Outlook or Microsoft 365",
+     "Step-by-step guide to connecting an Outlook or Microsoft 365 mailbox to WardOps, including IT admin approval."),
+    ("connect-imap", "connect-imap.md", "Connect a mailbox over IMAP",
+     "Connect company email at your hosting provider, Gmail, Yandex, Yahoo, iCloud or Zoho to WardOps over IMAP and SMTP."),
+]
+
 LEGAL = [
     ("terms", "terms.md", "Terms of Service",
      "Terms of Service for WardOps, the operations platform for ocean freight forwarders. Draft under legal review."),
@@ -126,7 +134,7 @@ def _inline(text: str) -> str:
     escaped = html.escape(text)
     escaped = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", escaped)
     escaped = re.sub(r"`(.+?)`", r"<code>\1</code>", escaped)
-    escaped = re.sub(r"\[([^\]]+)\]\((https?://[^)\s]+|/[^)\s]*)\)", r'<a href="\2">\1</a>', escaped)
+    escaped = re.sub(r"\[([^\]]+)\]\((https?://[^)\s]+|/[^)\s]*|mailto:[^)\s]+)\)", r'<a href="\2">\1</a>', escaped)
     return escaped
 
 
@@ -190,6 +198,17 @@ def build(strict: bool = False) -> int:
         target.write_text(page, encoding="utf-8")
         pages.append((f"legal/{slug}/", target, True))
         legal_links.append((title, f"{site_url}legal/{slug}/", description))
+
+    guide_template = (SRC / "guide.html").read_text(encoding="utf-8")
+    for slug, source, short_title, description in GUIDES:
+        body = fill(render_markdown((SRC / "guides" / source).read_text(encoding="utf-8")), base)
+        page = fill(guide_template, {**base, "ROOT": "../../", "DOC_TITLE": html.escape(short_title),
+                                     "DOC_DESCRIPTION": html.escape(description), "DOC_PATH": f"guides/{slug}/",
+                                     "DOC_BODY": body})
+        target = DIST / "guides" / slug / "index.html"
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(page, encoding="utf-8")
+        pages.append((f"guides/{slug}/", target, True))
 
     pricing = fill((SRC / "pricing.html").read_text(encoding="utf-8"),
                    {**base, "ROOT": "../", "PRICING_ROBOTS": "index, follow" if pricing_confirmed else "noindex, follow"})

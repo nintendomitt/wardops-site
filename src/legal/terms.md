@@ -419,7 +419,7 @@ format through the Platform's export tools or by request to the Service Provider
 from backups within the normal backup cycle and no later than [90] days. Logs are subject to the periods in
 Annex 3.
 
-21.3. Integration credentials (for example email account access tokens) are invalidated and deleted immediately
+21.3. Integration credentials (for example email account access tokens and IMAP passwords) are invalidated and deleted immediately
 when these Terms end or the connection is removed.
 
 ## 22. Force Majeure

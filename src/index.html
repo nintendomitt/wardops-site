@@ -96,7 +96,7 @@
         {"@type": "Question", "name": "Which shipments does WardOps support?",
          "acceptedAnswer": {"@type": "Answer", "text": "Full container load (FCL) ocean freight, import and export. Less-than-container load (LCL) comes next, then air freight."}},
         {"@type": "Question", "name": "Which email providers can I connect?",
-         "acceptedAnswer": {"@type": "Answer", "text": "Microsoft 365 / Outlook and Gmail. You connect with your own account and can disconnect at any time. Access tokens are stored encrypted."}},
+         "acceptedAnswer": {"@type": "Answer", "text": "Microsoft 365 / Outlook, Gmail and any mailbox that supports IMAP, such as company mail at your hosting provider. You connect with your own account and can disconnect at any time. Access tokens and mailbox passwords are stored encrypted."}},
         {"@type": "Question", "name": "Where does tracking data come from?",
          "acceptedAnswer": {"@type": "Answer", "text": "From carrier and terminal updates through a tracking provider, from delay emails and from your documents. Every ETA keeps its source, and a weaker source never overwrites a stronger one. During early access we set up the data source that fits your lanes."}},
         {"@type": "Question", "name": "How does WardOps use AI?",
@@ -522,7 +522,7 @@
           <p>No replies to colleagues or auto-responders, no repeat mails to the same customer, and one switch to turn it off. Every send is logged.</p></article>
         <article><span class="c-ico"><svg aria-hidden="true"><use href="#i-lock"/></svg></span>
           <h3>Your data stays separate</h3>
-          <p>Each company’s data is isolated, with admin, operations and view-only roles. Mail access tokens are stored encrypted.</p></article>
+          <p>Each company’s data is isolated, with admin, operations and view-only roles. Mail access credentials are stored encrypted.</p></article>
         <article><span class="c-ico"><svg aria-hidden="true"><use href="#i-spark"/></svg></span>
           <h3>AI that decides, never writes</h3>
           <p>AI picks the email type and where each document value goes, only from what is on the document. Replies are built by rules. Each part can be switched off, and your data never trains AI models.</p></article>
@@ -576,8 +576,9 @@
         <details><summary>Which email providers can I connect?</summary>
           <p class="inline-logos"><span class="brand-chip"><img src="{{ROOT}}assets/brands/gmail.svg" alt="" width="18" height="14">Gmail</span>
             <span class="brand-chip"><img src="{{ROOT}}assets/brands/outlook.svg" alt="" width="17" height="16">Microsoft 365 / Outlook</span></p>
-          <p>Microsoft 365 / Outlook and Gmail. You connect with your own account and can disconnect at any time. Access tokens
-            are stored encrypted.</p></details>
+          <p>Microsoft 365 / Outlook, Gmail and any mailbox that supports IMAP, such as company mail at your hosting provider.
+            You connect with your own account and can disconnect at any time. Access tokens and mailbox passwords are stored
+            encrypted. See the <a href="guides/connect-outlook/">Outlook and Microsoft 365</a> and <a href="guides/connect-imap/">IMAP</a> setup guides.</p></details>
         <details><summary>Where does tracking data come from?</summary>
           <p>From carrier and terminal updates through a tracking provider, from delay emails and from your documents. Every ETA
             keeps its source, and a weaker source never overwrites a stronger one. During early access we set up the data
@@ -652,6 +653,8 @@
       <a href="#features">Features</a>
       <a href="pricing/">Pricing</a>
       <a href="#faq">FAQ</a>
+      <a href="guides/connect-outlook/">Outlook setup guide</a>
+      <a href="guides/connect-imap/">IMAP setup guide</a>
     </nav>
   </div>
   <div class="container foot-bottom"><p>© {{YEAR}} WardOps</p>

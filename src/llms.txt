@@ -21,7 +21,7 @@
 
 ## Getting started
 
-- Sign up with Google or Apple, import a spreadsheet of open shipments and connect a Microsoft 365 / Outlook or Gmail inbox.
+- Sign up with Google or Apple, import a spreadsheet of open shipments and connect a Microsoft 365 / Outlook, Gmail or any IMAP inbox (for example company mail at a hosting provider).
 - Coming next: LCL, then air freight.
 - Three plans, priced per team. Setup is free on every plan; moving from another system (open shipments, customers, document templates) is supported free of charge. Contact: {{CONTACT_EMAIL}}
 
