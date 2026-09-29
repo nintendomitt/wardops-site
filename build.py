@@ -201,6 +201,9 @@ def build(strict: bool = False) -> int:
     (DIST / "404.html").write_text(not_found, encoding="utf-8")
     pages.append(("404.html", DIST / "404.html", False))
 
+    # Google Search Console doğrulama dosyaları kökte, değiştirilmeden yayımlanır.
+    for verification in SRC.glob("google*.html"):
+        shutil.copy2(verification, DIST / verification.name)
     (DIST / "robots.txt").write_text(fill((SRC / "robots.txt").read_text(encoding="utf-8"), base), encoding="utf-8")
     legal_list = "\n".join(f"- [{title}]({url}): {description}" for title, url, description in legal_links)
     (DIST / "llms.txt").write_text(fill((SRC / "llms.txt").read_text(encoding="utf-8"),
