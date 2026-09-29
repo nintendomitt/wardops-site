@@ -1,9 +1,9 @@
 # WardOps Terms of Service
 
-Version 1.0-DRAFT · 24 September 2026
+Version 1.3-DRAFT · 29 September 2026
 
 These Terms govern the rights and obligations between the business that uses the WardOps platform and the
-company that operates it. The annexes to these Terms (Annex 1 Automation, Approval and Responsibility Protocol;
+company that operates it. The annexes to these Terms (Annex 1 Automation and Responsibility Protocol;
 Annex 2 Data Processing Agreement; Annex 3 Records, Usage Data and Feedback Protocol) form an integral part of
 these Terms. If an annex conflicts with this text, the annex prevails to the extent it is specific to its subject.
 
@@ -39,15 +39,19 @@ Capitalised terms in these Terms have the following meanings:
   of the Turkish Personal Data Protection Law No. 6698 ("KVKK") and, where applicable, other data protection
   laws.
 - **Output:** any result the Platform produces by processing Customer Data: parsed fields, matches,
-  classifications, estimated dates, stage information, alerts, tasks, statistics, reply and notification drafts,
-  documents (arrival notice, delivery order, cargo release, etc.) and reports.
-- **Draft:** a text or document the Platform prepares for an Authorised User to review and approve, and which is
-  not sent to third parties unless approved.
-- **Approved Action:** an action an Authorised User starts with an explicit step in the Platform (for example
-  "Approve and send", "Download", "Save") and which may have an effect outside the Platform.
-- **Automatic Action:** an action the Platform performs inside the Platform without a user step (for example
-  linking an email to a file, producing an alert, preparing a Draft). An Automatic Action never communicates with
-  third parties on the Customer's behalf.
+  classifications, estimated dates, stage information, alerts, tasks, statistics, replies and notifications,
+  documents (arrival notice, delivery order, cargo release, proof of delivery, etc.), accounting documents
+  (invoices, debit notes, credit notes, statements) and reports.
+- **Draft:** a text or document the Platform has prepared but not sent; it waits for an Authorised User when it
+  could not be sent automatically or automatic sending is switched off.
+- **User Action:** an action an Authorised User starts with an explicit step in the Platform (for example
+  "Send", "Download", "Save", "Issue") and which may have an effect outside the Platform.
+- **Automatic Action:** an action the Platform performs without a user step (for example linking an email to a
+  file, producing an alert, preparing a reply).
+- **Automatic Sending:** a message whose scope and brakes are defined in Annex 1 and which the Platform sends on
+  the Customer's behalf, from the Customer's connected email account, without waiting for approval (replies to
+  status questions and notices for an ETA change, vessel arrival and pickup readiness). The Customer can switch
+  Automatic Sending off.
 - **Integration:** external services connected to the Platform with the Customer's authorisation (for example
   Microsoft 365 / Outlook, Gmail, tracking data providers, ISF providers, sign-in with Google or Apple).
 - **Third-Party Service:** services not controlled by the Service Provider and used through Integrations or
@@ -74,7 +78,7 @@ consequences of unauthorised acceptance apply jointly to that person and the Cus
 document, a hash of the document text, the date and time, the IP address and browser information. The Parties
 agree that these records are evidence of acceptance.
 
-3.4. The current versions of these Terms and their annexes are always available in the Platform and at [WEBSITE].
+3.4. The current versions of these Terms and their annexes are always available in the Platform and at https://wardops.co.
 The Customer can save and print them.
 
 ## 4. Description and Nature of the Service
@@ -135,8 +139,10 @@ quality of the data entered.
 third parties or relied on for operational decisions (recipient addresses, container and bill of lading numbers,
 dates, release status, delivery address, free time).
 
-6.3. **Responsibility for approvals:** every Draft and document sent, downloaded, saved or passed to third
-parties with an Authorised User's approval is the Customer's own statement and action (details in Annex 1).
+6.3. **Responsibility for sending:** every message and document sent, downloaded, saved or passed to third
+parties through Automatic Sending or a User Action is the Customer's own statement and action. The Customer takes
+on the accuracy of the records Automatic Sending relies on and the decision to keep it switched on (details in
+Annex 1).
 
 6.4. **Compliance:** it uses the Service in compliance with customs, foreign trade, export control, sanctions,
 data protection, e-commerce, competition and other applicable laws. Obligations under the rules of U.S. Customs
@@ -162,35 +168,51 @@ send misleading or unlawful content, or send spam or unsolicited commercial mess
 6.9. **Reporting errors:** it reports errors it notices in Outputs, especially those that look systematic, to
 the Service Provider within a reasonable time.
 
-## 7. Automation, Drafts and Approval
+## 7. Automation and Automatic Sending
 
-7.1. The Platform **does not send any email, message or document to third parties on the Customer's behalf
-without the explicit approval of an Authorised User.** Replies and notifications are prepared as Drafts; sending
-happens when an Authorised User clicks "Approve and send". The approving user and the date and time are
-recorded.
+7.1. Through Automatic Sending, from the Customer's connected email account, the Platform sends only the messages
+listed in Annex 1 (replies to status questions; notices for an ETA change, vessel arrival and cargo ready for
+pickup). These messages are built by rules and only from information recorded on the file; no AI writes the
+text. **No other email, message or document is sent to third parties without a User Action.** Every send is
+recorded with the sender (the Platform or a user), the date, the time and the recipients.
 
-7.2. Automatic Actions (linking emails to files, classification, reading ETAs, producing alerts and tasks,
-preparing Drafts) stay inside the Platform and are presented for the Customer's review. Automatic Actions can be
-wrong; unless reflected outside the Platform with an Authorised User's approval, such errors affect only records
-inside the Platform.
+7.2. Automatic Sending is subject to the brakes in Annex 1: nothing is sent to internal recipients or
+auto-responders, or again to the same recipient within a short time; if no account is connected or the Customer
+has switched the feature off, the message is not sent and waits for an Authorised User. The Customer can switch
+Automatic Sending off in the company settings at any time.
 
-7.3. Before approving a Draft, the Authorised User must check the recipients, subject, content, attachments and
-the file referred to. **The Customer is responsible for approved content, for the choice of recipients and for
-the consequences of sending.** This includes commercial losses that an email sent to the wrong recipient or with
-wrong content may cause (delivery of cargo to the wrong party, disclosure of confidential information, loss of
-charges, loss of reputation, etc.).
+7.3. Automatic Actions and Automatic Sending can be wrong. The Customer must keep the records Automatic Sending
+relies on (ETA, release status, parties and email addresses) correct and current, review email matches and sent
+messages regularly, and switch Automatic Sending off where it does not fit. **The Customer is responsible for the
+content of Automatic Sending, the accuracy of the records it relies on, and the content, recipients and
+consequences of sends made by User Action.** This includes commercial losses that an email sent to the wrong
+recipient or with wrong content may cause (delivery of cargo to the wrong party, disclosure of confidential
+information, loss of charges, loss of reputation, etc.).
 
-7.4. If a software error causes the Platform to communicate with third parties without an Authorised User's
-approval, the Service Provider informs the Customer as soon as it learns of it, makes reasonable efforts to fix
-the error, and its liability is assessed within the framework of Section 18.
+7.4. If a software error causes the Platform to communicate with third parties outside the scope or brakes
+defined in Annex 1, the Service Provider informs the Customer as soon as it learns of it, makes reasonable
+efforts to fix the error, and its liability is assessed within the framework of Section 18.
 
-7.5. Details of automation, approval and the sharing of responsibility by function are set out in Annex 1.
+7.5. Accounting documents produced on the Platform (invoices, debit notes, credit notes, statements) are
+commercial documents built from charges the Customer enters. The Platform does not suggest amounts and
+calculates only from the quantity and unit price entered. These documents do not replace official invoices or
+records required by tax law (for example e-invoices); issuing official documents and meeting tax and bookkeeping
+obligations remain the Customer's responsibility.
+
+7.6. Details of automation and the sharing of responsibility by function are set out in Annex 1.
 
 ## 8. AI Features and Automatic Data Reading
 
 8.1. To read fields from documents, the Platform first uses the document's own text and local optical character
 recognition (OCR). If these are not enough and the AI Feature is enabled for the account, the necessary part of
 the document (its text or a reduced page image) may be sent to a third-party AI provider.
+
+8.1a. Unless the Customer switches it off, the Platform also uses a third-party classification model (TypeSafe,
+Jev) to understand emails and documents: the type of an email, whether the customer is asking something out of
+routine, the type of a document, and which field on the shipment a value found in a document (for example a B/L
+number or an ETA) belongs to. The model does not write text; it only chooses among options the Platform gives it
+and cannot produce a value that is not in the document. For this, the email's subject and body and the
+document's text are sent to the provider. The Customer can switch this classification off in the admin screen (8.4).
 
 8.2. Values read by AI or by rules **may be wrong, incomplete or misleading.** The Platform checks these values
 with some rules (for example the container number check digit and date formats), but these checks do not
@@ -201,8 +223,8 @@ conflicts are shown as alerts.
 requires that Customer Data is not used for model training. The providers used are listed as sub-processors in
 Annex 2.
 
-8.4. The Customer can have the AI Feature switched off for its account. In that case documents are read only
-with text extraction and OCR.
+8.4. The Customer can switch off the AI Feature and the classification in 8.1a separately in the admin screen.
+Documents are then read only with text extraction and OCR, and emails are classified by rules.
 
 ## 9. Third-Party Data and Services
 
@@ -337,8 +359,9 @@ use of the Service:
 - administrative fines, liquidated damages, late penalties and seizures related to customs, ISF, AMS, export
   declarations and other official filings;
 - delivery of cargo to the wrong party, late delivery, non-delivery, loss of or damage to cargo;
-- damages arising from wrong emails, documents or notifications, or ones sent to the wrong recipient, with an
-  Authorised User's approval;
+- damages arising from emails, documents or notifications sent through Automatic Sending or a User Action that
+  rely on wrong or incomplete information in the Customer's records or went to the wrong recipient (except a
+  software error causing a send outside the scope and brakes in Annex 1);
 - damages arising from third-party data (tracking, voyage, terminal, carrier information) being wrong,
   incomplete or late;
 - damages arising from wrong data entered or transferred by the Customer, from Templates uploaded by the
@@ -364,7 +387,7 @@ permitted by mandatory law, not heard. [Subject to legal review.]
 19.1. The Customer pays the Service Provider, and holds it harmless from, damages and reasonable legal fees
 arising from claims, lawsuits and administrative sanctions brought against the Service Provider by third parties
 because of (a) Customer Data being unlawful or infringing third-party rights, (b) communications and documents
-sent with the approval of Authorised Users, (c) use of the Service contrary to these Terms or the law, or (d)
+sent through Automatic Sending or a User Action, (c) use of the Service contrary to these Terms or the law, or (d)
 the Customer not meeting its obligations as data controller.
 
 19.2. For claims against the Customer alleging that the Platform infringes third-party intellectual property
@@ -424,7 +447,7 @@ Until a change of address is notified, notices sent to the old address are valid
 ## 25. Evidence
 
 The Parties agree that, in disputes arising from these Terms, the commercial books and records of the Service
-Provider and the Customer, the Platform's logs (acceptance records, approval records, sending records), email
+Provider and the Customer, the Platform's logs (acceptance records, sending records, user action records), email
 correspondence and electronic records constitute evidence under Article 193 of the Turkish Code of Civil
 Procedure No. 6100. This does not remove the right to submit counter-evidence.
 

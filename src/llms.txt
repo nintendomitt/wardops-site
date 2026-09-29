@@ -9,20 +9,21 @@
 - Email: messages are linked to shipments by B/L, booking and container numbers. Questions unanswered after 8 hours come back as tasks. Status replies are drafted from the file in English or Turkish.
 - Tracking: milestones and ETA changes land on one timeline with their source (carrier or terminal, manual, email, booking, document). A weaker source never overwrites a stronger one.
 - Alerts include ETA shifts, missed departures, last free day, demurrage and detention estimates, ISF filed but not matched with AMS, cargo released but waiting for a delivery address, and arrival notices not yet issued.
-- Documents such as arrival notices, delivery orders and cargo releases are generated on the forwarder's own letterhead (PDF or the forwarder's Word template).
+- Documents such as arrival notices, cargo releases, delivery orders and proofs of delivery are generated on the forwarder's own letterhead (PDF or the forwarder's Word template).
+- Invoices, debit notes, credit notes and statements of account are issued from charges entered on the shipment. WardOps never suggests amounts, and these are commercial documents, not official tax invoices.
 
 ## Control and safety
 
-- Nothing is sent to customers or third parties without a person on the team approving it; every send is logged with who approved it.
+- Status questions and three customer moments (ETA change, vessel arrival, ready for pickup) are answered automatically, using only what is recorded on the shipment. No replies to colleagues or auto-responders, no repeat mails to the same customer; every send is logged and automatic sending can be switched off per company.
 - Each company's data is isolated; roles are admin, operations and view-only. Mail access tokens are stored encrypted.
-- AI is used only when text and OCR are not enough, can be switched off per company, and customer data is not used to train AI models.
+- A small classification model decides each email's type, out-of-routine customer questions and which document value goes to which shipment field; it picks only from values found on the document and writes no messages. AI reads a document page only when text and OCR are not enough. Both can be switched off per company, and customer data is not used to train AI models.
 - WardOps is not a carrier, NVOCC or customs broker and does not file customs, ISF or AMS declarations on anyone's behalf.
 
 ## Getting started
 
 - Sign up with Google or Apple, import a spreadsheet of open shipments and connect a Microsoft 365 / Outlook or Gmail inbox.
 - Coming next: LCL, then air freight.
-- Early-access pricing is agreed per team. Contact: {{CONTACT_EMAIL}}
+- Three plans, priced per team. Setup is free on every plan; moving from another system (open shipments, customers, document templates) is supported free of charge. Contact: {{CONTACT_EMAIL}}
 
 ## Pages
 

@@ -61,9 +61,10 @@
       "audience": {"@type": "BusinessAudience", "audienceType": "Ocean freight forwarders and customs-focused operations teams"},
       "featureList": [
         "Emails automatically linked to shipments by B/L, booking and container numbers",
-        "Reply and customer notification drafts that are sent only after approval",
+        "Automatic replies to status questions and proactive customer notifications, built only from the shipment file",
         "Document reading with text extraction, OCR and optional AI",
-        "Arrival notice, delivery order and cargo release generation on your letterhead",
+        "Arrival notice, delivery order, cargo release and proof of delivery on your letterhead",
+        "Invoices, debit notes, credit notes and statements from charges entered on the shipment",
         "ETA history with source priority and change alerts",
         "Last free day, demurrage and detention estimates",
         "ISF deadline and AMS match checks for US imports",
@@ -72,13 +73,25 @@
       "publisher": {"@id": "{{SITE_URL}}#organization"}
     },
     {
+      "@type": "VideoObject",
+      "@id": "{{SITE_URL}}#video",
+      "name": "WardOps in 20 seconds",
+      "description": "How WardOps puts documents, email and tracking for ocean freight shipments in one place: documents read and filed, emails matched and answered, ETA changes with their source.",
+      "thumbnailUrl": "{{SITE_URL}}assets/video/wardops-launch-poster.jpg",
+      "contentUrl": "{{SITE_URL}}assets/video/wardops-launch.mp4",
+      "uploadDate": "2026-09-29",
+      "duration": "PT20S",
+      "inLanguage": "en",
+      "publisher": {"@id": "{{SITE_URL}}#organization"}
+    },
+    {
       "@type": "FAQPage",
       "@id": "{{SITE_URL}}#faq",
       "mainEntity": [
         {"@type": "Question", "name": "Does WardOps replace my TMS?",
-         "acceptedAnswer": {"@type": "Answer", "text": "WardOps is an operations system with its own shipment files, focused on follow-up: documents, email and tracking. Accounting and invoicing stay in the tools you already use. You can start by importing a spreadsheet of open shipments."}},
-        {"@type": "Question", "name": "Will WardOps send emails to my customers on its own?",
-         "acceptedAnswer": {"@type": "Answer", "text": "No. Replies and notifications are prepared as drafts. Nothing is sent until someone on your team reviews it and clicks approve, and every send is logged with who approved it."}},
+         "acceptedAnswer": {"@type": "Answer", "text": "WardOps is an operations system with its own shipment files, focused on follow-up: documents, email and tracking. You can issue invoices, debit and credit notes from charges on the file, while your accounting system stays the book of record. You can start by importing a spreadsheet of open shipments."}},
+        {"@type": "Question", "name": "Will WardOps answer my customers on its own?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Yes, for status questions and three moments: an ETA change, vessel arrival and ready for pickup. Replies use only what is recorded on the shipment, in English or Turkish. WardOps does not answer colleagues or auto-responders, does not repeat itself to the same customer, and logs every send. Questions it cannot answer stay with your team, and automatic sending can be switched off."}},
         {"@type": "Question", "name": "Which shipments does WardOps support?",
          "acceptedAnswer": {"@type": "Answer", "text": "Full container load (FCL) ocean freight, import and export. Less-than-container load (LCL) comes next, then air freight."}},
         {"@type": "Question", "name": "Which email providers can I connect?",
@@ -86,9 +99,11 @@
         {"@type": "Question", "name": "Where does tracking data come from?",
          "acceptedAnswer": {"@type": "Answer", "text": "From carrier and terminal updates through a tracking provider, from delay emails and from your documents. Every ETA keeps its source, and a weaker source never overwrites a stronger one. During early access we set up the data source that fits your lanes."}},
         {"@type": "Question", "name": "How does WardOps use AI?",
-         "acceptedAnswer": {"@type": "Answer", "text": "Only when it is needed. Documents are read from their text first, then with OCR. AI reads a page only when both fall short, you can switch it off for your company, and your data is never used to train AI models."}},
+         "acceptedAnswer": {"@type": "Answer", "text": "Two narrow ways, each can be switched off for your company. A small model reads each email and document to decide its type, whether the customer is asking something out of routine, and which value is the B/L number or the ETA; it picks only from values found on the document and never writes messages. When text and OCR cannot read a document, AI reads that page. Your data is never used to train AI models."}},
+        {"@type": "Question", "name": "We already use another system. Can you move us over?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Yes, free of charge. Send us an Excel or CSV export of your open shipments and customers, and your document templates. We load them, set up your templates and check everything with you before you switch."}},
         {"@type": "Question", "name": "How much does WardOps cost?",
-         "acceptedAnswer": {"@type": "Answer", "text": "Early-access pricing is agreed per team. Tell us about your volume and we will share a simple plan."}}
+         "acceptedAnswer": {"@type": "Answer", "text": "Three plans, priced per team. Setup is free on every plan, and if you are moving from another system, we help you switch at no cost. Tell us about your volume and we will share the plan that fits."}}
       ]
     }
   ]
@@ -119,6 +134,7 @@
   <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4.5m0 0h11.5l-2 4 2 4H5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 20v-1.5a3.5 3.5 0 00-3.5-3.5h-5A3.5 3.5 0 004 18.5V20M10 11.5a3.5 3.5 0 100-7 3.5 3.5 0 000 7zm10 8.5v-1.5a3.5 3.5 0 00-2.6-3.4M15.5 4.6a3.5 3.5 0 010 6.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-report" viewBox="0 0 24 24"><path d="M5 20V10m7 10V4m7 16v-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8.5 5.8v12.4a.8.8 0 001.2.7l10-6.2a.8.8 0 000-1.4l-10-6.2a.8.8 0 00-1.2.7z" fill="currentColor"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13m0 0l-5-5m5 5l-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 </svg>
 
@@ -131,9 +147,13 @@
       <a href="#why">Why WardOps</a>
       <a href="#how-it-works">How it works</a>
       <a href="#control">Control</a>
+      <a href="pricing/">Pricing</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a class="btn btn-primary btn-small" href="#early-access">Get early access</a>
+    <div class="bar-actions">
+      <a class="btn btn-ghost btn-small" href="{{APP_URL}}">Log in</a>
+      <a class="btn btn-primary btn-small" href="#early-access">Get early access</a>
+    </div>
   </div>
 </header>
 
@@ -189,6 +209,155 @@
     </div>
   </section>
 
+  <!-- ========================= VIDEO ========================= -->
+  <section class="section video-section" id="video" aria-labelledby="video-title">
+    <div class="container">
+      <div class="section-head video-head">
+        <p class="eyebrow">See it in 20 seconds</p>
+        <h2 id="video-title">From &ldquo;Where&rsquo;s my container?&rdquo; to answered.</h2>
+      </div>
+      <div class="video-frame">
+        <video id="launch-video" controls preload="none" playsinline width="1920" height="1080"
+          poster="{{ROOT}}assets/video/wardops-launch-poster.jpg" aria-describedby="video-summary">
+          <source src="{{ROOT}}assets/video/wardops-launch.mp4" type="video/mp4">
+          <track kind="captions" srclang="en" label="English" src="{{ROOT}}assets/video/wardops-launch.en.vtt">
+        </video>
+        <button class="video-play" type="button" hidden aria-label="Play the 20-second WardOps video">
+          <span class="video-play-icon"><svg aria-hidden="true"><use href="#i-play"/></svg></span>
+          <span class="video-play-label">Play video <span class="muted">0:20</span></span>
+        </button>
+      </div>
+      <p class="video-summary" id="video-summary">Documents read and filed, emails matched and answered, every ETA change with its source. One shipment file.</p>
+    </div>
+  </section>
+
+  <!-- ========================= JOURNEY (scroll) ========================= -->
+  <section class="journey" id="journey" aria-labelledby="journey-title">
+    <div class="journey-track">
+      <div class="journey-stage">
+        <div class="container journey-inner">
+          <div class="journey-head">
+            <p class="eyebrow">One shipment, start to finish</p>
+            <h2 id="journey-title">From B/L to pickup, without chasing.</h2>
+          </div>
+          <figure class="journey-fig">
+            <svg class="journey-svg" viewBox="0 0 1200 460" role="img" aria-label="A bill of lading is filed on its container, the ship sails from Istanbul to New York while the customer is told about the new ETA, and the container is released and lifted onto a truck.">
+              <defs>
+                <linearGradient id="jsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F8FBFA"/><stop offset="1" stop-color="#E9F3F1"/></linearGradient>
+                <linearGradient id="jsea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#CBE6E7"/><stop offset="1" stop-color="#A9D3DC"/></linearGradient>
+              </defs>
+              <rect width="1200" height="460" fill="url(#jsky)"/>
+              <g data-j="clouds" fill="#FFFFFF">
+                <rect x="140" y="58" width="150" height="26" rx="13"/><rect x="180" y="44" width="80" height="26" rx="13"/>
+                <rect x="620" y="96" width="120" height="22" rx="11"/><rect x="990" y="150" width="170" height="26" rx="13"/>
+                <rect x="1030" y="136" width="90" height="24" rx="12"/><rect x="1290" y="70" width="140" height="24" rx="12"/>
+              </g>
+
+              <g data-j="world">
+                <!-- Istanbul limani -->
+                <rect x="0" y="300" width="262" height="160" fill="#D5DBD7"/><rect x="0" y="300" width="262" height="6" fill="#BCC5C1"/>
+                <text x="18" y="292" class="j-place">ISTANBUL</text>
+                <g stroke="#F0694A" stroke-width="7" stroke-linecap="square"><path d="M112 300V140M172 300V140"/></g>
+                <path d="M112 226L172 170M172 226L112 170" stroke="#F0694A" stroke-width="3"/>
+                <rect x="70" y="124" width="530" height="12" rx="2" fill="#F0694A"/><rect x="98" y="102" width="88" height="22" rx="2" fill="#D9573A"/>
+                <rect x="508" y="136" width="24" height="10" rx="2" fill="#26364B"/><path d="M520 146V226" stroke="#26364B" stroke-width="1.5"/>
+                <!-- New York limani -->
+                <rect x="2150" y="300" width="300" height="160" fill="#D5DBD7"/><rect x="2150" y="300" width="300" height="6" fill="#BCC5C1"/>
+                <text x="2166" y="292" class="j-place">NEW YORK</text>
+                <g stroke="#F0694A" stroke-width="7" stroke-linecap="square"><path d="M2296 300V140M2356 300V140"/></g>
+                <path d="M2296 226L2356 170M2356 226L2296 170" stroke="#F0694A" stroke-width="3"/>
+                <rect x="2210" y="102" width="88" height="22" rx="2" fill="#D9573A"/>
+
+                <!-- gemi -->
+                <g data-j="ship" transform="translate(270 300)">
+                  <path d="M0 0H392L370 50H20Z" fill="#1E2C44"/>
+                  <path d="M10.4 26H380.6L370 50H20Z" fill="#B42A33"/>
+                  <rect x="12" y="-64" width="48" height="64" rx="3" fill="#FFFFFF" stroke="#C9D2DA"/>
+                  <rect x="18" y="-56" width="36" height="8" rx="2" fill="#26364B"/><rect x="18" y="-40" width="36" height="5" rx="2" fill="#C9D2DA"/>
+                  <rect x="26" y="-82" width="18" height="18" rx="2" fill="#F0694A"/>
+                  <rect x="70" y="-26" width="48" height="26" rx="2" fill="#2B63D9"/><rect x="122" y="-26" width="48" height="26" rx="2" fill="#D6C8AC"/><rect x="174" y="-26" width="48" height="26" rx="2" fill="#9DB0C4"/><rect x="226" y="-26" width="48" height="26" rx="2" fill="#26364B"/><rect x="278" y="-26" width="48" height="26" rx="2" fill="#F0694A"/><rect x="330" y="-26" width="48" height="26" rx="2" fill="#8FB8DE"/><rect x="70" y="-52" width="48" height="26" rx="2" fill="#8FB8DE"/><rect x="122" y="-52" width="48" height="26" rx="2" fill="#9DB0C4"/><rect x="174" y="-52" width="48" height="26" rx="2" fill="#D6C8AC"/><rect x="278" y="-52" width="48" height="26" rx="2" fill="#2B63D9"/><rect x="330" y="-52" width="48" height="26" rx="2" fill="#D6C8AC"/>
+                  <g stroke="#000" stroke-opacity=".12" stroke-width="1.5"><path d="M82 -50V-2M94 -50V-2M106 -50V-2"/><path d="M134 -50V-2M146 -50V-2M158 -50V-2"/><path d="M186 -50V-2M198 -50V-2M210 -50V-2"/><path d="M238 -50V-2M250 -50V-2M262 -50V-2"/><path d="M290 -50V-2M302 -50V-2M314 -50V-2"/><path d="M342 -50V-2M354 -50V-2M366 -50V-2"/></g>
+                  <g data-j="eta" opacity="0" transform="translate(196 -130)">
+                    <rect x="-84" y="-19" width="168" height="38" rx="19" fill="#FFFFFF" stroke="#DDE3E1" stroke-width="1.5"/>
+                    <text data-j="eta1" x="0" y="6" text-anchor="middle" class="j-strong">ETA 12 Oct</text>
+                    <g data-j="eta2" opacity="0"><text x="-18" y="6" text-anchor="middle" class="j-strong">ETA 18 Oct</text>
+                      <rect x="36" y="-11" width="38" height="22" rx="6" fill="#FCE8E8"/><text x="55" y="5" text-anchor="middle" class="j-bad">+6d</text></g>
+                  </g>
+                </g>
+
+                <!-- bizim konteyner -->
+                <g data-j="box" transform="translate(496 248)">
+                  <rect width="48" height="26" rx="2" fill="url(#tide)"/>
+                  <path d="M12 2V24M24 2V24M36 2V24" stroke="#FFFFFF" stroke-opacity=".25" stroke-width="1.5"/>
+                  <rect data-j="ring" x="-4" y="-4" width="56" height="34" rx="5" fill="none" stroke="#0B7A72" stroke-width="2.5" opacity="0"/>
+                  <g data-j="tag" opacity="0"><rect x="-38" y="-36" width="124" height="26" rx="13" fill="#0B7A72"/>
+                    <text x="24" y="-18" text-anchor="middle" class="j-tag">OI-26090118</text></g>
+                </g>
+
+                <!-- kamyon -->
+                <g data-j="truck">
+                  <rect x="2262" y="282" width="134" height="8" rx="2" fill="#3A4A60"/>
+                  <rect x="2362" y="250" width="34" height="38" rx="5" fill="#2B63D9"/><rect x="2372" y="256" width="18" height="12" rx="2" fill="#EAF1FD"/>
+                  <g fill="#26364B"><circle cx="2276" cy="294" r="8"/><circle cx="2302" cy="294" r="8"/><circle cx="2346" cy="294" r="8"/><circle cx="2382" cy="294" r="8"/></g>
+                </g>
+                <!-- New York vinci: kol, araba ve halat -->
+                <rect x="1950" y="124" width="440" height="12" rx="2" fill="#F0694A"/>
+                <g data-j="trolley" transform="translate(2000 0)"><rect x="-12" y="136" width="24" height="10" rx="2" fill="#26364B"/></g>
+                <line data-j="cable" x1="2000" y1="146" x2="2000" y2="226" stroke="#26364B" stroke-width="1.5"/>
+              </g>
+
+              <rect y="328" width="1200" height="132" fill="url(#jsea)" opacity=".94"/>
+              <g data-j="waves" fill="none" stroke="#FFFFFF" stroke-opacity=".55" stroke-width="2" stroke-linecap="round">
+                <path d="M0 352q30 -7 60 0t60 0q30 -7 60 0t60 0q30 -7 60 0t60 0q30 -7 60 0t60 0q30 -7 60 0t60 0q30 -7 60 0t60 0q30 -7 60 0t60 0q30 -7 60 0t60 0q30 -7 60 0t60 0q30 -7 60 0t60 0q30 -7 60 0t60 0"/><path d="M-40 388q30 -7 60 0t60 0q30 -7 60 0t60 0q30 -7 60 0t60 0q30 -7 60 0t60 0q30 -7 60 0t60 0q30 -7 60 0t60 0q30 -7 60 0t60 0q30 -7 60 0t60 0q30 -7 60 0t60 0q30 -7 60 0t60 0q30 -7 60 0t60 0"/><path d="M-20 424q30 -7 60 0t60 0q30 -7 60 0t60 0q30 -7 60 0t60 0q30 -7 60 0t60 0q30 -7 60 0t60 0q30 -7 60 0t60 0q30 -7 60 0t60 0q30 -7 60 0t60 0q30 -7 60 0t60 0q30 -7 60 0t60 0q30 -7 60 0t60 0"/>
+              </g>
+
+              <!-- belge -->
+              <g data-j="doc" transform="translate(150 130)">
+                <rect x="-60" y="-72" width="120" height="152" rx="10" fill="#0F1C2E" opacity=".06" transform="translate(4 6)"/>
+                <rect x="-60" y="-76" width="120" height="152" rx="10" fill="#FFFFFF" stroke="#DDE3E1" stroke-width="1.5"/>
+                <path d="M-60 -66a10 10 0 0110-10h100a10 10 0 0110 10v20h-120z" fill="#F6F1E8"/>
+                <text x="-46" y="-55" class="j-doc">B/L</text>
+                <rect x="14" y="-68" width="34" height="18" rx="5" fill="#FFFFFF" stroke="#D6C8AC"/><text x="31" y="-55" text-anchor="middle" class="j-mini">PDF</text>
+                <g fill="#E9EDEB"><rect x="-44" y="-30" width="88" height="7" rx="3"/><rect x="-44" y="-14" width="64" height="7" rx="3"/>
+                  <rect x="-44" y="2" width="80" height="7" rx="3"/><rect x="-44" y="18" width="52" height="7" rx="3"/><rect x="-44" y="34" width="72" height="7" rx="3"/></g>
+                <rect x="-44" y="50" width="58" height="12" rx="3" fill="#E2F4F1"/>
+              </g>
+
+              <!-- musteri ve mail -->
+              <g data-j="cust" opacity="0" transform="translate(944 30)">
+                <rect width="220" height="54" rx="27" fill="#FFFFFF" stroke="#DDE3E1" stroke-width="1.5"/>
+                <circle cx="27" cy="27" r="17" fill="#EAF1FD"/><text x="27" y="32" text-anchor="middle" class="j-av">HP</text>
+                <text x="54" y="23" class="j-strong j-sm">Harbor &amp; Pine</text>
+                <text data-j="custwait" x="54" y="41" class="j-muted">Customer</text>
+                <g data-j="custok" opacity="0"><circle cx="61" cy="37" r="7" fill="#0B7A72"/><path d="M57.5 37l2.5 2.5 4.5-5" stroke="#FFFFFF" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                  <text x="74" y="41" class="j-ok">New ETA sent</text></g>
+              </g>
+              <g data-j="mail" opacity="0" transform="translate(746 196)">
+                <rect x="-22" y="-15" width="44" height="30" rx="5" fill="#FFFFFF" stroke="#2B63D9" stroke-width="2"/>
+                <path d="M-20 -12L0 3 20 -12" fill="none" stroke="#2B63D9" stroke-width="2" stroke-linejoin="round"/>
+              </g>
+
+              <!-- serbest birakma -->
+              <g class="j-chips">
+                <g data-j="r1" opacity="0" transform="translate(32 30)"><rect width="206" height="36" rx="18" fill="#FFFFFF" stroke="#B9DCD8"/><circle cx="19" cy="18" r="10" fill="#0B7A72"/><path d="M14.5 18l3 3 5.5-6" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="38" y="23" class="j-chip">Customs released</text></g>
+                <g data-j="r2" opacity="0" transform="translate(32 74)"><rect width="206" height="36" rx="18" fill="#FFFFFF" stroke="#B9DCD8"/><circle cx="19" cy="18" r="10" fill="#0B7A72"/><path d="M14.5 18l3 3 5.5-6" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="38" y="23" class="j-chip">Freight released</text></g>
+                <g data-j="r3" opacity="0" transform="translate(32 118)"><rect width="206" height="36" rx="18" fill="#FFFFFF" stroke="#B9DCD8"/><circle cx="19" cy="18" r="10" fill="#0B7A72"/><path d="M14.5 18l3 3 5.5-6" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="38" y="23" class="j-chip">Delivery order ready</text></g>
+              </g>
+            </svg>
+          </figure>
+          <ol class="journey-steps">
+            <li data-step="0"><span class="j-num">1</span><div><h3>The B/L arrives</h3>
+              <p>Read and filed on the right container. No download, no retyping.</p></div></li>
+            <li data-step="1"><span class="j-num">2</span><div><h3>The ship sails, the ETA moves</h3>
+              <p>Carrier updates land on the same file. The customer gets the new date automatically.</p></div></li>
+            <li data-step="2"><span class="j-num">3</span><div><h3>Released and handed over</h3>
+              <p>Customs and freight release checked, free time watched, delivery order ready for the trucker.</p></div></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ========================= WHY ========================= -->
   <section class="section" id="why" aria-labelledby="why-title">
     <div class="container">
@@ -196,8 +365,8 @@
         <p class="eyebrow">Why WardOps</p>
         <h2 id="why-title">Three jobs your team does all day. One shipment file.</h2>
         <p class="section-lead">Most ops teams juggle a TMS, a shared inbox, carrier websites and a folder of PDFs.
-          Other tools keep the record. WardOps also does the follow-up: it reads what comes in, puts it on the right file
-          and tells you what to do next.</p>
+          Other tools keep the record. WardOps also does the follow-up: it reads what comes in, puts it on the right file,
+          answers routine questions and tells you what to do next.</p>
       </div>
       <div class="pillars">
         <article class="pillar">
@@ -207,17 +376,17 @@
             against what is already on file. A value never silently overwrites one your team entered.</p>
           <ul class="ticks">
             <li>Missing documents by HS code and deadline become tasks</li>
-            <li>Arrival notice, delivery order and cargo release on your letterhead</li>
+            <li>Arrival notice, release, delivery order and POD on your letterhead</li>
           </ul>
         </article>
         <article class="pillar">
           <span class="p-ico p-mail"><svg aria-hidden="true"><use href="#i-mail"/></svg></span>
           <h3>Email: every message on the right shipment</h3>
-          <p>Emails are linked to shipments by B/L, booking and container numbers. Status questions get a reply drafted
-            from the file, so answering takes a minute instead of ten.</p>
+          <p>Emails are linked to shipments by B/L, booking and container numbers. Status questions are answered
+            automatically from the file, so nobody digs through carrier sites to reply.</p>
           <ul class="ticks">
-            <li>Questions unanswered after 8 hours come back as tasks</li>
-            <li>Drafts in English or Turkish, sent only after your OK</li>
+            <li>Replies in English or Turkish, sent automatically</li>
+            <li>Questions it cannot answer come back as tasks after 8 hours</li>
           </ul>
         </article>
         <article class="pillar">
@@ -233,16 +402,29 @@
       </div>
 
       <div class="compare">
+        <h3 class="h3-lg" id="compare-title">Typical setup vs. WardOps</h3>
         <div class="table-wrap">
-          <table>
-            <caption class="sr-only">A typical freight operations setup compared with WardOps</caption>
-            <thead><tr><th scope="col"></th><th scope="col">Typical setup</th><th scope="col" class="us">With WardOps</th></tr></thead>
+          <table aria-labelledby="compare-title">
+            <thead><tr><th scope="col"><span class="sr-only">Task</span></th><th scope="col">Typical setup</th><th scope="col" class="us">With WardOps</th></tr></thead>
             <tbody>
-              <tr><th scope="row">Where shipment information lives</th><td>TMS, inbox, carrier sites, shared drive</td><td class="us">One shipment file</td></tr>
-              <tr><th scope="row">How problems are found</th><td>Someone happens to notice</td><td class="us">Rules flag them, most urgent first</td></tr>
-              <tr><th scope="row">Customer status emails</th><td>Written from scratch, every time</td><td class="us">Drafted from the file, sent after your OK</td></tr>
-              <tr><th scope="row">Documents</th><td>Downloaded, renamed, retyped</td><td class="us">Read, matched and checked</td></tr>
-              <tr><th scope="row">ETA changes</th><td>Overwritten in a spreadsheet</td><td class="us">Kept with source and full history</td></tr>
+              <tr><th scope="row"><span class="cmp-ico"><svg aria-hidden="true"><use href="#i-mail"/></svg></span>Customer asks “where is it?”</th>
+                <td data-label="Typical setup"><span class="mark no" aria-hidden="true"></span><b>By hand</b><small>Carrier site, B/L, ETA, then a reply</small></td>
+                <td data-label="With WardOps" class="us"><span class="mark yes" aria-hidden="true"></span><b>Answered automatically</b><small>From the shipment file, in English or Turkish</small></td></tr>
+              <tr><th scope="row"><span class="cmp-ico"><svg aria-hidden="true"><use href="#i-ship"/></svg></span>ETA changes</th>
+                <td data-label="Typical setup"><span class="mark no" aria-hidden="true"></span><b>Noticed late</b><small>Often when the customer calls</small></td>
+                <td data-label="With WardOps" class="us"><span class="mark yes" aria-hidden="true"></span><b>Flagged, customer told</b><small>Old and new date, notice sent automatically</small></td></tr>
+              <tr><th scope="row"><span class="cmp-ico"><svg aria-hidden="true"><use href="#i-doc"/></svg></span>Incoming documents</th>
+                <td data-label="Typical setup"><span class="mark no" aria-hidden="true"></span><b>Retyped</b><small>Download, rename, key in</small></td>
+                <td data-label="With WardOps" class="us"><span class="mark yes" aria-hidden="true"></span><b>Read for you</b><small>Filed on the shipment and cross-checked</small></td></tr>
+              <tr><th scope="row"><span class="cmp-ico"><svg aria-hidden="true"><use href="#i-report"/></svg></span>Outgoing documents</th>
+                <td data-label="Typical setup"><span class="mark no" aria-hidden="true"></span><b>Copy and paste</b><small>A Word file edited for every shipment</small></td>
+                <td data-label="With WardOps" class="us"><span class="mark yes" aria-hidden="true"></span><b>Generated</b><small>Arrival notice, release, POD, invoice</small></td></tr>
+              <tr><th scope="row"><span class="cmp-ico"><svg aria-hidden="true"><use href="#i-clock"/></svg></span>Free time</th>
+                <td data-label="Typical setup"><span class="mark no" aria-hidden="true"></span><b>Spreadsheet</b><small>Missed days show up on the invoice</small></td>
+                <td data-label="With WardOps" class="us"><span class="mark yes" aria-hidden="true"></span><b>Warned ahead</b><small>With a demurrage estimate</small></td></tr>
+              <tr><th scope="row"><span class="cmp-ico"><svg aria-hidden="true"><use href="#i-log"/></svg></span>Shipment information</th>
+                <td data-label="Typical setup"><span class="mark no" aria-hidden="true"></span><b>Scattered</b><small>TMS, inbox, carrier sites, shared drive</small></td>
+                <td data-label="With WardOps" class="us"><span class="mark yes" aria-hidden="true"></span><b>One shipment file</b><small>Documents, emails and events together</small></td></tr>
             </tbody>
           </table>
         </div>
@@ -269,8 +451,8 @@
           <small><span class="mono">OI-26090124</span> · vessel sailed 3 days ago</small></div></li>
         <li><span class="pill pill-warn">Warning</span><div><b>Released, waiting for delivery address and trucker</b>
           <small><span class="mono">OI-26090131</span> · containers ready for pickup</small></div></li>
-        <li><span class="pill pill-info">Info</span><div><b>Customer asked for an update 9 hours ago</b>
-          <small><span class="mono">OE-26090207</span> · reply draft ready for review</small></div></li>
+        <li><span class="pill pill-info">Info</span><div><b>Customer question needs your team</b>
+          <small><span class="mono">OE-26090207</span> · not a status question · 9 hours unanswered</small></div></li>
       </ul>
     </div>
 
@@ -304,7 +486,7 @@
         <article><span class="feat-logos"><img src="{{ROOT}}assets/brands/gmail.svg" alt="Gmail" width="26" height="20"><img src="{{ROOT}}assets/brands/outlook.svg" alt="Microsoft Outlook" width="24" height="23"></span><h3>Gmail and Outlook</h3>
           <p>Connect your ops inbox. Only operational messages are read; the rest stays untouched.</p></article>
         <article><svg aria-hidden="true"><use href="#i-doc"/></svg><h3>Your documents, your letterhead</h3>
-          <p>Generate arrival notices, delivery orders and cargo releases as PDF, or fill your own Word template.</p></article>
+          <p>Arrival notices, releases, delivery orders, PODs and invoices as PDF, or your own Word template.</p></article>
         <article><svg aria-hidden="true"><use href="#i-flag"/></svg><h3>US imports covered</h3>
           <p>ISF 10+2 checklist and deadline, AMS match check, customs and freight release before pickup.</p></article>
         <article><svg aria-hidden="true"><use href="#i-anchor"/></svg><h3>Release and pickup readiness</h3>
@@ -326,26 +508,26 @@
     <div class="container">
       <div class="section-head">
         <p class="eyebrow">You stay in control</p>
-        <h2 id="control-title">Automation that asks before it acts</h2>
-        <p class="section-lead">One wrong email can cost more than a month of software. WardOps prepares the work and
-          your team decides what goes out.</p>
+        <h2 id="control-title">Automatic, with guardrails</h2>
+        <p class="section-lead">WardOps answers the routine questions for you, and only with what is on the file.
+          Anything it cannot answer stays with your team.</p>
       </div>
       <div class="controls">
+        <article><span class="c-ico"><svg aria-hidden="true"><use href="#i-check"/></svg></span>
+          <h3>Answers only from the file</h3>
+          <p>Replies and notices are built from what is recorded on the shipment. Nothing is guessed, and no AI writes your emails.</p></article>
         <article><span class="c-ico"><svg aria-hidden="true"><use href="#i-hand"/></svg></span>
-          <h3>Nothing leaves without your OK</h3>
-          <p>Replies, notifications and documents wait in an approval queue. Every send is logged with who approved it.</p></article>
+          <h3>Brakes built in</h3>
+          <p>No replies to colleagues or auto-responders, no repeat mails to the same customer, and one switch to turn it off. Every send is logged.</p></article>
         <article><span class="c-ico"><svg aria-hidden="true"><use href="#i-lock"/></svg></span>
           <h3>Your data stays separate</h3>
           <p>Each company’s data is isolated, with admin, operations and view-only roles. Mail access tokens are stored encrypted.</p></article>
         <article><span class="c-ico"><svg aria-hidden="true"><use href="#i-spark"/></svg></span>
-          <h3>AI only when it is needed</h3>
-          <p>Text and OCR come first. AI reads a page only when they fall short, and you can switch it off. Your data never trains AI models.</p></article>
-        <article><span class="c-ico"><svg aria-hidden="true"><use href="#i-log"/></svg></span>
-          <h3>A complete audit trail</h3>
-          <p>Sign-ins, sends, document generation and setting changes are recorded and visible to your admins.</p></article>
+          <h3>AI that decides, never writes</h3>
+          <p>AI picks the email type and where each document value goes, only from what is on the document. Replies are built by rules. Each part can be switched off, and your data never trains AI models.</p></article>
       </div>
       <p class="fine-links">Read how responsibility is shared in our
-        <a href="{{ROOT}}legal/automation-protocol/">Automation, Approval and Responsibility Protocol</a>.</p>
+        <a href="{{ROOT}}legal/automation-protocol/">Automation and Responsibility Protocol</a>.</p>
     </div>
   </section>
 
@@ -354,13 +536,15 @@
     <div class="container">
       <div class="section-head">
         <p class="eyebrow">Getting started</p>
-        <h2 id="start-title">No migration project</h2>
+        <h2 id="start-title">Free setup. Free help moving over.</h2>
+        <p class="section-lead">Setup costs nothing on any plan. Leaving another system? We bring your open shipments,
+          customers and document templates across for you, at no cost.</p>
       </div>
       <ol class="steps">
         <li><h3>Sign up with Google or Apple</h3>
           <p>Create your company workspace in a minute and invite your team.</p></li>
         <li><h3>Bring your open shipments</h3>
-          <p>Import a spreadsheet of open files and connect your operations inbox.</p>
+          <p>Import a spreadsheet of open files, or send us an export from your current system, and connect your operations inbox.</p>
           <p class="inline-logos"><span class="brand-chip"><img src="{{ROOT}}assets/brands/gmail.svg" alt="" width="18" height="14">Gmail</span>
             <span class="brand-chip"><img src="{{ROOT}}assets/brands/outlook.svg" alt="" width="17" height="16">Outlook</span></p></li>
         <li><h3>Work from “Needs attention”</h3>
@@ -379,10 +563,13 @@
       <div class="faq">
         <details><summary>Does WardOps replace my TMS?</summary>
           <p>WardOps is an operations system with its own shipment files, focused on follow-up: documents, email and tracking.
-            Accounting and invoicing stay in the tools you already use. You can start by importing a spreadsheet of open shipments.</p></details>
-        <details><summary>Will WardOps send emails to my customers on its own?</summary>
-          <p>No. Replies and notifications are prepared as drafts. Nothing is sent until someone on your team reviews it and
-            clicks approve, and every send is logged with who approved it.</p></details>
+            You can issue invoices, debit and credit notes from charges on the file, while your accounting system stays the book of
+            record. You can start by importing a spreadsheet of open shipments.</p></details>
+        <details><summary>Will WardOps answer my customers on its own?</summary>
+          <p>Yes, for status questions and three moments: an ETA change, vessel arrival and ready for pickup. Replies use
+            only what is recorded on the shipment, in English or Turkish. WardOps does not answer colleagues or
+            auto-responders, does not repeat itself to the same customer, and logs every send. Questions it cannot answer
+            stay with your team, and automatic sending can be switched off.</p></details>
         <details><summary>Which shipments does WardOps support?</summary>
           <p>Full container load (FCL) ocean freight, import and export. Less-than-container load (LCL) comes next, then air freight.</p></details>
         <details><summary>Which email providers can I connect?</summary>
@@ -395,10 +582,16 @@
             keeps its source, and a weaker source never overwrites a stronger one. During early access we set up the data
             source that fits your lanes.</p></details>
         <details><summary>How does WardOps use AI?</summary>
-          <p>Only when it is needed. Documents are read from their text first, then with OCR. AI reads a page only when both
-            fall short, you can switch it off for your company, and your data is never used to train AI models.</p></details>
+          <p>Two narrow ways, each can be switched off for your company. A small model reads each email and document to
+            decide its type, whether the customer is asking something out of routine, and which value is the B/L number or
+            the ETA; it picks only from values found on the document and never writes messages. When text and OCR cannot
+            read a document, AI reads that page. Your data is never used to train AI models.</p></details>
+        <details><summary>We already use another system. Can you move us over?</summary>
+          <p>Yes, free of charge. Send us an Excel or CSV export of your open shipments and customers, and your document
+            templates. We load them, set up your templates and check everything with you before you switch.</p></details>
         <details><summary>How much does WardOps cost?</summary>
-          <p>Early-access pricing is agreed per team. Tell us about your volume and we will share a simple plan.</p></details>
+          <p>Three plans, priced per team. Setup is free on every plan, and if you are moving from another system, we help
+            you switch at no cost. Tell us about your volume and we will share the plan that fits.</p></details>
       </div>
     </div>
   </section>
@@ -456,6 +649,7 @@
       <a href="#why">Why WardOps</a>
       <a href="#how-it-works">How it works</a>
       <a href="#features">Features</a>
+      <a href="pricing/">Pricing</a>
       <a href="#faq">FAQ</a>
     </nav>
   </div>

@@ -1,7 +1,9 @@
 {
   "name": "WardOps",
-  "url": "https://nintendomitt.github.io/wardops-site/",
-  "custom_domain": "",
+  "url": "https://wardops.co/",
+  "custom_domain": "wardops.co",
   "contact_email": "saturdayonlinesolutions@gmail.com",
-  "form_endpoint": ""
+  "form_endpoint": "",
+  "pricing_confirmed": true,
+  "app_url": "https://app.wardops.co/"
 }

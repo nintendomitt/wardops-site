@@ -27,8 +27,8 @@ DIST = ROOT / "dist"
 LEGAL = [
     ("terms", "terms.md", "Terms of Service",
      "Terms of Service for WardOps, the operations platform for ocean freight forwarders. Draft under legal review."),
-    ("automation-protocol", "automation-protocol.md", "Automation, Approval & Responsibility",
-     "How WardOps automates work, what always needs your approval, and how responsibility is shared. Draft."),
+    ("automation-protocol", "automation-protocol.md", "Automation & Responsibility",
+     "What WardOps sends automatically, the brakes on it, what needs your action, and how responsibility is shared. Draft."),
     ("data-processing", "data-processing.md", "Data Processing Agreement",
      "WardOps Data Processing Agreement: roles, sub-processors, security measures and deletion. Draft."),
     ("records-and-feedback", "records-and-feedback.md", "Records, Usage Data & Feedback",
@@ -145,6 +145,10 @@ def build(strict: bool = False) -> int:
         placeholders.append(f"site.json 'url' hâlâ yer tutucu: {site_url}")
     if config["contact_email"].endswith(("@example.com", ".example")):
         placeholders.append(f"site.json 'contact_email' hâlâ yer tutucu: {config['contact_email']}")
+    pricing_confirmed = bool(config.get("pricing_confirmed"))
+    if not pricing_confirmed:
+        # context/konumlandirma.md: fiyat rakamlari kesinlesmeden yayinlanmaz.
+        placeholders.append("site.json 'pricing_confirmed' false: fiyat sayfasi taslak rakamlar tasiyor (noindex)")
     if strict and placeholders:
         print("\n".join("HATA: " + p for p in placeholders))
         return 1
@@ -153,6 +157,7 @@ def build(strict: bool = False) -> int:
     endpoint = config.get("form_endpoint", "").strip()
     base = {
         "SITE_URL": site_url,
+        "APP_URL": config.get("app_url") or site_url,
         "SITE_NAME": config["name"],
         "CONTACT_EMAIL": config["contact_email"],
         "FORM_ACTION": endpoint or f"mailto:{config['contact_email']}",
@@ -185,6 +190,12 @@ def build(strict: bool = False) -> int:
         target.write_text(page, encoding="utf-8")
         pages.append((f"legal/{slug}/", target, True))
         legal_links.append((title, f"{site_url}legal/{slug}/", description))
+
+    pricing = fill((SRC / "pricing.html").read_text(encoding="utf-8"),
+                   {**base, "ROOT": "../", "PRICING_ROBOTS": "index, follow" if pricing_confirmed else "noindex, follow"})
+    (DIST / "pricing").mkdir(parents=True, exist_ok=True)
+    (DIST / "pricing" / "index.html").write_text(pricing, encoding="utf-8")
+    pages.append(("pricing/", DIST / "pricing" / "index.html", pricing_confirmed))
 
     not_found = fill((SRC / "404.html").read_text(encoding="utf-8"), {**base, "ROOT": "/"})
     (DIST / "404.html").write_text(not_found, encoding="utf-8")

@@ -1,6 +1,6 @@
 # Annex 2: Data Processing Agreement
 
-Version 1.0-DRAFT · 24 September 2026
+Version 1.3-DRAFT · 29 September 2026
 
 This Data Processing Agreement ("DPA") is an integral annex to the WardOps Terms of Service. It sets out the
 rights and obligations of the parties to the Terms of Service regarding the processing of Personal Data contained
@@ -20,7 +20,7 @@ controller; this data is covered by the Privacy Policy.
 | Element | Description |
 |---|---|
 | Subject | Running the Customer's ocean transport and logistics operations through the Platform |
-| Nature | Recording, storing, organising, matching, classifying, reading (text, OCR, AI), generating documents, passing on with the Customer's approval, deleting |
+| Nature | Recording, storing, organising, matching, classifying, reading (text, OCR, AI), generating documents, passing on for the Customer (automatic replies and notices defined in Annex 1, and sends by user action), deleting |
 | Purpose | Only to provide, secure and support the Service under the Terms of Service |
 | Duration | For the term of the Terms of Service and the deletion periods in Section 9 of this DPA |
 | Data subjects | The Customer's customers, shippers, consignees, notify parties, truckers, customs brokers, agents, carrier and terminal staff, and other people appearing in email correspondence |
@@ -81,8 +81,9 @@ Provider.
 KVKK and related secondary legislation, within the framework of standard contracts announced by the Personal Data
 Protection Board or other appropriate safeguards provided by law.
 
-6.2. The Customer can stop transfers to the related sub-processor by switching off AI document reading in the
-Platform's admin screen. Documents are then read only with text extraction and local OCR.
+6.2. The Customer can stop transfers to the related sub-processors by switching off AI document reading and Jev
+classification separately in the Platform's admin screen. Documents are then read only with text extraction and
+local OCR, and emails are classified by rules.
 
 ## 7. Security Incidents
 
@@ -133,7 +134,7 @@ taken as the basis.
 | Integration credentials | Email account access tokens are stored encrypted in the database (AES-based authenticated encryption), never returned in API responses, and deleted when the connection is removed. |
 | Transport security | All connections in the production environment are encrypted with TLS. |
 | Audit log | Sign-ins, failed sign-ins, user management, outbound sends, setting and template changes and document generation are logged; logs are visible to company admins and cannot be changed by users. Secrets such as passwords or tokens are never written to logs. |
-| Outbound control | No email or document is sent on the Customer's behalf without an Authorised User's approval. |
+| Outbound control | Without waiting for approval, only the replies and notices defined in Annex 1 are sent on the Customer's behalf, with defined brakes (no sending to internal recipients, auto-responders or the same recipient again within a short time); the Customer can switch this off. All other emails and documents are sent by an Authorised User's action. Every send is logged. |
 | Data minimisation | Through the email integration, only the content and attachments of messages that appear operational are downloaded; the body of unrelated messages is not opened. Only the necessary page or text is sent to AI. |
 | Backups | Regular backups are taken in production and stored encrypted. [Backup frequency and retention to be set after deployment.] |
 | Access management | Service Provider staff access to production data is limited on a least-privilege basis and logged. |
@@ -145,6 +146,7 @@ taken as the basis.
 |---|---|---|---|
 | [HOSTING PROVIDER] | Servers, database and file storage | [COUNTRY] | Always |
 | Anthropic PBC | AI reading of documents that text and OCR cannot read | USA | Unless the Customer switches the feature off, and only when needed |
+| TypeSafe ([LEGAL NAME TO BE CONFIRMED]) | Classification of emails and documents (Jev model): type, out-of-routine questions, which field a document value belongs to; generates no text, and the provider commits not to train models on the data | [COUNTRY TO BE CONFIRMED] | In use; the Customer can switch it off in the admin screen |
 | Google LLC | Sign in with Google (authentication) | USA | If the user chooses Google sign-in |
 | Apple Inc. | Sign in with Apple (authentication) | USA | If the user chooses Apple sign-in |
 | [EMAIL DELIVERY PROVIDER] | System notifications (if any) | [COUNTRY] | [To be decided] |

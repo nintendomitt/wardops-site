@@ -1,6 +1,6 @@
 # WardOps Privacy Policy
 
-Version 1.0-DRAFT · 25 September 2026
+Version 1.1-DRAFT · 27 September 2026
 
 This Policy explains how personal data is processed by the WardOps platform ("Platform") and by this website. It is
 prepared under Article 10 of the Turkish Personal Data Protection Law No. 6698 ("KVKK") and the related communiqué
@@ -72,6 +72,10 @@ related function is used:
 - **AI document reading:** depending on the business's preference, the necessary part of documents that text
   extraction and local OCR cannot read may be sent to an AI provider (Anthropic PBC, USA). The business can switch this
   off in the admin screen.
+- **AI classification (Jev):** unless the business switches it off, an email's subject and body and the text of
+  documents may be sent to TypeSafe to decide the email's type, whether it contains an out-of-routine question and
+  where document values go on the shipment. The provider generates no text and commits not to train models on the
+  data. The business can switch this off in the admin screen.
 - **Hosting:** [HOSTING PROVIDER AND COUNTRY].
 - **Website hosting:** this website is served by GitHub Pages (GitHub, Inc., USA); see Section 9.
 

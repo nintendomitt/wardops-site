@@ -1,6 +1,6 @@
 # Annex 3: Records, Usage Data and Feedback Protocol
 
-Version 1.0-DRAFT · 24 September 2026
+Version 1.1-DRAFT · 25 September 2026
 
 This Protocol is an integral annex to the WardOps Terms of Service. It sets out which records the Platform keeps,
 how user experience and feedback are collected, what these records are used for, who can access them and how long
@@ -12,7 +12,7 @@ they are kept.
 incidents, (c) to determine the Parties' responsibility in possible disputes, and (d) to fix errors in and improve
 the Service.
 
-1.2. Records protect the Customer and the Service Provider alike: who approved an email, who generated a document
+1.2. Records protect the Customer and the Service Provider alike: whether an email was sent automatically or by which user, who generated a document
 or who changed a setting is shown by these records.
 
 ## 2. Records Kept
