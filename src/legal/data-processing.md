@@ -1,6 +1,6 @@
 # Annex 2: Data Processing Agreement
 
-Version 1.4-DRAFT · 29 September 2026
+Version 1.5-DRAFT · 30 September 2026
 
 This Data Processing Agreement ("DPA") is an integral annex to the WardOps Terms of Service. It sets out the
 rights and obligations of the parties to the Terms of Service regarding the processing of Personal Data contained
@@ -42,7 +42,9 @@ instructions must be in writing and within the scope of the Service.
 ## 4. Service Provider Obligations
 
 4.1. The Service Provider processes Personal Data only on the Customer's documented instructions and to provide the
-Service; it does not use it for its own purposes, sell it, share it for advertising or use it to train AI models.
+Service; apart from the internal improvement in clause 8.3a of the Terms of Service, it does not use it for its own
+purposes, sell it, share it for advertising or use it to train AI models, and it never shares it with any provider
+to train or improve third-party or public AI models.
 
 4.2. It informs the Customer if it believes an instruction infringes the law.
 

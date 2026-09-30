@@ -1,6 +1,6 @@
 # WardOps Terms of Service
 
-Version 1.4-DRAFT · 29 September 2026
+Version 1.5-DRAFT · 30 September 2026
 
 These Terms govern the rights and obligations between the business that uses the WardOps platform and the
 company that operates it. The annexes to these Terms (Annex 1 Automation and Responsibility Protocol;
@@ -212,9 +212,16 @@ with some rules (for example the container number check digit and date formats),
 guarantee accuracy. Read values do not overwrite existing records; they only fill empty fields, and
 conflicts are shown as alerts.
 
-8.3. The Service Provider does not use Customer Data to train AI models and, in its contracts with AI providers,
-requires that Customer Data is not used for model training. The providers used are listed as sub-processors in
-Annex 2.
+8.3. Customer Data is never shared with any provider to train or improve third-party or public AI models, and the
+Service Provider does not use Customer Data to train AI models. The AI Feature uses only providers whose contract
+terms commit them not to use Customer Data for model training; the Service Provider does not grant these providers
+permission to use it for training and does not send them feedback. The providers used are listed as
+sub-processors in Annex 2.
+
+8.3a. The Service Provider may use Customer Data only within its own infrastructure to fix and improve the
+Service's reading rules, matching and alert logic (for example, correcting the rule for a document layout that was
+read incorrectly). In this use Customer Data is not shown to other customers, is not shared with third parties
+and is not given to external AI tools during development work.
 
 8.4. The Customer can switch off the AI Feature in the admin screen. Documents are then read only with text
 extraction and OCR. Emails are always classified by rules.
@@ -284,7 +291,8 @@ Customer receives a non-transferable, non-exclusive right to use them for its ow
 during the term.
 
 13.2. Customer Data belongs to the Customer. The Customer permits Customer Data to be processed to the extent
-necessary to provide the Service, keep it secure, fix errors and meet legal obligations.
+necessary to provide the Service, keep it secure, fix errors, carry out the internal improvement in clause 8.3a
+and meet legal obligations.
 
 13.3. The Service Provider may use anonymised and aggregated usage statistics that do not identify the Customer
 or individuals (for example the number of documents processed or the frequency of alert types) to improve the

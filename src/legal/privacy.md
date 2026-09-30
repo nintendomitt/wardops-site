@@ -1,6 +1,6 @@
 # WardOps Privacy Policy
 
-Version 1.2-DRAFT · 29 September 2026
+Version 1.3-DRAFT · 30 September 2026
 
 This Policy explains how personal data is processed by the WardOps platform ("Platform") and by this website. It is
 prepared under Article 10 of the Turkish Personal Data Protection Law No. 6698 ("KVKK") and the related communiqué
@@ -79,7 +79,10 @@ International transfers are made in line with Article 9 of KVKK and related seco
 without an adequacy decision, within the framework of standard contracts announced by the Personal Data Protection
 Board or other appropriate safeguards provided by law. [The transfer mechanism will be finalised after legal review.]
 
-5.3. We do not sell personal data, share it with third parties for advertising, or use it to train AI models.
+5.3. We do not sell personal data, share it with third parties for advertising, or use it to train AI models, and
+we never share it with any provider to train third-party or public AI models. Work to fix and improve the
+Service's reading rules is carried out only within our own infrastructure; the data is not shown to other
+businesses and is not given to external AI tools.
 
 ## 6. Retention Periods
 

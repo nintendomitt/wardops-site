@@ -1,6 +1,6 @@
 # Annex 3: Records, Usage Data and Feedback Protocol
 
-Version 1.1-DRAFT · 25 September 2026
+Version 1.2-DRAFT · 30 September 2026
 
 This Protocol is an integral annex to the WardOps Terms of Service. It sets out which records the Platform keeps,
 how user experience and feedback are collected, what these records are used for, who can access them and how long
@@ -80,7 +80,8 @@ Customer's written permission.**
 3.5. The Service Provider does not use third-party advertising or tracking tools to measure product use. Usage
 statistics are aggregated so that they do not identify individuals.
 
-3.6. Feedback and usage statistics are not used as Customer Data in training AI models.
+3.6. Feedback, usage statistics and Customer Data are not used to train AI models and are never shared with any
+provider to train third-party or public AI models.
 
 ## 4. Access
 
