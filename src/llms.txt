@@ -35,6 +35,9 @@
 - [Container check digit calculator]({{SITE_URL}}tools/container-check-digit/): Free ISO 6346 check digit calculator with the formula explained.
 - [Blog]({{SITE_URL}}blog/): Practical guides for freight forwarder operations teams.
 - [Pre-alert in shipping: document checklist and email template]({{SITE_URL}}blog/pre-alert-shipping-documents/): What a pre-alert must include and what the destination checks.
+- [Telex release vs express release vs sea waybill]({{SITE_URL}}blog/telex-release-express-release-sea-waybill/): Release types compared, and the two-layer (master and house) release check.
+- [Arrival notice: annotated sample and what to check]({{SITE_URL}}blog/arrival-notice-shipping-sample/): Each block of an arrival notice explained, who sends it and when.
+- [Master vs house bill of lading]({{SITE_URL}}blog/master-vs-house-bill-of-lading/): Who issues each bill, which number to track with, and common mismatches.
 
 ## Legal
 

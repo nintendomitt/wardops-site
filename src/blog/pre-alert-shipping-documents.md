@@ -69,12 +69,13 @@ not match:
 
 - **Container numbers:** four letters and seven digits, with a valid check digit. A quick way to catch typos is the
   [container check digit calculator](/tools/container-check-digit/).
-- **Bill of lading numbers:** the MBL on the house bill must match the master bill.
+- **Bill of lading numbers:** the MBL on the house bill must match the master bill
+  ([master vs house bill of lading](/blog/master-vs-house-bill-of-lading/)).
 - **Vessel, voyage, ETD and ETA:** the ETA drives the arrival notice and the last free day.
 - **Port of loading, port of discharge and place of delivery:** inland moves need the final place, not just the port.
 - **Consignee and notify party:** they must be the same on the HBL, the ISF and the invoice.
 - **Release type:** original, telex release or sea waybill. It decides what the consignee has to present at
-  destination.
+  destination; see [telex release vs express release vs sea waybill](/blog/telex-release-express-release-sea-waybill/).
 - **HS codes:** at least six digits, consistent between invoice and ISF.
 - **Packages and gross weight:** the same on the packing list and the bill of lading.
 
@@ -84,7 +85,7 @@ not match:
 - Confirm the ISF was filed and matches the house bill (US imports).
 - Ask the origin for everything missing in one email, not one item at a time.
 - Start tracking the ETA; any change moves the arrival notice and the last free day.
-- Prepare the arrival notice for the consignee before the vessel arrives.
+- Prepare the [arrival notice](/blog/arrival-notice-shipping-sample/) for the consignee before the vessel arrives.
 
 ## Pre-alert email template
 
