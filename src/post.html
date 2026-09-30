@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{DOC_TITLE}} | WardOps</title>
+<title>{{META_TITLE}} | WardOps</title>
 <meta name="description" content="{{DOC_DESCRIPTION}}">
 <link rel="canonical" href="{{SITE_URL}}{{DOC_PATH}}">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="theme-color" content="#FBFBF9">
 <meta name="color-scheme" content="light">
 <link rel="icon" href="{{ROOT}}assets/favicon.svg" type="image/svg+xml">
@@ -15,14 +15,24 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="WardOps">
 <meta property="og:url" content="{{SITE_URL}}{{DOC_PATH}}">
-<meta property="og:title" content="{{DOC_TITLE}} | WardOps">
+<meta property="og:title" content="{{META_TITLE}}">
 <meta property="og:description" content="{{DOC_DESCRIPTION}}">
 <meta property="og:image" content="{{SITE_URL}}assets/og-image.jpg">
+<meta property="article:published_time" content="{{DATE_ISO}}">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="{{ROOT}}assets/site.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
- {"@type":"ListItem","position":1,"name":"WardOps","item":"{{SITE_URL}}"},
- {"@type":"ListItem","position":2,"name":"{{DOC_TITLE}}","item":"{{SITE_URL}}{{DOC_PATH}}"}]}
+{"@context":"https://schema.org","@graph":[
+ {"@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"WardOps","item":"{{SITE_URL}}"},
+  {"@type":"ListItem","position":2,"name":"Blog","item":"{{SITE_URL}}blog/"},
+  {"@type":"ListItem","position":3,"name":"{{META_TITLE}}","item":"{{SITE_URL}}{{DOC_PATH}}"}]},
+ {"@type":"BlogPosting","headline":"{{META_TITLE}}","description":"{{DOC_DESCRIPTION}}",
+  "datePublished":"{{DATE_ISO}}","dateModified":"{{DATE_ISO}}","inLanguage":"en",
+  "mainEntityOfPage":"{{SITE_URL}}{{DOC_PATH}}","image":"{{SITE_URL}}assets/og-image.jpg",
+  "author":{"@type":"Organization","name":"WardOps","url":"{{SITE_URL}}"},
+  "publisher":{"@type":"Organization","name":"WardOps","url":"{{SITE_URL}}",
+   "logo":{"@type":"ImageObject","url":"{{SITE_URL}}assets/icon-192.png"}}}]}
 </script>
 </head>
 <body>
@@ -44,16 +54,17 @@
 <main id="main" class="doc-page">
   <div class="container">
     <article class="doc">
-      <a class="back" href="{{SITE_URL}}">← Back to WardOps</a>
+      <a class="back" href="{{ROOT}}blog/">← WardOps blog</a>
+      <p class="post-meta"><time datetime="{{DATE_ISO}}">{{DATE_LONG}}</time> · {{READ_MINUTES}} min read</p>
       {{DOC_BODY}}
+      <aside class="post-cta">
+        <p><strong>WardOps</strong> reads pre-alerts, bills of lading and arrival notices, files them on the right shipment,
+          tracks the last free day and asks the sender for what is missing.</p>
+        <a class="btn btn-primary btn-small" href="{{SITE_URL}}#early-access">Get early access</a>
+      </aside>
     </article>
-    <nav class="doc-nav" aria-label="Guides">
-      <a href="{{ROOT}}guides/connect-outlook/">Connect Outlook or Microsoft 365</a>
-      <a href="{{ROOT}}guides/connect-imap/">Connect over IMAP</a>
-      <a href="{{ROOT}}blog/">Blog</a>
-      <a href="{{ROOT}}tools/container-check-digit/">Container check digit calculator</a>
-      <a href="{{ROOT}}legal/privacy/">Privacy Policy</a>
-      <a href="{{ROOT}}legal/data-processing/">Data Processing Agreement</a>
+    <nav class="doc-nav" aria-label="More from the blog">
+{{POST_NAV}}
     </nav>
   </div>
 </main>

@@ -100,7 +100,7 @@
         {"@type": "Question", "name": "Where does tracking data come from?",
          "acceptedAnswer": {"@type": "Answer", "text": "From carrier and terminal updates through a tracking provider, from delay emails and from your documents. Every ETA keeps its source, and a weaker source never overwrites a stronger one. During early access we set up the data source that fits your lanes."}},
         {"@type": "Question", "name": "How does WardOps use AI?",
-         "acceptedAnswer": {"@type": "Answer", "text": "Two narrow ways, each can be switched off for your company. A small model reads each email and document to decide its type, whether the customer is asking something out of routine, and which value is the B/L number or the ETA; it picks only from values found on the document and never writes messages. When text and OCR cannot read a document, AI reads that page. Your data is never used to train AI models."}},
+         "acceptedAnswer": {"@type": "Answer", "text": "Only when it is needed. Documents are read from their text first, then with OCR. AI reads a page only when both fall short, you can switch it off for your company, and your data is never used to train AI models."}},
         {"@type": "Question", "name": "We already use another system. Can you move us over?",
          "acceptedAnswer": {"@type": "Answer", "text": "Yes, free of charge. Send us an Excel or CSV export of your open shipments and customers, and your document templates. We load them, set up your templates and check everything with you before you switch."}},
         {"@type": "Question", "name": "How much does WardOps cost?",
@@ -524,8 +524,8 @@
           <h3>Your data stays separate</h3>
           <p>Each company’s data is isolated, with admin, operations and view-only roles. Mail access credentials are stored encrypted.</p></article>
         <article><span class="c-ico"><svg aria-hidden="true"><use href="#i-spark"/></svg></span>
-          <h3>AI that decides, never writes</h3>
-          <p>AI picks the email type and where each document value goes, only from what is on the document. Replies are built by rules. Each part can be switched off, and your data never trains AI models.</p></article>
+          <h3>AI only when it is needed</h3>
+          <p>Text and OCR come first. AI reads a page only when they fall short, and you can switch it off. Your data never trains AI models.</p></article>
       </div>
       <p class="fine-links">Read how responsibility is shared in our
         <a href="{{ROOT}}legal/automation-protocol/">Automation and Responsibility Protocol</a>.</p>
@@ -584,10 +584,8 @@
             keeps its source, and a weaker source never overwrites a stronger one. During early access we set up the data
             source that fits your lanes.</p></details>
         <details><summary>How does WardOps use AI?</summary>
-          <p>Two narrow ways, each can be switched off for your company. A small model reads each email and document to
-            decide its type, whether the customer is asking something out of routine, and which value is the B/L number or
-            the ETA; it picks only from values found on the document and never writes messages. When text and OCR cannot
-            read a document, AI reads that page. Your data is never used to train AI models.</p></details>
+          <p>Only when it is needed. Documents are read from their text first, then with OCR. AI reads a page only when both
+            fall short, you can switch it off for your company, and your data is never used to train AI models.</p></details>
         <details><summary>We already use another system. Can you move us over?</summary>
           <p>Yes, free of charge. Send us an Excel or CSV export of your open shipments and customers, and your document
             templates. We load them, set up your templates and check everything with you before you switch.</p></details>
@@ -655,6 +653,8 @@
       <a href="#faq">FAQ</a>
       <a href="guides/connect-outlook/">Outlook setup guide</a>
       <a href="guides/connect-imap/">IMAP setup guide</a>
+      <a href="blog/">Blog</a>
+      <a href="tools/container-check-digit/">Container check digit</a>
     </nav>
   </div>
   <div class="container foot-bottom"><p>© {{YEAR}} WardOps</p>

@@ -1,6 +1,6 @@
 # Annex 1: Automation and Responsibility Protocol
 
-Version 1.7-DRAFT · 29 September 2026
+Version 1.8-DRAFT · 29 September 2026
 
 This Protocol is an integral annex to the WardOps Terms of Service. It sets out in detail which actions the
 Platform performs on its own, which messages it sends automatically, which actions need an Authorised User, the
@@ -48,7 +48,6 @@ In the table below, "Automatic" shows whether the action is done inside the Plat
 | ETA from delay emails | Reads the new ETA; records it in the history with source "email"; does not apply it if a more reliable source exists | Yes | No | Not needed | Confirm important ETA changes with the carrier or terminal |
 | Reading document fields (text, OCR) | Reads numbers, vessel, port and dates from bills of lading, arrival notices and similar documents | Yes | No | Not needed | Check documents sent to review and conflict alerts |
 | Reading document fields (AI) | If text/OCR is not enough and the feature is on, sends the necessary part of the document to the AI provider | Yes (setting) | Data goes to a sub-processor | Account setting | Verify read values; switch the feature off if preferred |
-| Understanding email and documents (Jev) | Decides the email's type and the customer's out-of-routine questions (saved to the customer memory); chooses the type of a document the rules cannot recognise and which field each document value belongs to. Chooses only among values found in the document and writes no text. Rules run first; if Jev does not answer, rules decide the same topics | On (the company can switch it off) | Data goes to a sub-processor | Not needed | Review fields filled by Jev and the customer memory; switch the feature off if wanted |
 | Tracking data | Records events from carriers, terminals or data providers and calculates the cargo's stage | Yes | No | Not needed | Check the source system for critical events |
 | Alerts and tasks | Opens tasks for delays, ETA shifts, free time, document deadlines, release, ISF/AMS matching and similar | Yes | No | Not needed | Review tasks, set thresholds to fit operations |
 | Demurrage/detention estimate | Calculates an estimated amount from the defined tariff | Yes | No | Not needed | Define tariffs correctly; rely on the carrier invoice for the final amount |

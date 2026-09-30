@@ -32,6 +32,33 @@ GUIDES = [
      "Connect company email at your hosting provider, Gmail, Yandex, Yahoo, iCloud or Zoho to WardOps over IMAP and SMTP."),
 ]
 
+#: Ucretsiz araclar (govde HTML parcasi, src/tools/): (adres, kaynak, kisa baslik, aciklama).
+TOOLS = [
+    ("container-check-digit", "container-check-digit.html", "Container Check Digit Calculator (ISO 6346)",
+     "Free container number check digit calculator: validate any shipping container number with the ISO 6346 formula, "
+     "with a worked example and letter values."),
+]
+
+
+def load_posts():
+    """src/blog/*.md: '---' arasindaki ust bilgi (anahtar: deger) ve Markdown govde; yeniden eskiye."""
+    posts = []
+    for path in sorted((SRC / "blog").glob("*.md")):
+        text = path.read_text(encoding="utf-8")
+        head = re.match(r"---\n(.*?)\n---\n", text, re.S)
+        if not head:
+            raise ValueError(f"{path.name}: ust bilgi (---) yok")
+        meta = dict(line.split(": ", 1) for line in head.group(1).splitlines() if ": " in line)
+        for key in ("title", "meta_title", "description", "date"):
+            if not meta.get(key):
+                raise ValueError(f"{path.name}: '{key}' eksik")
+        meta["date"] = dt.date.fromisoformat(meta["date"].strip())
+        meta["slug"] = meta.get("slug", path.stem).strip()
+        meta["body"] = text[head.end():]
+        posts.append(meta)
+    return sorted(posts, key=lambda post: post["date"], reverse=True)
+
+
 LEGAL = [
     ("terms", "terms.md", "Terms of Service",
      "Terms of Service for WardOps, the operations platform for ocean freight forwarders. Draft under legal review."),
@@ -82,8 +109,19 @@ def render_markdown(text: str) -> str:
         line = lines[index].rstrip()
         stripped = line.strip()
         heading = re.match(r"^(#{1,4})\s+(.*)$", stripped)
+        raw = re.match(r"^<(figure|pre|script|div|aside)\b", stripped)
         if not stripped:
             flush()
+        elif raw:
+            # Ham HTML blogu (cizim, sablon, yapilandirilmis veri): kapanis etiketine kadar oldugu gibi alinir.
+            flush()
+            closing, block = f"</{raw.group(1)}>", []
+            while index < len(lines):
+                block.append(lines[index])
+                if closing in lines[index]:
+                    break
+                index += 1
+            output.append("\n".join(block))
         elif heading:
             flush()
             level = len(heading.group(1))
@@ -209,6 +247,47 @@ def build(strict: bool = False) -> int:
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(page, encoding="utf-8")
         pages.append((f"guides/{slug}/", target, True))
+
+    # Araclar (rehber sablonuyla; govde HTML parcasi): /tools/<ad>/
+    for slug, source, short_title, description in TOOLS:
+        body = fill((SRC / "tools" / source).read_text(encoding="utf-8"), base)
+        page = fill(guide_template, {**base, "ROOT": "../../", "DOC_TITLE": html.escape(short_title),
+                                     "DOC_DESCRIPTION": html.escape(description), "DOC_PATH": f"tools/{slug}/",
+                                     "DOC_BODY": body})
+        target = DIST / "tools" / slug / "index.html"
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(page, encoding="utf-8")
+        pages.append((f"tools/{slug}/", target, True))
+
+    # Blog: src/blog/*.md (ust bilgi: title, meta_title, description, date). Yeni yazi = yeni dosya.
+    posts = load_posts()
+    post_template = (SRC / "post.html").read_text(encoding="utf-8")
+    for post in posts:
+        others = [other for other in posts if other["slug"] != post["slug"]][:5]
+        nav = "\n".join(f'      <a href="../{other["slug"]}/">{html.escape(other["title"])}</a>' for other in others)
+        nav += '\n      <a href="../../tools/container-check-digit/">Container check digit calculator</a>'
+        body = fill(render_markdown(post["body"]), base)
+        words = len(re.sub(r"<[^>]+>", " ", body).split())
+        page = fill(post_template, {
+            **base, "ROOT": "../../", "DOC_TITLE": html.escape(post["title"]), "META_TITLE": html.escape(post["meta_title"]),
+            "DOC_DESCRIPTION": html.escape(post["description"]), "DOC_PATH": f"blog/{post['slug']}/", "DOC_BODY": body,
+            "DATE_ISO": post["date"].isoformat(), "DATE_LONG": post["date"].strftime("%B %-d, %Y"),
+            "READ_MINUTES": max(1, round(words / 220)), "POST_NAV": nav})
+        target = DIST / "blog" / post["slug"] / "index.html"
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(page, encoding="utf-8")
+        pages.append((f"blog/{post['slug']}/", target, True))
+    post_list = "\n".join(
+        f'      <article class="post-card"><p class="post-meta"><time datetime="{p["date"].isoformat()}">'
+        f'{p["date"].strftime("%B %-d, %Y")}</time></p><h2><a href="{p["slug"]}/">{html.escape(p["title"])}</a></h2>'
+        f'<p>{html.escape(p["description"])}</p></article>' for p in posts) or "      <p>New articles are on the way.</p>"
+    items = json.dumps([{"@type": "BlogPosting", "headline": p["meta_title"], "url": f"{site_url}blog/{p['slug']}/",
+                         "datePublished": p["date"].isoformat()} for p in posts])
+    blog_page = fill((SRC / "blog.html").read_text(encoding="utf-8"),
+                     {**base, "ROOT": "../", "POST_LIST": post_list, "POST_ITEMS": items})
+    (DIST / "blog").mkdir(parents=True, exist_ok=True)
+    (DIST / "blog" / "index.html").write_text(blog_page, encoding="utf-8")
+    pages.append(("blog/", DIST / "blog" / "index.html", True))
 
     pricing = fill((SRC / "pricing.html").read_text(encoding="utf-8"),
                    {**base, "ROOT": "../", "PRICING_ROBOTS": "index, follow" if pricing_confirmed else "noindex, follow"})

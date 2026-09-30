@@ -438,3 +438,33 @@ h1{font-size:clamp(40px,5.4vw,64px);line-height:1.04;letter-spacing:-.036em;font
   .foot-grid{grid-template-columns:1fr}
   .doc{padding:28px 20px;border-radius:14px}
 }
+
+/* --- blog, rehber ve araclar ------------------------------------------------------------------ */
+.post-meta{font-size:14px;color:var(--muted);margin:0 0 6px}
+.doc h1,.blog-head h1{max-width:none}
+.doc h1 + p{font-size:17px}
+.doc code{font-family:var(--mono);font-size:.92em;background:var(--fog);border-radius:6px;padding:1px 5px}
+.diagram{margin:24px 0;padding:18px;background:var(--paper);border:1px solid var(--line-soft);border-radius:var(--radius-sm)}
+.diagram svg{display:block;width:100%;height:auto;max-width:100%;font-family:var(--font)}
+.diagram figcaption{margin-top:10px;font-size:14px;color:var(--muted)}
+pre.template{white-space:pre-wrap;overflow-wrap:anywhere;font-family:var(--mono);font-size:13.5px;line-height:1.6;
+  background:var(--fog);border:1px solid var(--line-soft);border-radius:var(--radius-sm);padding:16px 18px;margin:14px 0;color:var(--ink-2)}
+.post-cta{margin-top:34px;padding:20px 22px;border-radius:var(--radius-sm);background:var(--blue-soft);display:grid;gap:12px;justify-items:start}
+.post-cta p{margin:0}
+.blog-head{max-width:800px;margin:0 auto 24px;display:grid;gap:8px}
+.blog-head h1{font-size:clamp(28px,3.4vw,38px);line-height:1.15}
+.blog-head p{color:var(--muted);font-size:17px}
+.post-list{max-width:800px;margin:0 auto;display:grid;gap:14px}
+.post-card{background:var(--white);border:1px solid var(--line-soft);border-radius:var(--radius);padding:22px 24px;display:grid;gap:6px}
+.post-card h2{font-size:20px;line-height:1.3;letter-spacing:-.01em}
+.post-card h2 a{color:var(--ink);text-decoration:none}
+.post-card h2 a:hover{color:var(--blue)}
+.post-card p{margin:0;color:var(--ink-2)}
+.calc{display:grid;gap:8px;margin:18px 0 8px;padding:18px;background:var(--paper);border:1px solid var(--line-soft);border-radius:var(--radius-sm)}
+.calc label{font-weight:650;font-size:15px}
+.calc input{font:600 20px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:12px 14px;
+  border:1px solid var(--line);border-radius:var(--radius-sm);background:var(--white);width:100%;max-width:360px}
+.calc input:focus{outline:2px solid var(--blue);outline-offset:1px}
+.calc-result{margin:0;font-size:16px;color:var(--ink-2)}
+.calc-result.ok{color:var(--ok)}
+.calc-result.bad{color:var(--crit)}

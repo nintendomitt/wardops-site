@@ -16,7 +16,7 @@
 
 - Status questions and three customer moments (ETA change, vessel arrival, ready for pickup) are answered automatically, using only what is recorded on the shipment. No replies to colleagues or auto-responders, no repeat mails to the same customer; every send is logged and automatic sending can be switched off per company.
 - Each company's data is isolated; roles are admin, operations and view-only. Mail access tokens are stored encrypted.
-- A small classification model decides each email's type, out-of-routine customer questions and which document value goes to which shipment field; it picks only from values found on the document and writes no messages. AI reads a document page only when text and OCR are not enough. Both can be switched off per company, and customer data is not used to train AI models.
+- AI is used only when text and OCR are not enough, can be switched off per company, and customer data is not used to train AI models.
 - WardOps is not a carrier, NVOCC or customs broker and does not file customs, ISF or AMS declarations on anyone's behalf.
 
 ## Getting started
@@ -29,6 +29,12 @@
 
 - [Home]({{SITE_URL}}): Product overview, features, how it works and FAQ.
 - [Early access]({{SITE_URL}}#early-access): Request a walkthrough with your own shipments.
+- [Pricing]({{SITE_URL}}pricing/): Starter, Growth and Full Automation plans, monthly per team.
+- [Connect Outlook or Microsoft 365]({{SITE_URL}}guides/connect-outlook/): Setup guide, including IT admin approval.
+- [Connect over IMAP]({{SITE_URL}}guides/connect-imap/): Setup guide for hosting-company mail, Gmail, Yandex, Yahoo, iCloud and Zoho.
+- [Container check digit calculator]({{SITE_URL}}tools/container-check-digit/): Free ISO 6346 check digit calculator with the formula explained.
+- [Blog]({{SITE_URL}}blog/): Practical guides for freight forwarder operations teams.
+- [Pre-alert in shipping: document checklist and email template]({{SITE_URL}}blog/pre-alert-shipping-documents/): What a pre-alert must include and what the destination checks.
 
 ## Legal
 

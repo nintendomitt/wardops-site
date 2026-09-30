@@ -3,26 +3,30 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{DOC_TITLE}} | WardOps</title>
-<meta name="description" content="{{DOC_DESCRIPTION}}">
-<link rel="canonical" href="{{SITE_URL}}{{DOC_PATH}}">
-<meta name="robots" content="index, follow">
+<title>Ocean Freight Operations Blog | WardOps</title>
+<meta name="description" content="Practical guides for freight forwarder operations teams: pre-alerts, bills of lading, arrival notices, last free day, demurrage and US import paperwork.">
+<link rel="canonical" href="{{SITE_URL}}blog/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="theme-color" content="#FBFBF9">
 <meta name="color-scheme" content="light">
 <link rel="icon" href="{{ROOT}}assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="{{ROOT}}assets/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="{{ROOT}}assets/apple-touch-icon.png">
-<meta property="og:type" content="article">
+<meta property="og:type" content="website">
 <meta property="og:site_name" content="WardOps">
-<meta property="og:url" content="{{SITE_URL}}{{DOC_PATH}}">
-<meta property="og:title" content="{{DOC_TITLE}} | WardOps">
-<meta property="og:description" content="{{DOC_DESCRIPTION}}">
+<meta property="og:url" content="{{SITE_URL}}blog/">
+<meta property="og:title" content="Ocean Freight Operations Blog">
+<meta property="og:description" content="Practical guides for freight forwarder operations teams.">
 <meta property="og:image" content="{{SITE_URL}}assets/og-image.jpg">
 <link rel="stylesheet" href="{{ROOT}}assets/site.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
- {"@type":"ListItem","position":1,"name":"WardOps","item":"{{SITE_URL}}"},
- {"@type":"ListItem","position":2,"name":"{{DOC_TITLE}}","item":"{{SITE_URL}}{{DOC_PATH}}"}]}
+{"@context":"https://schema.org","@graph":[
+ {"@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"WardOps","item":"{{SITE_URL}}"},
+  {"@type":"ListItem","position":2,"name":"Blog","item":"{{SITE_URL}}blog/"}]},
+ {"@type":"Blog","name":"WardOps blog","url":"{{SITE_URL}}blog/","inLanguage":"en",
+  "publisher":{"@type":"Organization","name":"WardOps","url":"{{SITE_URL}}"},
+  "blogPost":{{POST_ITEMS}}}]}
 </script>
 </head>
 <body>
@@ -43,17 +47,19 @@
 </header>
 <main id="main" class="doc-page">
   <div class="container">
-    <article class="doc">
-      <a class="back" href="{{SITE_URL}}">← Back to WardOps</a>
-      {{DOC_BODY}}
-    </article>
-    <nav class="doc-nav" aria-label="Guides">
+    <section class="blog-head">
+      <p class="eyebrow">Blog</p>
+      <h1>Ocean freight operations, explained</h1>
+      <p>Practical guides for the people who run shipments every day: documents, deadlines, charges and the US import
+        paperwork around them.</p>
+    </section>
+    <div class="post-list">
+{{POST_LIST}}
+    </div>
+    <nav class="doc-nav" aria-label="Tools and guides">
+      <a href="{{ROOT}}tools/container-check-digit/">Container check digit calculator</a>
       <a href="{{ROOT}}guides/connect-outlook/">Connect Outlook or Microsoft 365</a>
       <a href="{{ROOT}}guides/connect-imap/">Connect over IMAP</a>
-      <a href="{{ROOT}}blog/">Blog</a>
-      <a href="{{ROOT}}tools/container-check-digit/">Container check digit calculator</a>
-      <a href="{{ROOT}}legal/privacy/">Privacy Policy</a>
-      <a href="{{ROOT}}legal/data-processing/">Data Processing Agreement</a>
     </nav>
   </div>
 </main>

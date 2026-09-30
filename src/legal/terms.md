@@ -1,6 +1,6 @@
 # WardOps Terms of Service
 
-Version 1.3-DRAFT · 29 September 2026
+Version 1.4-DRAFT · 29 September 2026
 
 These Terms govern the rights and obligations between the business that uses the WardOps platform and the
 company that operates it. The annexes to these Terms (Annex 1 Automation and Responsibility Protocol;
@@ -207,13 +207,6 @@ obligations remain the Customer's responsibility.
 recognition (OCR). If these are not enough and the AI Feature is enabled for the account, the necessary part of
 the document (its text or a reduced page image) may be sent to a third-party AI provider.
 
-8.1a. Unless the Customer switches it off, the Platform also uses a third-party classification model (TypeSafe,
-Jev) to understand emails and documents: the type of an email, whether the customer is asking something out of
-routine, the type of a document, and which field on the shipment a value found in a document (for example a B/L
-number or an ETA) belongs to. The model does not write text; it only chooses among options the Platform gives it
-and cannot produce a value that is not in the document. For this, the email's subject and body and the
-document's text are sent to the provider. The Customer can switch this classification off in the admin screen (8.4).
-
 8.2. Values read by AI or by rules **may be wrong, incomplete or misleading.** The Platform checks these values
 with some rules (for example the container number check digit and date formats), but these checks do not
 guarantee accuracy. Read values do not overwrite existing records; they only fill empty fields, and
@@ -223,8 +216,8 @@ conflicts are shown as alerts.
 requires that Customer Data is not used for model training. The providers used are listed as sub-processors in
 Annex 2.
 
-8.4. The Customer can switch off the AI Feature and the classification in 8.1a separately in the admin screen.
-Documents are then read only with text extraction and OCR, and emails are classified by rules.
+8.4. The Customer can switch off the AI Feature in the admin screen. Documents are then read only with text
+extraction and OCR. Emails are always classified by rules.
 
 ## 9. Third-Party Data and Services
 

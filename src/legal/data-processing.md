@@ -1,6 +1,6 @@
 # Annex 2: Data Processing Agreement
 
-Version 1.3-DRAFT · 29 September 2026
+Version 1.4-DRAFT · 29 September 2026
 
 This Data Processing Agreement ("DPA") is an integral annex to the WardOps Terms of Service. It sets out the
 rights and obligations of the parties to the Terms of Service regarding the processing of Personal Data contained
@@ -81,9 +81,9 @@ Provider.
 KVKK and related secondary legislation, within the framework of standard contracts announced by the Personal Data
 Protection Board or other appropriate safeguards provided by law.
 
-6.2. The Customer can stop transfers to the related sub-processors by switching off AI document reading and Jev
-classification separately in the Platform's admin screen. Documents are then read only with text extraction and
-local OCR, and emails are classified by rules.
+6.2. The Customer can stop transfers to the related sub-processor by switching off AI document reading in the
+Platform's admin screen. Documents are then read only with text extraction and local OCR. Emails are always
+classified by rules.
 
 ## 7. Security Incidents
 
@@ -146,7 +146,6 @@ taken as the basis.
 |---|---|---|---|
 | [HOSTING PROVIDER] | Servers, database and file storage | [COUNTRY] | Always |
 | Anthropic PBC | AI reading of documents that text and OCR cannot read | USA | Unless the Customer switches the feature off, and only when needed |
-| TypeSafe ([LEGAL NAME TO BE CONFIRMED]) | Classification of emails and documents (Jev model): type, out-of-routine questions, which field a document value belongs to; generates no text, and the provider commits not to train models on the data | [COUNTRY TO BE CONFIRMED] | In use; the Customer can switch it off in the admin screen |
 | Google LLC | Sign in with Google (authentication) | USA | If the user chooses Google sign-in |
 | Apple Inc. | Sign in with Apple (authentication) | USA | If the user chooses Apple sign-in |
 | [EMAIL DELIVERY PROVIDER] | System notifications (if any) | [COUNTRY] | [To be decided] |

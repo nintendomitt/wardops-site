@@ -1,0 +1,94 @@
+<h1>Container check digit calculator</h1>
+<p>Type the first 10 characters of a container number to get its check digit, or all 11 to see whether the number is
+valid. The calculation follows ISO 6346 and runs in your browser; nothing is sent anywhere.</p>
+
+<form class="calc" id="cdForm" autocomplete="off" onsubmit="return false">
+  <label for="cdInput">Container number</label>
+  <div class="calc-row">
+    <input id="cdInput" maxlength="13" placeholder="CSQU305438 or CSQU3054383" spellcheck="false" inputmode="text">
+  </div>
+  <p class="calc-result" id="cdResult" aria-live="polite">Example: <code>CSQU305438</code> → check digit <strong>3</strong>.</p>
+</form>
+
+<h2>How the check digit is calculated</h2>
+<p>A container number has four letters (three for the owner, one for the equipment category, usually U) followed by
+six serial digits and one check digit. The check digit catches most typing errors:</p>
+<ul>
+<li>Each letter is converted to a number: A = 10, B = 12, C = 13 … Z = 38. Values that are multiples of 11 (11, 22, 33)
+are skipped.</li>
+<li>Each of the first ten characters is multiplied by 2 to the power of its position: 1, 2, 4, 8 … 512.</li>
+<li>The products are added up and divided by 11. The remainder is the check digit; a remainder of 10 counts as 0.</li>
+</ul>
+
+<h3>Worked example: CSQU 305438</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Character</th><th>C</th><th>S</th><th>Q</th><th>U</th><th>3</th><th>0</th><th>5</th><th>4</th><th>3</th><th>8</th></tr></thead>
+<tbody>
+<tr><td>Value</td><td>13</td><td>30</td><td>28</td><td>32</td><td>3</td><td>0</td><td>5</td><td>4</td><td>3</td><td>8</td></tr>
+<tr><td>× weight</td><td>1</td><td>2</td><td>4</td><td>8</td><td>16</td><td>32</td><td>64</td><td>128</td><td>256</td><td>512</td></tr>
+<tr><td>= product</td><td>13</td><td>60</td><td>112</td><td>256</td><td>48</td><td>0</td><td>320</td><td>512</td><td>768</td><td>4096</td></tr>
+</tbody></table></div>
+<p>The products add up to 6,185. 6,185 ÷ 11 leaves a remainder of 3, so the full number is <strong>CSQU 305438 3</strong>.</p>
+
+<h3>Letter values</h3>
+<div class="table-wrap"><table>
+<tbody>
+<tr><td>A 10</td><td>B 12</td><td>C 13</td><td>D 14</td><td>E 15</td><td>F 16</td><td>G 17</td><td>H 18</td><td>I 19</td></tr>
+<tr><td>J 20</td><td>K 21</td><td>L 23</td><td>M 24</td><td>N 25</td><td>O 26</td><td>P 27</td><td>Q 28</td><td>R 29</td></tr>
+<tr><td>S 30</td><td>T 31</td><td>U 32</td><td>V 34</td><td>W 35</td><td>X 36</td><td>Y 37</td><td>Z 38</td><td></td></tr>
+</tbody></table></div>
+
+<h2>Why it matters in operations</h2>
+<p>A single wrong digit in a container number means tracking returns nothing, an arrival notice goes out with the wrong
+equipment, or a trucker is sent for the wrong box. Checking the digit when a number is first typed or read from a
+document stops these errors before they reach the customer. WardOps checks the digit of every container number it
+reads from a bill of lading or arrival notice and files only the numbers that pass.</p>
+
+<h2>FAQ</h2>
+<h3>Does a valid check digit mean the container exists?</h3>
+<p>No. It only means the number is well formed. A mistyped number can still pass by chance, and a valid number may belong
+to a container that is not on your shipment. Confirm against the bill of lading or the carrier's tracking.</p>
+<h3>What do the four letters mean?</h3>
+<p>The first three letters are the owner code, registered with the Bureau International des Containers (BIC). The fourth
+is the equipment category: U for freight containers, J for detachable freight container equipment and Z for trailers and
+chassis.</p>
+<h3>Why is there no 11, 22 or 33 in the letter values?</h3>
+<p>The calculation divides by 11, so a letter worth 11, 22 or 33 would add nothing to the remainder and a mistake in
+that letter would go unnoticed. Skipping those values keeps every letter counted.</p>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"WebApplication","name":"Container check digit calculator","applicationCategory":"BusinessApplication",
+  "operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+  "description":"Calculates and validates the ISO 6346 check digit of a shipping container number in the browser."},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Does a valid check digit mean the container exists?","acceptedAnswer":{"@type":"Answer","text":"No. It only means the number is well formed. A mistyped number can still pass by chance, and a valid number may belong to a container that is not on your shipment."}},
+  {"@type":"Question","name":"What do the four letters of a container number mean?","acceptedAnswer":{"@type":"Answer","text":"The first three letters are the owner code registered with the Bureau International des Containers (BIC). The fourth is the equipment category: U for freight containers, J for detachable freight container equipment and Z for trailers and chassis."}},
+  {"@type":"Question","name":"How is the container check digit calculated?","acceptedAnswer":{"@type":"Answer","text":"Letters are converted to values (A=10 to Z=38, skipping multiples of 11), each of the first ten characters is multiplied by 2 to the power of its position, the products are summed and divided by 11. The remainder is the check digit; 10 counts as 0."}}]}]}
+</script>
+<script>
+(function () {
+  var values = {}, v = 10;
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").forEach(function (ch) { if (v % 11 === 0) v++; values[ch] = v++; });
+  function digit(ten) {
+    var total = 0;
+    for (var i = 0; i < 10; i++) {
+      var ch = ten[i];
+      total += (/[A-Z]/.test(ch) ? values[ch] : +ch) * Math.pow(2, i);
+    }
+    return total % 11 % 10;
+  }
+  var input = document.getElementById("cdInput"), out = document.getElementById("cdResult");
+  function show(html, kind) { out.innerHTML = html; out.className = "calc-result" + (kind ? " " + kind : ""); }
+  input.addEventListener("input", function () {
+    var n = input.value.toUpperCase().replace(/[^A-Z0-9]/g, "");
+    if (!n) { show('Example: <code>CSQU305438</code> → check digit <strong>3</strong>.'); return; }
+    if (!/^[A-Z]{4}\d{0,7}$/.test(n)) { show("A container number is 4 letters followed by 7 digits.", "bad"); return; }
+    if (n.length < 10) { show("Keep typing: " + (10 - n.length) + " more character(s) for the check digit."); return; }
+    var d = digit(n);
+    if (n.length === 10) { show("Check digit: <strong>" + d + "</strong> → <code>" + n + d + "</code>", "ok"); return; }
+    if (+n[10] === d) show("<code>" + n + "</code> is valid.", "ok");
+    else show("<code>" + n + "</code> is not valid: the check digit should be <strong>" + d + "</strong>, not " + n[10] + ".", "bad");
+  });
+})();
+</script>
