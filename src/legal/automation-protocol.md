@@ -1,6 +1,6 @@
 # Annex 1: Automation and Responsibility Protocol
 
-Version 1.8-DRAFT · 29 September 2026
+Version 1.9-DRAFT · 3 October 2026
 
 This Protocol is an integral annex to the WardOps Terms of Service. It sets out in detail which actions the
 Platform performs on its own, which messages it sends automatically, which actions need an Authorised User, the
@@ -49,6 +49,7 @@ In the table below, "Automatic" shows whether the action is done inside the Plat
 | Reading document fields (text, OCR) | Reads numbers, vessel, port and dates from bills of lading, arrival notices and similar documents | Yes | No | Not needed | Check documents sent to review and conflict alerts |
 | Reading document fields (AI) | If text/OCR is not enough and the feature is on, sends the necessary part of the document to the AI provider | Yes (setting) | Data goes to a sub-processor | Account setting | Verify read values; switch the feature off if preferred |
 | Tracking data | Records events from carriers, terminals or data providers and calculates the cargo's stage | Yes | No | Not needed | Check the source system for critical events |
+| Document delivery request (Full Automation) | On imports worked with the original bill of lading, when the customs broker and consignee are known and arrival is 3 days or less away, opens a document delivery request; the request is passed to the partner courier | Yes (plan-based) | Yes: the courier collects the documents from the named person and delivers them to the recipient | Not needed | Check the pickup and delivery place, the person and the document list; cancel the request if needed |
 | Alerts and tasks | Opens tasks for delays, ETA shifts, free time, document deadlines, release, ISF/AMS matching and similar | Yes | No | Not needed | Review tasks, set thresholds to fit operations |
 | Demurrage/detention estimate | Calculates an estimated amount from the defined tariff | Yes | No | Not needed | Define tariffs correctly; rely on the carrier invoice for the final amount |
 | Reply to a status question | Builds a reply from recorded information for an email linked to a file and, if it passes the brakes in Section 3, sends it from the connected account | Yes | **Yes** | Not needed (can be switched off) | Keep file records (ETA, release, parties) correct and current; review sent replies |

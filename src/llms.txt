@@ -30,6 +30,9 @@
 - [Home]({{SITE_URL}}): Product overview, features, how it works and FAQ.
 - [Early access]({{SITE_URL}}#early-access): Request a walkthrough with your own shipments.
 - [Pricing]({{SITE_URL}}pricing/): Starter, Growth and Full Automation plans, monthly per team.
+- [WardOps Türkçe]({{SITE_URL}}tr/): Turkish homepage: documents, email and tracking in one file, customs document delivery by a partner courier, accounting export for Turkish accounting software.
+- [Fiyatlar]({{SITE_URL}}tr/fiyatlar/): Turkish pricing in Turkish lira, VAT included.
+- [Türkiye politikaları]({{SITE_URL}}tr/hukuki/hizmet-sozlesmesi/): Turkish master versions of the terms, privacy notice (KVKK), data processing agreement and automation protocol; data hosted in Turkey, customers' business relationships never used or shared.
 - [Connect Outlook or Microsoft 365]({{SITE_URL}}guides/connect-outlook/): Setup guide, including IT admin approval.
 - [Connect over IMAP]({{SITE_URL}}guides/connect-imap/): Setup guide for hosting-company mail, Gmail, Yandex, Yahoo, iCloud and Zoho.
 - [Container check digit calculator]({{SITE_URL}}tools/container-check-digit/): Free ISO 6346 check digit calculator with the formula explained.

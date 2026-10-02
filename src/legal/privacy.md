@@ -1,6 +1,6 @@
 # WardOps Privacy Policy
 
-Version 1.3-DRAFT · 30 September 2026
+Version 1.4-DRAFT · 3 October 2026
 
 This Policy explains how personal data is processed by the WardOps platform ("Platform") and by this website. It is
 prepared under Article 10 of the Turkish Personal Data Protection Law No. 6698 ("KVKK") and the related communiqué
@@ -33,7 +33,7 @@ will be added after legal review.]
 | Transaction security | Non-reversible hash of the password, session data, sign-in and failed sign-in records, IP address, browser information, the permanent account ID from Google or Apple |
 | Legal transaction | Records of acceptance of terms and policies (document, version, date, IP, browser) |
 | Audit log | Records of actions in the Platform (for example adding users, sending replies, generating documents, changing settings) |
-| Marketing | Only with separate permission: contact preference for newsletters and product news |
+| Marketing | Contact preference and opt-out record for promotional messages (only businesses that are WardOps customers and their Authorised Users) |
 | Feedback | Support requests, survey answers, interview notes and in-Platform feedback |
 
 We do not ask Authorised Users for special categories of personal data (health, biometrics, religion, political
@@ -56,7 +56,7 @@ created automatically while using the Platform, and support and contact channels
 | Proving acceptance of terms and policies, resolving disputes | (e) Establishing, exercising or protecting a right |
 | Answering support requests, measuring and improving service quality | (c) Performance of a contract, (f) Legitimate interest |
 | Legal obligations (tax, commercial and logging obligations, requests from authorities) | (a) Expressly provided by law, (ç) Legal obligation |
-| Product news and newsletter | Explicit consent (only if given; can be withdrawn at any time) |
+| Information, new-feature and offer messages about WardOps products and services (only to businesses we have a business relationship with and their Authorised Users; in line with commercial electronic message rules, can be refused at any time) | (f) Legitimate interest; consent / approval where the law requires it |
 
 ## 5. Transfers of Personal Data
 
@@ -72,14 +72,19 @@ related function is used:
 - **AI document reading:** depending on the business's preference, the necessary part of documents that text
   extraction and local OCR cannot read may be sent to an AI provider (Anthropic PBC, USA). The business can switch this
   off in the admin screen.
-- **Hosting:** [HOSTING PROVIDER AND COUNTRY].
+- **Hosting:** data is hosted on servers located in Turkey ([HOSTING PROVIDER]); encrypted backups are stored at:
+  [BACKUP STORAGE PROVIDER AND COUNTRY].
+- **Document delivery:** the contact name, address and phone number in a document delivery request opened by a
+  business are shared with the partner courier company.
 - **Website hosting:** this website is served by GitHub Pages (GitHub, Inc., USA); see Section 9.
 
 International transfers are made in line with Article 9 of KVKK and related secondary legislation; for countries
 without an adequacy decision, within the framework of standard contracts announced by the Personal Data Protection
 Board or other appropriate safeguards provided by law. [The transfer mechanism will be finalised after legal review.]
 
-5.3. We do not sell personal data, share it with third parties for advertising, or use it to train AI models, and
+5.3. We do not use the data of customers, consignees, shippers and other business relationships that businesses
+bring into the Platform for our own commercial purposes, we send these people no promotional messages and we do not
+share this data with other businesses. We do not sell personal data, share it with third parties for advertising, or use it to train AI models, and
 we never share it with any provider to train third-party or public AI models. Work to fix and improve the
 Service's reading rules is carried out only within our own infrastructure; the data is not shown to other
 businesses and is not given to external AI tools.

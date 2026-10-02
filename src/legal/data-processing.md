@@ -1,6 +1,6 @@
 # Annex 2: Data Processing Agreement
 
-Version 1.5-DRAFT · 30 September 2026
+Version 1.7-DRAFT · 3 October 2026
 
 This Data Processing Agreement ("DPA") is an integral annex to the WardOps Terms of Service. It sets out the
 rights and obligations of the parties to the Terms of Service regarding the processing of Personal Data contained
@@ -20,11 +20,11 @@ controller; this data is covered by the Privacy Policy.
 | Element | Description |
 |---|---|
 | Subject | Running the Customer's ocean transport and logistics operations through the Platform |
-| Nature | Recording, storing, organising, matching, classifying, reading (text, OCR, AI), generating documents, passing on for the Customer (automatic replies and notices defined in Annex 1, and sends by user action), deleting |
+| Nature | Recording, storing, organising, matching, classifying, reading (text, OCR, AI), generating documents, passing on for the Customer (automatic replies and notices defined in Annex 1, and sends by user action), passing to accounting software the Customer connects, collecting and evaluating job applications, passing document delivery requests to the partner courier, deleting |
 | Purpose | Only to provide, secure and support the Service under the Terms of Service |
 | Duration | For the term of the Terms of Service and the deletion periods in Section 9 of this DPA |
-| Data subjects | The Customer's customers, shippers, consignees, notify parties, truckers, customs brokers, agents, carrier and terminal staff, and other people appearing in email correspondence |
-| Data categories | Identity (name, surname, title), contact (email, phone, address), correspondence content and attachments, personal data appearing in shipment and document details, contact persons on customer records |
+| Data subjects | The Customer's customers, shippers, consignees, notify parties, truckers, customs brokers, agents, carrier and terminal staff, and other people appearing in email correspondence, candidates applying to the Customer's job postings |
+| Data categories | Identity (name, surname, title), contact (email, phone, address), correspondence content and attachments, personal data appearing in shipment and document details, contact persons on customer records, candidates' CVs, cover letters, interview and evaluation details, the contact name, address and phone number in a document delivery request |
 | Special categories | Not intended to be processed; the Customer must not transfer such data to the Platform |
 
 ## 3. Customer Obligations
@@ -73,7 +73,7 @@ additional cost.
 those in this DPA, and is responsible to the Customer for sub-processors' actions within the framework of the
 Terms of Service.
 
-5.4. Integrations the Customer chooses to connect itself (for example its own Microsoft 365 or Gmail account) are
+5.4. Integrations the Customer chooses to connect itself (for example its own Microsoft 365, Gmail or Paraşüt account) are
 subject to the Customer's contract with that provider; these providers are not sub-processors of the Service
 Provider.
 
@@ -146,7 +146,9 @@ taken as the basis.
 
 | Sub-processor | Service | Location | When |
 |---|---|---|---|
-| [HOSTING PROVIDER] | Servers, database and file storage | [COUNTRY] | Always |
+| [HOSTING PROVIDER] | Servers, database and file storage | Turkey | Always |
+| [BACKUP STORAGE PROVIDER] | Storage of encrypted backups | [COUNTRY] | Always |
+| [PARTNER COURIER COMPANY] | Collecting and delivering original documents | Turkey | When the Customer opens a document delivery request, or when the request is opened on Full Automation |
 | Anthropic PBC | AI reading of documents that text and OCR cannot read | USA | Unless the Customer switches the feature off, and only when needed |
 | Google LLC | Sign in with Google (authentication) | USA | If the user chooses Google sign-in |
 | Apple Inc. | Sign in with Apple (authentication) | USA | If the user chooses Apple sign-in |

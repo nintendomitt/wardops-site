@@ -72,6 +72,28 @@ LEGAL = [
      "WardOps Privacy Policy: what personal data we process, why, where it goes and your rights. Draft."),
 ]
 
+#: Türkçe hukuki metinler (/tr/hukuki/<adres>/): (adres, kaynak, kısa ad, açıklama, İngilizce karşılığı).
+#: Ana metinler backend/legal/ altındadır; depo birlikte derlenirken src/tr/hukuki/'ye kendiliğinden kopyalanır,
+#: yalnızca site deposu derlenirken (GitHub Actions) mevcut kopyalar kullanılır.
+LEGAL_TR = [
+    ("hizmet-sozlesmesi", "hizmet-sozlesmesi.md", "Hizmet Sözleşmesi",
+     "WardOps Hizmet Sözleşmesi ve Kullanım Koşulları: hizmetin kapsamı, ücretler, veri, sorumluluk ve fesih. Taslak.",
+     "legal/terms/"),
+    ("gizlilik", "kvkk-aydinlatma.md", "Gizlilik ve KVKK Aydınlatma Metni",
+     "WardOps Gizlilik Politikası ve KVKK Aydınlatma Metni: hangi kişisel veriler, hangi amaçla, kimlerle ve haklarınız. Taslak.",
+     "legal/privacy/"),
+    ("otomasyon-protokolu", "otomasyon-sorumluluk-protokolu.md", "Otomasyon ve Sorumluluk Protokolü",
+     "WardOps'un otomatik yaptıkları, frenleri, sizin onayınızı gerektirenler ve sorumluluk paylaşımı. Taslak.",
+     "legal/automation-protocol/"),
+    ("veri-isleme-sozlesmesi", "veri-isleme-sozlesmesi.md", "Veri İşleme Sözleşmesi",
+     "WardOps Veri İşleme Sözleşmesi: roller, alt işleyenler, güvenlik tedbirleri ve silme. Taslak.",
+     "legal/data-processing/"),
+    ("kayit-protokolu", "kayit-geri-bildirim-protokolu.md", "Kayıtlar ve Geri Bildirim Protokolü",
+     "WardOps'un tuttuğu işlem kayıtları, kullanım verileri ve geri bildirim: kim erişir, ne kadar saklanır. Taslak.",
+     "legal/records-and-feedback/"),
+]
+LEGAL_MASTER = ROOT.parent / "backend" / "legal"
+
 TITLE_MAX, DESCRIPTION_MAX = 65, 160
 
 
@@ -237,6 +259,22 @@ def build(strict: bool = False) -> int:
         pages.append((f"legal/{slug}/", target, True))
         legal_links.append((title, f"{site_url}legal/{slug}/", description))
 
+    tr_template = (SRC / "tr" / "hukuki.html").read_text(encoding="utf-8")
+    for slug, source, short_title, description, en_path in LEGAL_TR:
+        copy = SRC / "tr" / "hukuki" / source
+        if LEGAL_MASTER.is_dir():   # ana metin değiştiyse sitedeki kopya da güncellenir
+            master = (LEGAL_MASTER / source).read_text(encoding="utf-8")
+            if not copy.exists() or copy.read_text(encoding="utf-8") != master:
+                copy.write_text(master, encoding="utf-8")
+                print(f"Türkçe hukuki metin eşitlendi: {source}")
+        page = fill(tr_template, {**base, "ROOT": "../../../", "DOC_TITLE": html.escape(short_title),
+                                  "DOC_DESCRIPTION": html.escape(description), "DOC_PATH": f"tr/hukuki/{slug}/",
+                                  "EN_PATH": en_path, "DOC_BODY": render_markdown(copy.read_text(encoding="utf-8"))})
+        target = DIST / "tr" / "hukuki" / slug / "index.html"
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(page, encoding="utf-8")
+        pages.append((f"tr/hukuki/{slug}/", target, True))
+
     guide_template = (SRC / "guide.html").read_text(encoding="utf-8")
     for slug, source, short_title, description in GUIDES:
         body = fill(render_markdown((SRC / "guides" / source).read_text(encoding="utf-8")), base)
@@ -295,6 +333,24 @@ def build(strict: bool = False) -> int:
     (DIST / "pricing" / "index.html").write_text(pricing, encoding="utf-8")
     pages.append(("pricing/", DIST / "pricing" / "index.html", pricing_confirmed))
 
+    # Türkçe sayfalar: /tr/ ve /tr/fiyatlar/ (TL fiyatlar). İkon tanımları İngilizce ana sayfadan alınır.
+    index_src = (SRC / "index.html").read_text(encoding="utf-8")
+    icon_defs = re.search(r'<svg width="0" height="0".*?</svg>', index_src, re.S).group(0)
+    extra = re.search(r'<symbol id="i-x".*?</symbol>', (SRC / "pricing.html").read_text(encoding="utf-8"), re.S)
+    if extra:
+        icon_defs = icon_defs[:-len("</svg>")] + "  " + extra.group(0) + "\n</svg>"
+    tr_home = fill((SRC / "tr" / "index.html").read_text(encoding="utf-8"),
+                   {**base, "ROOT": "../", "ICON_DEFS": icon_defs})
+    (DIST / "tr").mkdir(parents=True, exist_ok=True)
+    (DIST / "tr" / "index.html").write_text(tr_home, encoding="utf-8")
+    pages.append(("tr/", DIST / "tr" / "index.html", True))
+    tr_pricing = fill((SRC / "tr" / "fiyatlar.html").read_text(encoding="utf-8"),
+                      {**base, "ROOT": "../../", "ICON_DEFS": icon_defs,
+                       "PRICING_ROBOTS": "index, follow" if pricing_confirmed else "noindex, follow"})
+    (DIST / "tr" / "fiyatlar").mkdir(parents=True, exist_ok=True)
+    (DIST / "tr" / "fiyatlar" / "index.html").write_text(tr_pricing, encoding="utf-8")
+    pages.append(("tr/fiyatlar/", DIST / "tr" / "fiyatlar" / "index.html", pricing_confirmed))
+
     not_found = fill((SRC / "404.html").read_text(encoding="utf-8"), {**base, "ROOT": "/"})
     (DIST / "404.html").write_text(not_found, encoding="utf-8")
     pages.append(("404.html", DIST / "404.html", False))
@@ -348,8 +404,9 @@ def audit(pages, site_url: str):
             problems.append(f"{name}: meta description yok")
         elif len(html.unescape(description.group(1))) > DESCRIPTION_MAX:
             problems.append(f"{name}: açıklama {len(html.unescape(description.group(1)))} karakter (en fazla {DESCRIPTION_MAX})")
-        if '<html lang="en"' not in text:
-            problems.append(f"{name}: <html lang=\"en\"> yok")
+        lang = "tr" if path.startswith("tr/") else "en"
+        if f'<html lang="{lang}"' not in text:
+            problems.append(f"{name}: <html lang=\"{lang}\"> yok")
         robots = re.search(r'<meta name="robots" content="([^"]*)"', text)
         if indexable:
             canonical = re.search(r'<link rel="canonical" href="([^"]*)"', text)

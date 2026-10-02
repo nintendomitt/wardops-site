@@ -1,6 +1,6 @@
 # WardOps Terms of Service
 
-Version 1.5-DRAFT · 30 September 2026
+Version 1.7-DRAFT · 3 October 2026
 
 These Terms govern the rights and obligations between the business that uses the WardOps platform and the
 company that operates it. The annexes to these Terms (Annex 1 Automation and Responsibility Protocol;
@@ -53,7 +53,8 @@ Capitalised terms in these Terms have the following meanings:
   status questions and notices for an ETA change, vessel arrival and pickup readiness). The Customer can switch
   Automatic Sending off.
 - **Integration:** external services connected to the Platform with the Customer's authorisation (for example
-  Microsoft 365 / Outlook, Gmail, tracking data providers, ISF providers, sign-in with Google or Apple).
+  Microsoft 365 / Outlook, Gmail, tracking data providers, ISF providers, accounting software such as Paraşüt,
+  sign-in with Google or Apple).
 - **Third-Party Service:** services not controlled by the Service Provider and used through Integrations or
   sub-processors (carrier and terminal systems, email providers, AI providers, hosting providers, etc.).
 - **AI Feature:** processing performed with third-party AI models, such as reading data from documents,
@@ -240,6 +241,31 @@ restriction or revocation of authorisation in a third party's service is not the
 appear to be operational; that filters are not perfect; and that some relevant emails may not be processed or
 some unrelated emails may be processed.
 
+9.4. **Accounting export:** When the Customer connects accounting software (for example Paraşüt), the documents it
+chooses to send and the related account details (name, tax number, email, address) are passed to that software
+on the Customer's instruction; the accounting export file is downloaded by the Customer and imported into its own
+software. A sent document is created there as a sales invoice; issuing official documents such as e-invoices or
+e-archive invoices, and the correctness of VAT rates, exemptions and other tax treatment, remain the Customer's
+responsibility. The central bank exchange rate used in documents is for information.
+
+9.5. **Recruiting:** When the Customer uses the Platform for job postings and applications, the Customer is the
+data controller for candidates' personal data. The privacy notice on the application page is a template; the
+Customer is responsible for its own notice obligations, for keeping data only as long as needed and for deleting
+it at the candidate's request. The Service Provider processes candidate data only on the Customer's behalf and
+does not send candidate data to job platforms (for example LinkedIn or Kariyer.net).
+
+9.6. **Document delivery service:** The Customer may open a request through the Platform for original documents (for
+example the original bill of lading, commercial invoice or certificate of origin) to be delivered; on the Full
+Automation plan the Platform opens the request itself when the conditions are met. Requests are carried out through
+the Service Provider's partner courier or transport companies: the documents are collected from the place and the
+authorised person the Customer specifies and delivered to the named recipient (for example a customs broker, port
+or agent). Documents do not come to the Service Provider's office and are not stored by the Service Provider. The
+people who hand over and receive the documents, and the times, are recorded and a handover record is issued.
+Delivery times are subject to the courier company's terms of service; the Service Provider's liability for loss of,
+damage to or delay of documents is limited as set out in Section 18, and the Service Provider exercises its rights
+against the courier company for the Customer's benefit. The document delivery fee and scope are set out in the order
+form or on the pricing page.
+
 ## 10. Generated Documents and Templates
 
 10.1. The Platform generates arrival notices, delivery orders, cargo releases and similar documents using the
@@ -283,6 +309,11 @@ Provider may suspend the Service [15] days after written notice.
 
 12.3. During trial or free periods the Service is provided "as is", and the targets in Section 11 do not apply.
 
+12.4. **Annual billing:** If the Customer chooses annual billing, the plan fee is invoiced one year in advance and the
+discount stated on the pricing page (20%) applies. Additional user fees are not discounted and are calculated at the
+monthly price. If the plan is upgraded during the annual term, the difference is invoiced pro rata for the remaining
+period. A refund of fees paid when the Customer terminates before the annual term ends [is to be determined].
+
 ## 13. Intellectual Property
 
 13.1. All intellectual and industrial property rights in the Platform, software, interface, ready-made templates,
@@ -300,6 +331,19 @@ Service.
 
 13.4. Suggestions and feedback from the Customer or Authorised Users may be used to improve the Service without
 any fee or obligation. Parts of feedback that contain personal data are processed under Annex 3.
+
+13.5. **Protection of the Customer's business relationships:** The Service Provider does not use the customers,
+consignees, shippers, agents, suppliers and other business relationships contained in Customer Data for its own
+commercial purposes; it sends these people and companies no offers, promotions or other communications apart from
+notices sent on the Customer's behalf, and does not use them to build direct business relationships that bypass the
+Customer. Customer Data is not shared with other customers, in particular the Customer's competitors; one customer's
+data is never shown to other customers.
+
+13.6. **The Service Provider's promotional messages:** The Service Provider may send the Customer and its Authorised
+Users information, new-feature and offer messages about the Service. The Customer and Authorised Users may refuse
+these messages at any time free of charge (unsubscribe); refusal does not cover mandatory notices about how the
+Service operates. The Service Provider does not send promotional messages to the Customer's customers or business
+relationships (13.5).
 
 ## 14. Confidentiality
 
@@ -333,6 +377,9 @@ accounts, and for Authorised Users using the Platform securely.
 
 16.3. When the Service Provider becomes aware of a Security Incident affecting Customer Data, it informs the
 Customer within the time set out in Annex 2 and takes reasonable measures to limit its effects.
+
+16.4. **Hosting:** Customer Data is hosted on servers located in Turkey. Where encrypted backups are stored is stated
+in the sub-processor list in Annex 2.
 
 ## 17. Disclaimer of Warranties
 

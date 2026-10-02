@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WardOps — Forwarder'lar için Belge, E-posta ve Takip</title>
+<meta name="description" content="WardOps, deniz yolu forwarder'ları için operasyon yazılımı: belge, e-posta ve konteyner takibi tek dosyada; bugün neye bakmanız gerektiğini gösterir.">
+<link rel="canonical" href="{{SITE_URL}}tr/">
+<link rel="alternate" hreflang="tr" href="{{SITE_URL}}tr/">
+<link rel="alternate" hreflang="en" href="{{SITE_URL}}">
+<link rel="alternate" hreflang="x-default" href="{{SITE_URL}}">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#FBFBF9">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="{{ROOT}}assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="{{ROOT}}assets/favicon-48.png" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="{{ROOT}}assets/apple-touch-icon.png">
+<link rel="manifest" href="{{ROOT}}site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="WardOps">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:url" content="{{SITE_URL}}tr/">
+<meta property="og:title" content="WardOps — Belge, e-posta ve takip tek dosyada">
+<meta property="og:description" content="Deniz yolu forwarder'ları için operasyon yazılımı. Her belge okunup dosyaya işlenir, her e-posta doğru dosyaya bağlanır, her ETA değişikliği kaynağıyla görünür.">
+<meta property="og:image" content="{{SITE_URL}}assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="{{ROOT}}assets/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "{{SITE_URL}}tr/#webpage",
+      "url": "{{SITE_URL}}tr/",
+      "name": "WardOps — Forwarder'lar için belge, e-posta ve takip",
+      "inLanguage": "tr",
+      "isPartOf": {"@id": "{{SITE_URL}}#website"},
+      "about": {"@id": "{{SITE_URL}}#software"}
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "{{SITE_URL}}tr/#software",
+      "name": "WardOps",
+      "url": "{{SITE_URL}}tr/",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Freight forwarder operasyon yazılımı",
+      "operatingSystem": "Web tarayıcısı",
+      "inLanguage": "tr",
+      "offers": {"@type": "AggregateOffer", "priceCurrency": "TRY", "lowPrice": "1999", "highPrice": "5999", "offerCount": "3",
+                 "url": "{{SITE_URL}}tr/fiyatlar/"},
+      "featureList": [
+        "E-postalar B/L, booking ve konteyner numarasıyla dosyaya bağlanır",
+        "Durum sorularına dosyadaki bilgiyle otomatik yanıt (Türkçe ve İngilizce)",
+        "Belge okuma: metin, OCR ve gerektiğinde yapay zekâ",
+        "Orijinal gümrük evrakının anlaşmalı kuryeyle teslim alınıp gümrük müşavirine teslimi",
+        "Fatura ve borç dekontlarının Paraşüt'e aktarımı",
+        "Logo, Zirve, Netsis ve Uyumsoft için muhasebe aktarım dosyası (TCMB kuru ve KDV ile)"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "{{SITE_URL}}tr/#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "WardOps Paraşüt ile nasıl çalışır?",
+         "acceptedAnswer": {"@type": "Answer", "text": "WardOps'ta kestiğiniz fatura ve borç dekontları tek tıkla Paraşüt hesabınıza satış faturası olarak aktarılır. Cari, vergi numarasıyla bulunur ya da açılır; yabancı para faturada TCMB kuru kullanılır. e-Fatura ve e-Arşiv belgesini Paraşüt'te siz düzenlersiniz."}},
+        {"@type": "Question", "name": "Logo, Zirve, Netsis veya Uyumsoft kullanıyorum. Aktarım nasıl olur?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Muhasebe ekranından seçtiğiniz tarih aralığındaki belgeleri tek bir Excel aktarım dosyası olarak alırsınız: kalem, cari, vergi numarası, döviz, TCMB kuru, TL karşılığı ve KDV ayrı sütunlardadır. Dosya programınızın Excel aktarımıyla içe alınır. Bu programlara doğrudan bağlantı yakında."}},
+        {"@type": "Question", "name": "Fiyatlar KDV dahil mi?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Evet. Türkiye fiyatları Türk lirası ve KDV dahildir; kurulum ve başka sistemden geçiş her pakette ücretsizdir."}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">İçeriğe geç</a>
+{{ICON_DEFS}}
+
+<header class="site-header">
+  <div class="container bar">
+    <a class="brand" href="{{SITE_URL}}tr/" aria-label="WardOps ana sayfa">
+      <svg class="brand-mark" aria-hidden="true"><use href="#mark"/></svg><span>Ward<span class="ops">Ops</span></span>
+    </a>
+    <nav class="nav" aria-label="Ana menü">
+      <a href="#neden">Neden WardOps</a>
+      <a href="#evrak">Gümrük evrakı</a>
+      <a href="#kontrol">Kontrol</a>
+      <a href="fiyatlar/">Fiyatlar</a>
+      <a href="#sss">SSS</a>
+    </nav>
+    <div class="bar-actions">
+      <a class="lang-switch" href="{{SITE_URL}}" hreflang="en" lang="en" aria-label="Switch to English (İngilizce sürüm)">
+        <svg aria-hidden="true"><use href="#i-globe"/></svg><span class="lang-long">English</span><span class="lang-short">EN</span></a>
+      <a class="btn btn-ghost btn-small" href="{{APP_URL}}">Giriş yap</a>
+      <a class="btn btn-primary btn-small" href="#erken-erisim">Erken erişim</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Deniz yolu forwarder'ları için</p>
+        <h1 id="hero-title">Belge, E&#8209;Posta ve Takip Tek Dosyada.</h1>
+        <p class="lead">WardOps her PDF'i, her e-postayı ve her hat güncellemesini doğru dosyaya koyar; bugün neye bakmanız gerektiğini gösterir.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#erken-erisim">Erken erişim isteyin</a>
+          <a class="btn btn-ghost" href="#neden">Nasıl çalıştığını görün</a>
+        </div>
+        <p class="works-with">Birlikte çalışır
+          <span class="brand-chip"><img src="{{ROOT}}assets/brands/gmail.svg" alt="" width="20" height="15">Gmail</span>
+          <span class="brand-chip"><img src="{{ROOT}}assets/brands/outlook.svg" alt="" width="18" height="17">Outlook</span>
+        </p>
+      </div>
+
+      <figure class="flow" aria-label="Örnek: bir belge, bir e-posta ve bir takip güncellemesi aynı dosyaya düşer">
+        <div class="sources">
+          <div class="source s-doc">
+            <span class="ico"><svg aria-hidden="true"><use href="#i-doc"/></svg></span>
+            <div><b>Konşimento</b><small>PDF okundu, dosyaya işlendi</small></div>
+          </div>
+          <div class="source s-mail">
+            <span class="ico"><svg aria-hidden="true"><use href="#i-mail"/></svg></span>
+            <div><b>Müşteri e-postası</b><small>“Yük nerede?”</small></div>
+          </div>
+          <div class="source s-track">
+            <span class="ico"><svg aria-hidden="true"><use href="#i-ship"/></svg></span>
+            <div><b>Hat güncellemesi</b><small>ETA 6 gün kaydı</small></div>
+          </div>
+        </div>
+        <svg class="merge" viewBox="0 0 40 240" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 40 C 22 40, 18 120, 40 120 M0 120 H40 M0 200 C 22 200, 18 120, 40 120" fill="none" stroke="#B9C4CF" stroke-width="1.5" stroke-dasharray="3 4" vector-effect="non-scaling-stroke"/>
+        </svg>
+        <article class="ship-card">
+          <header class="sc-head">
+            <span class="mono sc-no">OI-26100014</span><span class="pill pill-warn">Tahliye edildi</span>
+          </header>
+          <p class="sc-route">Mersin <svg aria-hidden="true"><use href="#i-arrow"/></svg> New York</p>
+          <dl class="sc-facts">
+            <div><dt>ETA</dt><dd>18 Eki <span class="shift" title="ETA toplam 17 gün kaydı">+17g</span></dd></div>
+            <div><dt>Son ücretsiz gün</dt><dd>27 Eki</dd></div>
+          </dl>
+          <p class="sc-attn"><i class="dot crit" aria-hidden="true"></i>Ücretsiz süre 2 gün sonra bitiyor</p>
+        </article>
+        <figcaption class="sr-only">Konşimento, müşteri e-postası ve hat ETA güncellemesini birleştiren örnek dosya.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="neden" aria-labelledby="neden-title">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Neden WardOps</p>
+        <h2 id="neden-title">Ekibinizin Gün Boyu Yaptığı Üç İş. Tek Dosya.</h2>
+        <p class="section-lead">Operasyon ekipleri çoğu zaman bir program, ortak bir posta kutusu, hat siteleri ve PDF dolu bir
+          klasör arasında gidip gelir. Diğer araçlar kaydı tutar; WardOps takibi de yapar: geleni okur, doğru dosyaya koyar,
+          rutin soruları yanıtlar ve sıradaki işi söyler.</p>
+      </div>
+      <div class="pillars">
+        <article class="pillar">
+          <span class="p-ico p-doc"><svg aria-hidden="true"><use href="#i-doc"/></svg></span>
+          <h3>Belgeler: Her PDF Okunur ve İşlenir</h3>
+          <p>Konşimento, arrival notice ve booking teyidi okunur, doğru dosyaya bağlanır ve dosyadaki bilgiyle karşılaştırılır.
+            Ekibinizin girdiği değerin üzerine sessizce yazılmaz.</p>
+          <ul class="ticks">
+            <li>HS koduna ve son tarihe göre eksik belgeler göreve döner</li>
+            <li>Arrival notice, release, delivery order ve POD kendi antetinizle</li>
+          </ul>
+        </article>
+        <article class="pillar">
+          <span class="p-ico p-mail"><svg aria-hidden="true"><use href="#i-mail"/></svg></span>
+          <h3>E&#8209;Posta: Her Mesaj Doğru Dosyada</h3>
+          <p>E-postalar B/L, booking ve konteyner numarasıyla dosyaya bağlanır. Durum soruları dosyadaki bilgiyle otomatik
+            yanıtlanır; kimse yanıt için hat sitelerinde arama yapmaz.</p>
+          <ul class="ticks">
+            <li>Türkçe veya İngilizce yanıt, otomatik gönderim</li>
+            <li>CC'deki kişiler ilgili firmanın kişi listesine eklenir</li>
+          </ul>
+        </article>
+        <article class="pillar">
+          <span class="p-ico p-track"><svg aria-hidden="true"><use href="#i-ship"/></svg></span>
+          <h3>Takip: Her Değişiklik Kaynağıyla</h3>
+          <p>Hareketler ve ETA değişiklikleri tek zaman çizelgesinde, nereden geldiğiyle görünür. Belge gibi zayıf bir kaynak
+            hattan gelen bilginin üzerine yazmaz.</p>
+          <ul class="ticks">
+            <li>Kayan ETA ve kaçan kalkış erkenden işaretlenir</li>
+            <li>Son ücretsiz gün, demuraj ve detention tahmini</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="evrak" aria-labelledby="evrak-title">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Gümrük Evrakı</p>
+        <h2 id="evrak-title">Orijinal Evrak, Kayıtlı Teslimle Gümrük Müşavirinize</h2>
+        <p class="section-lead">Konşimento aslı ve diğer orijinal evrak, dosyadan açtığınız taleple anlaşmalı kuryemiz tarafından
+          alıcınızdan teslim alınır ve gümrük müşavirinize teslim edilir. Evrak bize gelmez; her adımda kimin teslim aldığı
+          ve ne zaman teslim edildiği dosyada kayıtlıdır.</p>
+      </div>
+      <ol class="steps four">
+        <li><h3>Talep Dosyadan Açılır</h3>
+          <p>Alıcı ve gümrük müşaviri dosyadaki kayıtlardan gelir; evrak listesini kontrol edip onaylarsınız.</p></li>
+        <li><h3>Kurye Atanır</h3>
+          <p>Talep anlaşmalı kurye firmasına iletilir; takip numarası dosyaya işlenir.</p></li>
+        <li><h3>Evrak Teslim Alınır</h3>
+          <p>Evrakı teslim alan yetkilinin adı ve saati kaydedilir.</p></li>
+        <li><h3>Müşavire Teslim Edilir</h3>
+          <p>Teslim alan kişi kaydedilir, imzalı teslim tutanağı dosyada hazırdır.</p></li>
+      </ol>
+      <p class="assure-note"><b>Full Automation</b> paketinde ithalat dosyasında konşimento aslıyla çalışılıyorsa, alıcı ve
+        gümrük müşaviri belliyse ve varışa üç gün kaldıysa talep kendiliğinden açılır; ekibiniz yalnızca kontrol eder.</p>
+    </div>
+  </section>
+
+  <section class="section warm" id="kontrol" aria-labelledby="kontrol-title">
+    <div class="container assure">
+      <div class="assure-head">
+        <p class="eyebrow">Kontrol Sizde</p>
+        <h2 id="kontrol-title">Otomasyon, Sizin Kurallarınızla</h2>
+        <p class="section-lead">WardOps rutin soruları yanıtlar ve yalnızca dosyada kayıtlı bilgiyi kullanır. Yanıtlayamadığı
+          her konu ekibinize görev olarak düşer.</p>
+        <ul class="assure-points">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Her gönderim kayıt altında</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Firma bazında tek ayarla kapatılabilir</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Yanıtlar yalnızca dosyadaki bilgiden</li>
+        </ul>
+        <p class="assure-note">Sorumluluk paylaşımının ayrıntıları:
+          <a href="{{ROOT}}tr/hukuki/otomasyon-protokolu/">Otomasyon ve Sorumluluk Protokolü</a></p>
+      </div>
+      <div class="assure-grid">
+        <article class="assure-card"><span class="c-ico"><svg aria-hidden="true"><use href="#i-check"/></svg></span>
+          <h3>Yalnızca Dosyadaki Bilgiyle</h3>
+          <p>Yanıtlar ve bildirimler dosyada kayıtlı bilgiden oluşturulur. Hiçbir bilgi tahmin edilmez; e-postalarınızı yapay
+            zekâ yazmaz.</p></article>
+        <article class="assure-card"><span class="c-ico"><svg aria-hidden="true"><use href="#i-hand"/></svg></span>
+          <h3>Kontrollü Otomatik Gönderim</h3>
+          <p>Ekip içi yazışmalara ve otomatik yanıtlara cevap verilmez, aynı müşteriye tekrar gönderim yapılmaz. Otomatik
+            gönderim tek ayarla kapatılır.</p></article>
+        <article class="assure-card"><span class="c-ico"><svg aria-hidden="true"><use href="#i-lock"/></svg></span>
+          <h3>Verileriniz Ayrı ve Şifreli</h3>
+          <p>Her firmanın verisi ayrı tutulur; yönetici, operasyon ve izleyici rolleri vardır. E-posta ve muhasebe bağlantı
+            bilgileri şifreli saklanır.</p></article>
+        <article class="assure-card"><span class="c-ico"><svg aria-hidden="true"><use href="#i-spark"/></svg></span>
+          <h3>Yapay Zekâ Yalnızca Gerektiğinde</h3>
+          <p>Belgeler önce metin ve OCR ile okunur; yapay zekâ yalnızca bunlar yetmediğinde devreye girer ve kapatılabilir.
+            Verileriniz yapay zekâ modellerinin eğitiminde kullanılmaz.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tint" id="sss" aria-labelledby="sss-title">
+    <div class="container narrow-wrap">
+      <div class="section-head">
+        <p class="eyebrow">SSS</p>
+        <h2 id="sss-title">Forwarder'ların Sorduğu Sorular</h2>
+      </div>
+      <div class="faq">
+        <details><summary>WardOps Paraşüt ile nasıl çalışır?</summary>
+          <p>WardOps'ta kestiğiniz fatura ve borç dekontları tek tıkla Paraşüt hesabınıza satış faturası olarak aktarılır. Cari,
+            vergi numarasıyla bulunur ya da açılır; yabancı para faturada TCMB kuru kullanılır. e-Fatura ve e-Arşiv belgesini
+            Paraşüt'te siz düzenlersiniz.</p></details>
+        <details><summary>Logo, Zirve, Netsis veya Uyumsoft kullanıyorum. Aktarım nasıl olur?</summary>
+          <p>Muhasebe ekranından seçtiğiniz tarih aralığındaki belgeleri tek bir Excel aktarım dosyası olarak alırsınız: kalem, cari,
+            vergi numarası, döviz, TCMB kuru, TL karşılığı ve KDV ayrı sütunlardadır. Dosya programınızın Excel aktarımıyla içe
+            alınır. Bu programlara doğrudan bağlantı yakında.</p></details>
+        <details><summary>Fiyatlar KDV dahil mi?</summary>
+          <p>Evet. Türkiye fiyatları Türk lirası ve KDV dahildir; kurulum ve başka sistemden geçiş her pakette ücretsizdir.
+            <a href="fiyatlar/">Fiyatlar</a></p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-section" id="erken-erisim" aria-labelledby="cta-title">
+    <div class="container cta-grid">
+      <div>
+        <p class="eyebrow on-dark">Erken erişim</p>
+        <h2 id="cta-title">WardOps'u Kendi Dosyalarınızla Görün</h2>
+        <p class="lead-sm">Küçük bir grup deniz yolu ekibiyle başlıyoruz. Ekibinizi kısaca anlatın; birkaç gerçek dosyanızla
+          kurulum yapıp size gösterelim.</p>
+        <p class="contact-line">E-postayı mı tercih edersiniz? <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a></p>
+      </div>
+      <form class="form" id="accessForm" action="{{FORM_ACTION}}" method="post" data-endpoint="{{FORM_ENDPOINT}}"
+            data-email="{{CONTACT_EMAIL}}" novalidate>
+        <div class="field"><label for="f-name">Adınız</label><input id="f-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="f-email">İş e-postası</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="f-company">Firma</label><input id="f-company" name="company" autocomplete="organization" required></div>
+        <div class="field"><label for="f-volume">Aylık FCL konteyner</label>
+          <select id="f-volume" name="volume">
+            <option value="">Seçin (isteğe bağlı)</option>
+            <option>50'nin altı</option><option>50–200</option><option>200–1.000</option><option>1.000'in üzeri</option>
+          </select></div>
+        <div class="field full"><label for="f-note">Bilmemiz gereken bir şey var mı? <span class="opt">(isteğe bağlı)</span></label>
+          <textarea id="f-note" name="note" rows="3" placeholder="Hatlar, kullandığınız programlar, ekibi yavaşlatan işler"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="f-web">Web sitesi</label><input id="f-web" name="website" tabindex="-1" autocomplete="off"></div>
+        <p class="consent full">Bu bilgileri yalnızca WardOps hakkında sizinle iletişim için kullanırız. <a href="{{ROOT}}tr/hukuki/gizlilik/">Gizlilik ve KVKK Aydınlatma Metni</a>.</p>
+        <div class="full form-foot">
+          <button class="btn btn-primary" type="submit">Erken erişim isteyin</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container foot-grid">
+    <div class="foot-brand">
+      <a class="brand" href="{{SITE_URL}}tr/"><svg class="brand-mark" aria-hidden="true"><use href="#mark"/></svg><span>Ward<span class="ops">Ops</span></span></a>
+      <p>Deniz yolu forwarder'ları için belge, e-posta ve takip tek dosyada. Erken erişim aşamasındadır; özellikler değişebilir.</p>
+      <p><a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a></p>
+    </div>
+    <nav aria-label="Hukuki" class="foot-links">
+      <p class="foot-title">Hukuki</p>
+      <a href="{{ROOT}}tr/hukuki/hizmet-sozlesmesi/">Hizmet sözleşmesi</a>
+      <a href="{{ROOT}}tr/hukuki/gizlilik/">Gizlilik ve KVKK</a>
+      <a href="{{ROOT}}tr/hukuki/veri-isleme-sozlesmesi/">Veri işleme sözleşmesi</a>
+    </nav>
+    <nav aria-label="Sayfa" class="foot-links">
+      <p class="foot-title">Ürün</p>
+      <a href="#neden">Neden WardOps</a>
+      <a href="#evrak">Gümrük evrakı</a>
+      <a href="#kontrol">Kontrol</a>
+      <a href="fiyatlar/">Fiyatlar</a>
+      <a href="#sss">SSS</a>
+      <a href="{{SITE_URL}}" hreflang="en" lang="en">English</a>
+    </nav>
+  </div>
+  <div class="container foot-bottom"><p>© {{YEAR}} WardOps</p>
+    <p class="tm">Gmail, Google LLC'nin; Microsoft 365 ve Outlook, Microsoft şirketler grubunun markalarıdır. Paraşüt, Logo, Netsis,
+      Zirve ve Uyumsoft ilgili şirketlerin markalarıdır. WardOps bu şirketlerle bağlantılı değildir ve onlarca onaylanmamıştır.</p></div>
+</footer>
+
+<script src="{{ROOT}}assets/site.js" defer></script>
+</body>
+</html>

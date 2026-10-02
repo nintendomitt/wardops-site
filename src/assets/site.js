@@ -5,6 +5,19 @@
   var status = document.getElementById("formStatus");
   var endpoint = form.getAttribute("data-endpoint");
   var email = form.getAttribute("data-email");
+  // Türkçe sayfada (lang="tr") mesajlar Türkçe.
+  var tr = document.documentElement.lang === "tr";
+  var T = tr ? {
+    missing: "Lütfen adınızı, geçerli bir iş e-postasını ve firma adını yazın.", sending: "Gönderiliyor…",
+    ok: "Teşekkürler, bilgileriniz bize ulaştı. En kısa sürede dönüş yapacağız.",
+    fail: "Gönderilemedi. Lütfen şu adrese yazın: ", mail: "E-posta uygulamanız bilgiler dolu olarak açılmalı. Açılmazsa şu adrese yazın: ",
+    subject: "WardOps erken erişim: ", fields: ["Ad", "Firma", "E-posta", "Aylık FCL konteyner"]
+  } : {
+    missing: "Please add your name, a valid work email and your company.", sending: "Sending…",
+    ok: "Thanks, we got it. We will get back to you soon.",
+    fail: "That did not go through. Please email us at ", mail: "Your email app should open with the details filled in. If it does not, write to ",
+    subject: "WardOps early access: ", fields: ["Name", "Company", "Email", "FCL containers per month"]
+  };
 
   function say(text, kind) {
     status.textContent = text;
@@ -22,7 +35,7 @@
       if (bad) missing.push(field);
     });
     if (missing.length) {
-      say("Please add your name, a valid work email and your company.", "err");
+      say(T.missing, "err");
       missing[0].focus();
       return;
     }
@@ -35,7 +48,7 @@
     };
 
     if (endpoint) {
-      say("Sending…");
+      say(T.sending);
       fetch(endpoint, {
         method: "POST",
         headers: {"Content-Type": "application/json", "Accept": "application/json"},
@@ -43,18 +56,18 @@
       }).then(function (response) {
         if (!response.ok) throw new Error(String(response.status));
         form.reset();
-        say("Thanks, we got it. We will get back to you soon.", "ok");
+        say(T.ok, "ok");
       }).catch(function () {
-        say("That did not go through. Please email us at " + email + ".", "err");
+        say(T.fail + email + ".", "err");
       });
       return;
     }
 
-    var body = "Name: " + data.name + "\nCompany: " + data.company + "\nEmail: " + data.email +
-      "\nFCL containers per month: " + (data.volume || "-") + "\n\n" + (data.note || "");
-    window.location.href = "mailto:" + email + "?subject=" + encodeURIComponent("WardOps early access: " + data.company) +
+    var body = T.fields[0] + ": " + data.name + "\n" + T.fields[1] + ": " + data.company + "\n" + T.fields[2] + ": " + data.email +
+      "\n" + T.fields[3] + ": " + (data.volume || "-") + "\n\n" + (data.note || "");
+    window.location.href = "mailto:" + email + "?subject=" + encodeURIComponent(T.subject + data.company) +
       "&body=" + encodeURIComponent(body);
-    say("Your email app should open with the details filled in. If it does not, write to " + email + ".");
+    say(T.mail + email + ".");
   });
 })();
 
@@ -180,4 +193,22 @@
     if (played && played.catch) played.catch(function () { button.hidden = false; video.controls = false; });
   });
   video.addEventListener("play", hide);
+})();
+
+// Fiyat sayfasi: aylik / yillik odeme secici (JS yoksa aylik fiyatlar gorunur).
+(function () {
+  var buttons = document.querySelectorAll("[data-billing]");
+  if (!buttons.length) return;
+  function show(period) {
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].setAttribute("aria-pressed", String(buttons[i].getAttribute("data-billing") === period));
+    }
+    var values = document.querySelectorAll("[data-monthly][data-yearly]");
+    for (var k = 0; k < values.length; k++) {
+      values[k].textContent = values[k].getAttribute(period === "yearly" ? "data-yearly" : "data-monthly");
+    }
+  }
+  for (var b = 0; b < buttons.length; b++) {
+    buttons[b].addEventListener("click", function () { show(this.getAttribute("data-billing")); });
+  }
 })();

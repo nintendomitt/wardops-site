@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{DOC_TITLE}} | WardOps</title>
+<meta name="description" content="{{DOC_DESCRIPTION}}">
+<link rel="canonical" href="{{SITE_URL}}{{DOC_PATH}}">
+<link rel="alternate" hreflang="tr" href="{{SITE_URL}}{{DOC_PATH}}">
+<link rel="alternate" hreflang="en" href="{{SITE_URL}}{{EN_PATH}}">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#FBFBF9">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="{{ROOT}}assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="{{ROOT}}assets/favicon-48.png" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="{{ROOT}}assets/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:site_name" content="WardOps">
+<meta property="og:url" content="{{SITE_URL}}{{DOC_PATH}}">
+<meta property="og:title" content="{{DOC_TITLE}} | WardOps">
+<meta property="og:description" content="{{DOC_DESCRIPTION}}">
+<meta property="og:image" content="{{SITE_URL}}assets/og-image.jpg">
+<link rel="stylesheet" href="{{ROOT}}assets/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"WardOps","item":"{{SITE_URL}}tr/"},
+ {"@type":"ListItem","position":2,"name":"{{DOC_TITLE}}","item":"{{SITE_URL}}{{DOC_PATH}}"}]}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">İçeriğe geç</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs><linearGradient id="tide" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1FB5A5"/><stop offset=".55" stop-color="#2B63D9"/><stop offset="1" stop-color="#183C8C"/></linearGradient></defs>
+  <symbol id="mark" viewBox="0 0 48 48"><rect width="48" height="48" rx="12" fill="url(#tide)"/>
+    <path d="M11 16l6.5 16 6.5-11 6.5 11L37 16" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+<header class="site-header">
+  <div class="container bar">
+    <a class="brand" href="{{SITE_URL}}tr/" aria-label="WardOps ana sayfa"><svg class="brand-mark" aria-hidden="true"><use href="#mark"/></svg><span>Ward<span class="ops">Ops</span></span></a>
+    <div class="bar-actions" style="margin-left:auto">
+      <a class="btn btn-ghost btn-small" href="{{APP_URL}}">Giriş</a>
+      <a class="btn btn-primary btn-small" href="{{SITE_URL}}tr/#erken-erisim">Erken erişim</a>
+    </div>
+  </div>
+</header>
+<main id="main" class="doc-page">
+  <div class="container">
+    <article class="doc">
+      <a class="back" href="{{SITE_URL}}tr/">← WardOps ana sayfa</a>
+      <p class="doc-lang"><a href="{{SITE_URL}}{{EN_PATH}}" hreflang="en" lang="en">English version</a></p>
+      <p class="draft-banner">Taslak. Bu metin hukuki incelemededir ve genel kullanıma açılmadan önce değişecektir.
+        Köşeli parantez [ ] içindeki bilgiler henüz tamamlanmamıştır.</p>
+      {{DOC_BODY}}
+    </article>
+    <nav class="doc-nav" aria-label="Hukuki metinler">
+      <a href="{{ROOT}}tr/hukuki/hizmet-sozlesmesi/">Hizmet Sözleşmesi</a>
+      <a href="{{ROOT}}tr/hukuki/gizlilik/">Gizlilik ve KVKK Aydınlatma</a>
+      <a href="{{ROOT}}tr/hukuki/otomasyon-protokolu/">Otomasyon ve Sorumluluk</a>
+      <a href="{{ROOT}}tr/hukuki/veri-isleme-sozlesmesi/">Veri İşleme Sözleşmesi</a>
+      <a href="{{ROOT}}tr/hukuki/kayit-protokolu/">Kayıtlar ve Geri Bildirim</a>
+    </nav>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container foot-bottom" style="margin-top:0;border-top:none;padding-top:0"><p>© {{YEAR}} WardOps · <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a></p></div>
+</footer>
+</body>
+</html>
