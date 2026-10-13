@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WardOps demo in one minute | WardOps</title>
+<meta name="description" content="Watch WardOps on a demo inbox: emails filed on the right shipment, replies built only from the file, last free days flagged before demurrage starts.">
+<link rel="canonical" href="{{SITE_URL}}demo/">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#FBFBF9">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="{{ROOT}}assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="{{ROOT}}assets/favicon-48.png" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="{{ROOT}}assets/apple-touch-icon.png">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="WardOps">
+<meta property="og:url" content="{{SITE_URL}}demo/">
+<meta property="og:title" content="WardOps demo in one minute">
+<meta property="og:description" content="Customer emails filed on the right shipment, replies built only from the file, last free days flagged before demurrage starts.">
+<meta property="og:image" content="{{SITE_URL}}assets/video/wardops-demo-poster.jpg">
+<meta property="og:video" content="{{SITE_URL}}assets/video/wardops-demo.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1920">
+<meta property="og:video:height" content="1080">
+<link rel="stylesheet" href="{{ROOT}}assets/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"WardOps","item":"{{SITE_URL}}"},
+  {"@type":"ListItem","position":2,"name":"Demo","item":"{{SITE_URL}}demo/"}]},
+ {"@type":"VideoObject","@id":"{{SITE_URL}}demo/#video","name":"WardOps demo in one minute",
+  "description":"WardOps on a demo inbox: a customer asks about a container, the email is filed on the right shipment by container, B/L or booking number, the reply is built only from what is on the file, arrival notices are read and filed, and last free days, ETA changes and missing documents are flagged.",
+  "thumbnailUrl":"{{SITE_URL}}assets/video/wardops-demo-poster.jpg","contentUrl":"{{SITE_URL}}assets/video/wardops-demo.mp4",
+  "uploadDate":"2026-10-13","duration":"PT1M2S","inLanguage":"en","publisher":{"@id":"{{SITE_URL}}#organization"}}]}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+{{ICON_DEFS}}
+
+<header class="site-header">
+  <div class="container bar">
+    <a class="brand" href="{{SITE_URL}}" aria-label="WardOps home">
+      <svg class="brand-mark" aria-hidden="true"><use href="#mark"/></svg><span>Ward<span class="ops">Ops</span></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="{{ROOT}}#why">Why WardOps</a>
+      <a href="{{ROOT}}#how-it-works">How it works</a>
+      <a href="{{ROOT}}pricing/">Pricing</a>
+      <a href="{{ROOT}}#faq">FAQ</a>
+    </nav>
+    <div class="bar-actions">
+      <a class="btn btn-ghost btn-small" href="{{APP_URL}}">Log in</a>
+      <a class="btn btn-primary btn-small" href="{{ROOT}}#early-access">Get early access</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="pricing-hero" aria-labelledby="demo-title">
+    <div class="container">
+      <p class="eyebrow">Demo</p>
+      <h1 id="demo-title">WardOps in one minute.</h1>
+      <p class="lead">A customer asks about a container. Watch WardOps file the email on the right shipment, reply using
+        only what is on the file, and flag last free days before demurrage starts.</p>
+    </div>
+  </section>
+
+  <section class="section video-section" aria-label="Demo video">
+    <div class="container">
+      <div class="video-frame">
+        <video id="launch-video" controls preload="metadata" playsinline width="1920" height="1080"
+          poster="{{ROOT}}assets/video/wardops-demo-poster.jpg" aria-describedby="video-summary">
+          <source src="{{ROOT}}assets/video/wardops-demo.mp4" type="video/mp4">
+        </video>
+        <button class="video-play" type="button" hidden aria-label="Play the one-minute WardOps demo">
+          <span class="video-play-icon"><svg aria-hidden="true"><use href="#i-play"/></svg></span>
+          <span class="video-play-label">Play demo <span class="muted">1:02</span></span>
+        </button>
+      </div>
+      <p class="video-summary" id="video-summary">Real product screens with demo data. The customers, shipments and emails
+        shown are fictional. Narrated, with subtitles.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="seen-title">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">What you just saw</p>
+        <h2 id="seen-title">One inbox, every shipment in order.</h2>
+      </div>
+      <div class="features">
+        <article><svg aria-hidden="true"><use href="#i-mail"/></svg><h3>Every email on the right shipment</h3>
+          <p>Matched by container, B/L or booking number, with a note of what the system did with each email.</p></article>
+        <article><svg aria-hidden="true"><use href="#i-check"/></svg><h3>Replies built only from the file</h3>
+          <p>Status questions answered from your own mailbox, with your signature. Prefer to approve every reply? Switch automatic sending off.</p></article>
+        <article><svg aria-hidden="true"><use href="#i-doc"/></svg><h3>Arrival notices read and filed</h3>
+          <p>Documents attached to emails are read and filed on the shipment they belong to.</p></article>
+        <article><svg aria-hidden="true"><use href="#i-clock"/></svg><h3>What needs attention today</h3>
+          <p>Last free days, ETA changes and missing documents on one screen every morning.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-section" aria-labelledby="demo-cta-title">
+    <div class="container pricing-cta">
+      <h2 id="demo-cta-title">See WardOps with your own shipments.</h2>
+      <a class="btn btn-primary" href="{{ROOT}}#early-access">Get early access</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container foot-grid">
+    <div class="foot-brand">
+      <a class="brand" href="{{SITE_URL}}"><svg class="brand-mark" aria-hidden="true"><use href="#mark"/></svg><span>Ward<span class="ops">Ops</span></span></a>
+      <p>Documents, email and tracking in one place for ocean freight forwarders. In early access; features may change.</p>
+      <p><a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a></p>
+    </div>
+    <nav aria-label="Legal" class="foot-links">
+      <p class="foot-title">Legal</p>
+      <a href="{{ROOT}}legal/terms/">Terms of Service</a>
+      <a href="{{ROOT}}legal/privacy/">Privacy Policy</a>
+      <a href="{{ROOT}}legal/automation-protocol/">Automation &amp; Responsibility</a>
+      <a href="{{ROOT}}legal/data-processing/">Data Processing Agreement</a>
+      <a href="{{ROOT}}legal/records-and-feedback/">Records &amp; Feedback</a>
+    </nav>
+    <nav aria-label="Page" class="foot-links">
+      <p class="foot-title">Product</p>
+      <a href="{{ROOT}}#why">Why WardOps</a>
+      <a href="{{ROOT}}#how-it-works">How it works</a>
+      <a href="{{ROOT}}pricing/">Pricing</a>
+      <a href="{{ROOT}}#faq">FAQ</a>
+      <a href="{{ROOT}}demo/" aria-current="page">Demo</a>
+      <a href="{{ROOT}}blog/">Blog</a>
+    </nav>
+  </div>
+  <div class="container foot-bottom"><p>© {{YEAR}} WardOps</p>
+    <p class="tm">Gmail is a trademark of Google LLC. Microsoft 365 and Outlook are trademarks of the Microsoft group of
+      companies. WardOps is not affiliated with or endorsed by Google or Microsoft.</p></div>
+</footer>
+
+<script src="{{ROOT}}assets/site.js" defer></script>
+</body>
+</html>

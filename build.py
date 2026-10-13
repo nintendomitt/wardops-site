@@ -351,6 +351,12 @@ def build(strict: bool = False) -> int:
     (DIST / "tr" / "fiyatlar" / "index.html").write_text(tr_pricing, encoding="utf-8")
     pages.append(("tr/fiyatlar/", DIST / "tr" / "fiyatlar" / "index.html", pricing_confirmed))
 
+    # Demo sayfası: /demo/ (1 dakikalık seslendirmeli demo videosu; soğuk mailin video bağlantısı)
+    demo = fill((SRC / "demo.html").read_text(encoding="utf-8"), {**base, "ROOT": "../", "ICON_DEFS": icon_defs})
+    (DIST / "demo").mkdir(parents=True, exist_ok=True)
+    (DIST / "demo" / "index.html").write_text(demo, encoding="utf-8")
+    pages.append(("demo/", DIST / "demo" / "index.html", True))
+
     not_found = fill((SRC / "404.html").read_text(encoding="utf-8"), {**base, "ROOT": "/"})
     (DIST / "404.html").write_text(not_found, encoding="utf-8")
     pages.append(("404.html", DIST / "404.html", False))
